@@ -67,6 +67,8 @@ jobs:
         run: python3 _exports/validate.py --git
       - name: Compile every exported crate as an external Git dependency
         run: python3 _exports/validate.py --all --git
+      - name: Check compiler plugins with upstream toolchains
+        run: python3 _exports/validate.py --plugins
       - name: Check sync freshness
         run: python3 _exports/sync.py --freshness-hours 48
       - name: Publish verified snapshot

@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 import subprocess
 import tempfile
+import tomllib
 
 from native_env import native_environment
 
@@ -19,7 +20,10 @@ def run(*args, **kwargs):
 def digest():
     value = hashlib.sha256()
     value.update((ROOT / "_exports/crates.json").read_bytes())
-    for directory in (ROOT / "codex-rs",):
+    value.update((ROOT / "_exports/compiler-plugins.json").read_bytes())
+    value.update((ROOT / "_exports/vendor.json").read_bytes())
+    value.update((ROOT / "_exports/dependency-sources.json").read_bytes())
+    for directory in (ROOT / "codex-rs", ROOT / "_exports/vendor", ROOT / "tools/argument-comment-lint"):
         for path in sorted(directory.rglob("*")):
             if path.is_file() and "target" not in path.parts and "__pycache__" not in path.parts:
                 value.update(path.relative_to(ROOT).as_posix().encode())
@@ -31,13 +35,30 @@ def invariants():
     catalog = json.loads((ROOT / "_exports/crates.json").read_text())
     metadata = json.loads(run("cargo", "metadata", "--no-deps", "--format-version", "1", "--manifest-path", str(ROOT / "codex-rs/Cargo.toml"), capture_output=True, text=True).stdout)
     packages = [package for package in metadata["packages"] if package["id"] in metadata["workspace_members"]]
-    assert {package["name"] for package in packages} == {package["name"] for package in catalog}
+    if {package["name"] for package in packages} != {package["name"] for package in catalog}:
+        raise RuntimeError("catalog does not match the complete workspace")
     for package in packages:
-        assert any(set(target["kind"]) & {"lib", "rlib", "proc-macro", "cdylib", "staticlib"} for target in package["targets"]), package["name"]
+        if not any(set(target["kind"]) & {"lib", "rlib", "proc-macro", "cdylib", "staticlib"} for target in package["targets"]):
+            raise RuntimeError(f"missing library target: {package['name']}")
     before = digest()
     run("cargo", "run", "--locked", "--manifest-path", str(ROOT / "_exports/exporter/Cargo.toml"), "--", str(ROOT))
-    assert before == digest(), "export is not idempotent"
+    if before != digest():
+        raise RuntimeError("export is not idempotent")
     print(f"Validated all {len(packages)} library targets and deterministic exports")
+
+
+def compiler_plugins():
+    plugins = json.loads((ROOT / "_exports/compiler-plugins.json").read_text())
+    for plugin in plugins:
+        directory = ROOT / plugin["path"]
+        with (directory / "Cargo.toml").open("rb") as file:
+            manifest = tomllib.load(file)
+        if manifest["package"]["name"] != plugin["name"] or "cdylib" not in manifest["lib"]["crate-type"]:
+            raise RuntimeError(f"compiler plugin manifest changed: {plugin['name']}")
+        components = ",".join(plugin["requires"])
+        run("rustup", "toolchain", "install", plugin["toolchain"], "--profile", "minimal", "--component", components)
+        run("cargo", f"+{plugin['toolchain']}", "check", "--locked", "--manifest-path", str(directory / "Cargo.toml"))
+    print(f"Checked {len(plugins)} compiler plugins with their pinned toolchains")
 
 
 def consumer(all_crates, git_source):
@@ -78,8 +99,11 @@ if __name__ == "__main__":
     parser.add_argument("--invariants", action="store_true")
     parser.add_argument("--all", action="store_true")
     parser.add_argument("--git", action="store_true")
+    parser.add_argument("--plugins", action="store_true")
     arguments = parser.parse_args()
-    if arguments.invariants:
+    if arguments.plugins:
+        compiler_plugins()
+    elif arguments.invariants:
         invariants()
     else:
         consumer(arguments.all, arguments.git)

@@ -1,0 +1,13 @@
+[
+  {
+    "kind": "compiler-plugin",
+    "name": "argument_comment_lint",
+    "path": "tools/argument-comment-lint",
+    "requires": [
+      "rustc-dev",
+      "rust-src",
+      "llvm-tools-preview"
+    ],
+    "toolchain": "nightly-2025-09-18"
+  }
+]

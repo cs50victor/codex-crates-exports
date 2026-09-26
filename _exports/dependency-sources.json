@@ -1,0 +1,75 @@
+[
+  {
+    "name": "crossterm",
+    "version": "0.29.0",
+    "source": {
+      "git": "https://github.com/openai-oss-forks/crossterm",
+      "rev": "efa177859fd9623d57b9fe7ae9bf491ae1ac6ec4"
+    }
+  },
+  {
+    "name": "tokio-tungstenite",
+    "version": "0.28.0",
+    "source": {
+      "git": "https://github.com/openai-oss-forks/tokio-tungstenite",
+      "rev": "0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186"
+    }
+  },
+  {
+    "name": "tungstenite",
+    "version": "0.27.0",
+    "source": {
+      "git": "https://github.com/openai-oss-forks/tungstenite-rs",
+      "rev": "4fffad30fe373adbdcffab9545e9e9bf4f2fc19f"
+    }
+  },
+  {
+    "name": "axum",
+    "version": "0.8.8",
+    "source": {
+      "path": "_exports/vendor/axum-0.8.8"
+    }
+  },
+  {
+    "name": "opentelemetry-otlp",
+    "version": "0.31.0",
+    "source": {
+      "path": "_exports/vendor/opentelemetry-otlp-0.31.0"
+    }
+  },
+  {
+    "name": "opentelemetry-proto",
+    "version": "0.31.0",
+    "source": {
+      "path": "_exports/vendor/opentelemetry-proto-0.31.0"
+    }
+  },
+  {
+    "name": "ratatui",
+    "version": "0.30.2",
+    "source": {
+      "path": "_exports/vendor/ratatui-0.30.2"
+    }
+  },
+  {
+    "name": "ratatui-crossterm",
+    "version": "0.1.2",
+    "source": {
+      "path": "_exports/vendor/ratatui-crossterm-0.1.2"
+    }
+  },
+  {
+    "name": "tonic",
+    "version": "0.14.3",
+    "source": {
+      "path": "_exports/vendor/tonic-0.14.3"
+    }
+  },
+  {
+    "name": "tonic-prost",
+    "version": "0.14.3",
+    "source": {
+      "path": "_exports/vendor/tonic-prost-0.14.3"
+    }
+  }
+]

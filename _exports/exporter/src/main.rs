@@ -40,7 +40,17 @@ fn dependency_table(item: &Item) -> Result<InlineTable> {
     }
 }
 
-fn rewrite_dependencies(item: &mut Item, patches: &[(String, InlineTable)]) -> Result<()> {
+struct DependencySource {
+    name: String,
+    version: semver::Version,
+    source: InlineTable,
+}
+
+fn rewrite_dependencies(
+    item: &mut Item,
+    patches: &[DependencySource],
+    directory: &Path,
+) -> Result<()> {
     let Some(table) = item.as_table_like_mut() else {
         return Ok(());
     };
@@ -56,7 +66,29 @@ fn rewrite_dependencies(item: &mut Item, patches: &[(String, InlineTable)]) -> R
                     .get("package")
                     .and_then(Value::as_str)
                     .unwrap_or(name.get());
-                if let Some((_, patch)) = patches.iter().find(|(name, _)| name == package) {
+                let requirement = dependency
+                    .get("version")
+                    .and_then(Value::as_str)
+                    .map(semver::VersionReq::parse)
+                    .transpose()?;
+                let matches: Vec<_> = patches
+                    .iter()
+                    .filter(|patch| {
+                        patch.name == package
+                            && requirement
+                                .as_ref()
+                                .is_none_or(|requirement| requirement.matches(&patch.version))
+                            && (!dependency.contains_key("git")
+                                || patch.source.get("git").and_then(Value::as_str)
+                                    == dependency.get("git").and_then(Value::as_str))
+                            && !dependency.contains_key("registry")
+                    })
+                    .collect();
+                ensure!(
+                    matches.len() <= 1,
+                    "ambiguous locked source for dependency {package}"
+                );
+                if let Some(patch) = matches.first() {
                     for key in [
                         "version",
                         "registry",
@@ -69,14 +101,25 @@ fn rewrite_dependencies(item: &mut Item, patches: &[(String, InlineTable)]) -> R
                     ] {
                         dependency.remove(key);
                     }
-                    for (key, val) in patch {
-                        dependency.insert(key, val.clone());
+                    for (key, val) in &patch.source {
+                        if key == "path" {
+                            let path = Path::new(val.as_str().context("dependency path")?);
+                            let relative = pathdiff::diff_paths(path, directory)
+                                .context("relative dependency path")?;
+                            dependency.insert(
+                                key,
+                                Value::from(relative.to_str().context("UTF-8 dependency path")?),
+                            );
+                        } else {
+                            dependency.insert(key, val.clone());
+                        }
                     }
+                    dependency.insert("version", Value::from(format!("={}", patch.version)));
                     *item = Item::Value(Value::InlineTable(dependency));
                 }
             }
         } else if key != "patch" {
-            rewrite_dependencies(item, patches)?;
+            rewrite_dependencies(item, patches, directory)?;
         }
     }
     Ok(())
@@ -112,6 +155,25 @@ fn rust_files(root: &Path, files: &mut BTreeSet<PathBuf>) -> Result<()> {
     Ok(())
 }
 
+fn manifests(root: &Path, files: &mut BTreeSet<PathBuf>) -> Result<()> {
+    for entry in fs::read_dir(root)? {
+        let entry = entry?;
+        let path = entry.path();
+        let kind = entry.file_type()?;
+        if kind.is_dir() {
+            if ![".git", ".jj", "_exports", "target", "node_modules"]
+                .iter()
+                .any(|skip| entry.file_name() == *skip)
+            {
+                manifests(&path, files)?;
+            }
+        } else if kind.is_file() && entry.file_name() == "Cargo.toml" {
+            files.insert(path);
+        }
+    }
+    Ok(())
+}
+
 fn export(root: &Path) -> Result<()> {
     let ignore_path = root.join(".gitignore");
     let mut ignore = fs::read_to_string(&ignore_path).unwrap_or_default();
@@ -121,22 +183,51 @@ fn export(root: &Path) -> Result<()> {
         }
     }
     fs::write(ignore_path, ignore)?;
+    let status = Command::new("python3")
+        .arg(root.join("_exports/vendor.py"))
+        .status()?;
+    ensure!(status.success(), "dependency source preparation failed");
     let workspace = root.join("codex-rs");
     let metadata = metadata(&workspace)?;
     let mut root_manifest =
         fs::read_to_string(workspace.join("Cargo.toml"))?.parse::<DocumentMut>()?;
+    let sources: Json = serde_json::from_str(&fs::read_to_string(
+        root.join("_exports/dependency-sources.json"),
+    )?)?;
     let mut patches = Vec::new();
-    if let Some(table) = root_manifest["patch"]["crates-io"].as_table_like() {
-        for (name, item) in table.iter() {
-            let patch = dependency_table(item)?;
-            ensure!(
-                patch.contains_key("git") && patch.contains_key("rev"),
-                "patch {name} must use a pinned Git revision"
-            );
-            patches.push((name.to_owned(), patch));
+    for record in sources.as_array().context("dependency sources")? {
+        let mut source = InlineTable::new();
+        for (key, value) in record["source"].as_object().context("dependency source")? {
+            let text = value.as_str().context("dependency source value")?;
+            let text = if key == "path" {
+                root.join(text).to_string_lossy().into_owned()
+            } else {
+                text.to_owned()
+            };
+            source.insert(key, Value::from(text));
+        }
+        patches.push(DependencySource {
+            name: record["name"]
+                .as_str()
+                .context("dependency name")?
+                .to_owned(),
+            version: record["version"]
+                .as_str()
+                .context("dependency version")?
+                .parse()?,
+            source,
+        });
+    }
+    rewrite_dependencies(root_manifest.as_item_mut(), &patches, &workspace)?;
+    for patch in &patches {
+        if let Some(path) = patch.source.get("path").and_then(Value::as_str) {
+            let directory = Path::new(path);
+            let manifest = directory.join("Cargo.toml");
+            let mut document = fs::read_to_string(&manifest)?.parse::<DocumentMut>()?;
+            rewrite_dependencies(document.as_item_mut(), &patches, directory)?;
+            fs::write(manifest, document.to_string())?;
         }
     }
-    rewrite_dependencies(root_manifest.as_item_mut(), &patches)?;
     fs::write(workspace.join("Cargo.toml"), root_manifest.to_string())?;
     let members = metadata["workspace_members"]
         .as_array()
@@ -145,13 +236,19 @@ fn export(root: &Path) -> Result<()> {
     let mut files = BTreeSet::new();
     let mut binary_entrypoints = BTreeSet::new();
     let mut catalog = Vec::new();
+    let mut package_manifests = BTreeSet::new();
     for package in packages
         .iter()
         .filter(|package| members.contains(&package["id"]))
     {
         let manifest = Path::new(package["manifest_path"].as_str().context("manifest path")?);
         let mut document = fs::read_to_string(manifest)?.parse::<DocumentMut>()?;
-        rewrite_dependencies(document.as_item_mut(), &patches)?;
+        package_manifests.insert(manifest.to_path_buf());
+        rewrite_dependencies(
+            document.as_item_mut(),
+            &patches,
+            manifest.parent().context("manifest directory")?,
+        )?;
         let targets = package["targets"].as_array().context("targets")?;
         let proc_macro = targets.iter().any(|target| {
             target["kind"]
@@ -239,6 +336,40 @@ fn export(root: &Path) -> Result<()> {
         root.join("_exports/crates.json"),
         format!("{}\n", serde_json::to_string_pretty(&catalog)?),
     )?;
+    let mut all_manifests = BTreeSet::new();
+    manifests(root, &mut all_manifests)?;
+    let mut plugins = Vec::new();
+    for manifest in all_manifests.difference(&package_manifests) {
+        let document = fs::read_to_string(manifest)?.parse::<DocumentMut>()?;
+        let Some(package) = document.get("package") else {
+            continue;
+        };
+        let private_compiler = package
+            .get("metadata")
+            .and_then(|item| item.get("rust-analyzer"))
+            .and_then(|item| item.get("rustc_private"))
+            .and_then(Item::as_bool)
+            == Some(true);
+        ensure!(
+            private_compiler,
+            "unclassified package outside the Codex workspace: {}",
+            manifest.display()
+        );
+        let directory = manifest.parent().context("plugin directory")?;
+        let toolchain =
+            fs::read_to_string(directory.join("rust-toolchain"))?.parse::<DocumentMut>()?;
+        plugins.push(json!({
+            "name": package["name"].as_str().context("plugin name")?,
+            "path": directory.strip_prefix(root)?.to_str().context("plugin path")?,
+            "kind": "compiler-plugin",
+            "toolchain": toolchain["toolchain"]["channel"].as_str().context("plugin toolchain")?,
+            "requires": ["rustc-dev", "rust-src", "llvm-tools-preview"],
+        }));
+    }
+    fs::write(
+        root.join("_exports/compiler-plugins.json"),
+        format!("{}\n", serde_json::to_string_pretty(&plugins)?),
+    )?;
     println!(
         "Exported {} crates; parsed {} Rust files; rewrote {rewritten}",
         catalog.len(),
@@ -252,4 +383,45 @@ fn main() -> Result<()> {
         .nth(1)
         .context("usage: codex-crates-exporter REPOSITORY")?;
     export(&fs::canonicalize(root)?)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn patches_compatible_aliases_and_target_dependencies_without_changing_older_versions() {
+        let mut source = InlineTable::new();
+        source.insert("git", Value::from("https://example.test/leaf"));
+        source.insert("rev", Value::from("abc"));
+        let patches = [DependencySource {
+            name: "leaf".into(),
+            version: "0.29.0".parse().unwrap(),
+            source,
+        }];
+        let mut document = "[dependencies]\nnewer = { package = 'leaf', version = '0.29', features = ['x'] }\nolder = { package = 'leaf', version = '0.28' }\n[target.'cfg(unix)'.dependencies]\nleaf = '0.29'\n".parse::<DocumentMut>().unwrap();
+        rewrite_dependencies(document.as_item_mut(), &patches, Path::new("/workspace")).unwrap();
+        assert_eq!(
+            document["dependencies"]["older"]["version"].as_str(),
+            Some("0.28")
+        );
+        assert_eq!(
+            document["dependencies"]["newer"]["git"].as_str(),
+            Some("https://example.test/leaf")
+        );
+        assert_eq!(
+            document["dependencies"]["newer"]["features"]
+                .as_array()
+                .unwrap()
+                .len(),
+            1
+        );
+        assert_eq!(
+            document["target"]["cfg(unix)"]["dependencies"]["leaf"]["rev"].as_str(),
+            Some("abc")
+        );
+        let once = document.to_string();
+        rewrite_dependencies(document.as_item_mut(), &patches, Path::new("/workspace")).unwrap();
+        assert_eq!(document.to_string(), once);
+    }
 }

@@ -73,6 +73,7 @@ def refresh():
         toolchain = tomllib.load(file)["toolchain"]["channel"]
     run("rustup", "toolchain", "install", toolchain, "--profile", "minimal")
     os.environ["RUSTUP_TOOLCHAIN"] = toolchain
+    os.environ["CODEX_EXPORT_UPSTREAM"] = revision
     if environment_file := os.environ.get("GITHUB_ENV"):
         with open(environment_file, "a") as file:
             file.write(f"RUSTUP_TOOLCHAIN={toolchain}\n")
