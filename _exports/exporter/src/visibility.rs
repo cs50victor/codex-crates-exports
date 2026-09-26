@@ -27,6 +27,14 @@ fn offset(source: &str, span: Span, end: bool) -> Result<usize> {
 fn collect(source: &str, items: &[Item], edits: &mut Vec<Edit>) -> Result<()> {
     for item in items {
         if let Item::Mod(item) = item {
+            let seals_trait = item.content.as_ref().is_some_and(|(_, items)| {
+                items.iter().any(
+                    |item| matches!(item, Item::Trait(trait_item) if trait_item.ident == "Sealed"),
+                )
+            });
+            if item.ident == "private" || item.ident == "sealed" || seals_trait {
+                continue;
+            }
             if item.attrs.iter().any(|attribute| {
                 attribute.path().is_ident("cfg")
                     && matches!(&attribute.meta, syn::Meta::List(list) if list.tokens.to_string() == "test")
@@ -143,6 +151,15 @@ mod tests {
     #[test]
     fn rejects_invalid_source() {
         assert!(rewrite("fn (").is_err());
+    }
+
+    #[test]
+    fn preserves_sealed_trait_boundaries_and_private_module_paths() {
+        let source = "mod private { pub trait Sealed {} } mod sealed; mod internal { pub trait Sealed {} } mod api {}";
+        assert_eq!(
+            rewrite(source).unwrap(),
+            "mod private { pub trait Sealed {} } mod sealed; mod internal { pub trait Sealed {} } pub mod api {}"
+        );
     }
 
     #[test]

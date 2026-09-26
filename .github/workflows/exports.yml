@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   verify:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 120
     permissions:
       contents: write
@@ -33,7 +33,11 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends pkg-config libssl-dev libcap-dev libasound2-dev
+          sudo apt-get install -y --no-install-recommends cmake pkg-config libssl-dev libcap-dev libasound2-dev libglib2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+          pkg-config --atleast-version=1.28 gstreamer-1.0
+          pkg-config --atleast-version=1.28 gstreamer-app-1.0
+          pkg-config --atleast-version=1.28 gstreamer-audio-1.0
+          pkg-config --exists glib-2.0 gobject-2.0 gio-2.0 alsa
       - name: Install upstream Rust toolchain
         shell: bash
         run: |
