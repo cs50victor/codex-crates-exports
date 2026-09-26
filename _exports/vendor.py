@@ -7,7 +7,6 @@ from pathlib import Path
 import shutil
 import tarfile
 import tempfile
-import subprocess
 import tomllib
 from urllib.request import urlopen
 
@@ -30,13 +29,21 @@ def resolve_dependency(specification, packages):
     return identity(matches[0])
 
 
+def snapshot_dependencies(root, revision):
+    lock = tomllib.loads((root / "codex-rs/Cargo.lock").read_text())
+    manifest = tomllib.loads((root / "codex-rs/Cargo.toml").read_text())
+    inputs = {"revision": revision, "packages": lock["package"], "patches": manifest.get("patch", {}).get("crates-io", {})}
+    (root / "_exports/upstream-dependencies.json").write_text(json.dumps(inputs, indent=2) + "\n")
+
+
 def prepare():
     provenance = json.loads((ROOT / "_exports/upstream.json").read_text())
     revision = os.environ.get("CODEX_EXPORT_UPSTREAM", provenance["revision"])
-    lock = subprocess.check_output(["git", "-C", str(ROOT), "show", f"{revision}:codex-rs/Cargo.lock"], text=True)
-    manifest = subprocess.check_output(["git", "-C", str(ROOT), "show", f"{revision}:codex-rs/Cargo.toml"], text=True)
-    packages = tomllib.loads(lock)["package"]
-    patches = tomllib.loads(manifest).get("patch", {}).get("crates-io", {})
+    inputs = json.loads((ROOT / "_exports/upstream-dependencies.json").read_text())
+    if inputs["revision"] != revision:
+        raise RuntimeError("dependency input snapshot does not match the selected upstream revision")
+    packages = inputs["packages"]
+    patches = inputs["patches"]
     affected = set()
     overrides = []
     for name, source in patches.items():

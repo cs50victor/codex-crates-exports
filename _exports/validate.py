@@ -21,6 +21,7 @@ def digest():
     value = hashlib.sha256()
     value.update((ROOT / "_exports/crates.json").read_bytes())
     value.update((ROOT / "_exports/compiler-plugins.json").read_bytes())
+    value.update((ROOT / "_exports/upstream-dependencies.json").read_bytes())
     value.update((ROOT / "_exports/vendor.json").read_bytes())
     value.update((ROOT / "_exports/dependency-sources.json").read_bytes())
     for directory in (ROOT / "codex-rs", ROOT / "_exports/vendor", ROOT / "tools/argument-comment-lint"):

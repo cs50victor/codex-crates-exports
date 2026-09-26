@@ -12,6 +12,8 @@ import tarfile
 import tempfile
 import tomllib
 
+from vendor import snapshot_dependencies
+
 ROOT = Path(__file__).resolve().parents[1]
 UPSTREAM = "https://github.com/openai/codex.git"
 PROTECTED = ("_exports/", ".github/workflows/exports.yml", ".github/workflows/freshness.yml", "README.txt")
@@ -69,6 +71,7 @@ def refresh():
     revision = run("git", "rev-parse", "FETCH_HEAD", capture_output=True, text=True).stdout.strip()
     archive = run("git", "archive", revision, capture_output=True).stdout
     replace_upstream(archive)
+    snapshot_dependencies(ROOT, revision)
     with (ROOT / "codex-rs/rust-toolchain.toml").open("rb") as file:
         toolchain = tomllib.load(file)["toolchain"]["channel"]
     run("rustup", "toolchain", "install", toolchain, "--profile", "minimal")
