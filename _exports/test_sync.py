@@ -57,6 +57,13 @@ class SyncTests(unittest.TestCase):
         self.assertFalse((self.root / ".github/workflows/unwanted.yml").exists())
         self.assertFalse((self.root / "README.md").exists())
 
+    def test_excludes_upstream_dependency_automation(self):
+        self.write(".github/dependabot.yaml", "old automation")
+        subprocess.run(["git", "-C", str(self.root), "add", "."], check=True)
+        sync.replace_upstream(archive({".github/dependabot.yml": "new automation", ".github/dependabot.yaml": "new automation"}))
+        self.assertFalse((self.root / ".github/dependabot.yml").exists())
+        self.assertFalse((self.root / ".github/dependabot.yaml").exists())
+
     def test_preserves_safe_relative_symlinks(self):
         sync.replace_upstream(archive({"target.txt": "content"}, {"nested/link.txt": "../target.txt"}))
         self.assertTrue((self.root / "nested/link.txt").is_symlink())

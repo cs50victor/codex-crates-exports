@@ -53,7 +53,7 @@ def replace_upstream(archive):
         for source in staging.rglob("*"):
             relative = source.relative_to(staging)
             name = relative.as_posix()
-            if name.startswith(".github/workflows/") or name == "README.md":
+            if name.startswith(".github/workflows/") or name in ("README.md", ".github/dependabot.yml", ".github/dependabot.yaml"):
                 continue
             destination = ROOT / relative
             if source.is_symlink():
