@@ -1,1 +1,5 @@
-Codex Crates Exports makes the Rust workspace crates from openai/codex available as individually selectable Cargo Git dependencies. It follows upstream main daily, exposes library module paths with a syntax-aware exporter, and preserves type, field and method visibility, licenses and platform requirements. Procedural macros retain Rust's export rules, and the separate Dylint compiler plugin keeps its upstream form and nightly toolchain. Use a pinned commit and a package name from _exports/crates.json; compiler plugins are inventoried in _exports/compiler-plugins.json, with usage and validation limits in _exports/USAGE.txt. This is an independent community derivative, not an official OpenAI distribution or a crates.io publication.
+Use individual Rust crates from openai/codex in your own projects as Cargo
+Git dependencies. This repository syncs with upstream main daily and publishes
+updates only after tests and compilation checks pass. Choose a crate from
+_exports/crates.json and pin a commit in your Cargo.toml. See _exports/USAGE.txt
+for setup, examples and limitations. This is an unofficial community project.
