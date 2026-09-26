@@ -100,7 +100,7 @@ use toml::Value as TomlValue;
 use tracing::warn;
 
 #[path = "in_process_bootstrap.rs"]
-mod bootstrap;
+pub mod bootstrap;
 
 const IN_PROCESS_CONNECTION_ID: ConnectionId = ConnectionId(0);
 const SHUTDOWN_TIMEOUT: Duration = Duration::from_secs(5);

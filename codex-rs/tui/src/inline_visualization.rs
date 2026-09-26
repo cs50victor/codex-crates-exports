@@ -1,6 +1,6 @@
 //! Terminal fallback for assistant-authored inline visualization directives.
 
-mod viewer;
+pub mod viewer;
 
 use base64::Engine as _;
 use base64::engine::general_purpose::URL_SAFE_NO_PAD;

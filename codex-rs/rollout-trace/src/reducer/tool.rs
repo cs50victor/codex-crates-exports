@@ -18,8 +18,8 @@ use crate::payload::RawPayloadRef;
 use crate::raw_event::RawEventSeq;
 use crate::raw_event::RawToolCallRequester;
 
-mod agents;
-mod terminal;
+pub mod agents;
+pub mod terminal;
 
 pub(super) use agents::ObservedAgentResultEdge;
 pub(super) use agents::PendingAgentInteractionEdge;

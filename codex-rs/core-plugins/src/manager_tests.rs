@@ -76,10 +76,10 @@ use wiremock::matchers::query_param;
 const MAX_CAPABILITY_SUMMARY_DESCRIPTION_LEN: usize = 1024;
 
 #[path = "marketplace_policy/curated_loading_tests.rs"]
-mod curated_marketplace_policy;
+pub mod curated_marketplace_policy;
 
 #[path = "remote_metadata_cache_tests.rs"]
-mod remote_metadata_cache;
+pub mod remote_metadata_cache;
 
 fn unrestricted_config_layer_stack() -> ConfigLayerStack {
     ConfigLayerStack::default()

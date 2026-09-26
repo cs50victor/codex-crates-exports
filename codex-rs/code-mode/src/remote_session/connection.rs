@@ -51,8 +51,8 @@ pub(super) use self::driver::RemoteSession;
 pub(super) use self::driver::SessionCleanup;
 use self::reader::drive_reader;
 
-mod driver;
-mod reader;
+pub mod driver;
+pub mod reader;
 
 const IPC_CHANNEL_CAPACITY: usize = 128;
 const LOCAL_HOST_STARTUP_TIMEOUT: Duration = Duration::from_secs(30);

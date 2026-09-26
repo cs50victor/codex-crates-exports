@@ -22,11 +22,11 @@ use thiserror::Error;
 use ts_rs::TS;
 use url::Url;
 
-mod absolute_path_normalization;
-mod api_path_string;
-mod config_path;
-mod native_path_bytes;
-mod platform;
+pub mod absolute_path_normalization;
+pub mod api_path_string;
+pub mod config_path;
+pub mod native_path_bytes;
+pub mod platform;
 
 use absolute_path_normalization::path_uri_from_segments;
 

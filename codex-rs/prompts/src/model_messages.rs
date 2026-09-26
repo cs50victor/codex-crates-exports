@@ -13,10 +13,10 @@ use codex_protocol::openai_models::ToolMessage;
 use permissions::ResolvedApprovalMessages;
 use permissions::ResolvedPermissionMessages;
 
-mod collaboration;
-mod guardian;
-mod multi_agent;
-pub(crate) mod permissions;
+pub mod collaboration;
+pub mod guardian;
+pub mod multi_agent;
+pub mod permissions;
 
 pub use collaboration::ResolvedCollaborationModeMessages;
 pub use guardian::ResolvedAutoReviewMessages;

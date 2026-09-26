@@ -24,7 +24,7 @@ use wiremock::matchers::path;
 const TURN_COST_PATH: &str = "/v1/analytics/codex/turn-costs";
 
 #[path = "turn_cost_worker_chatgpt_tests.rs"]
-mod chatgpt;
+pub mod chatgpt;
 
 #[tokio::test]
 async fn worker_starts_with_otlp_metrics_exporter_without_log_exporter() {

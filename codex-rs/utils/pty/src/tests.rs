@@ -15,7 +15,7 @@ use crate::spawn_pty_process;
 
 #[cfg(windows)]
 #[path = "windows_tests.rs"]
-mod windows_tests;
+pub mod windows_tests;
 
 pub(super) fn find_python() -> Option<String> {
     for candidate in ["python3", "python"] {

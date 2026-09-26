@@ -1,5 +1,5 @@
 #[path = "proto/codex.exec_server.relay.v1.rs"]
-mod generated;
+pub mod generated;
 
 pub(crate) use generated::RelayData;
 pub(crate) use generated::RelayHandshake;

@@ -6,19 +6,19 @@
 //!
 //! See `README.md` for the system diagram and reducer model.
 
-mod bundle;
-mod code_cell;
-mod compaction;
-mod inference;
-mod mcp;
-mod model;
-mod payload;
-mod protocol_event;
-mod raw_event;
-mod reducer;
-mod thread;
-mod tool_dispatch;
-mod writer;
+pub mod bundle;
+pub mod code_cell;
+pub mod compaction;
+pub mod inference;
+pub mod mcp;
+pub mod model;
+pub mod payload;
+pub mod protocol_event;
+pub mod raw_event;
+pub mod reducer;
+pub mod thread;
+pub mod tool_dispatch;
+pub mod writer;
 
 /// Conventional reduced-state cache name written next to a raw trace bundle.
 pub use bundle::REDUCED_STATE_FILE_NAME;

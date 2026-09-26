@@ -42,7 +42,7 @@ use toml::Value as TomlValue;
 use toml_edit::Item as TomlItem;
 
 #[path = "config_manager_service_credential_edits.rs"]
-mod credential_edits;
+pub mod credential_edits;
 
 use credential_edits::CredentialProviderEdits;
 

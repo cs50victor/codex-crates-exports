@@ -4,29 +4,29 @@
 //! - in-process restrictions (`no_new_privs` + seccomp), and
 //! - bubblewrap for filesystem isolation.
 #[cfg(target_os = "linux")]
-mod bazel_bwrap;
+pub mod bazel_bwrap;
 #[cfg(target_os = "linux")]
-mod bundled_bwrap;
+pub mod bundled_bwrap;
 #[cfg(target_os = "linux")]
-mod bwrap;
+pub mod bwrap;
 #[cfg(target_os = "linux")]
-mod daemon_mounts;
+pub mod daemon_mounts;
 #[cfg(target_os = "linux")]
-mod exec_util;
+pub mod exec_util;
 #[cfg(target_os = "linux")]
-mod fd_mount;
+pub mod fd_mount;
 #[cfg(target_os = "linux")]
-mod landlock;
+pub mod landlock;
 #[cfg(target_os = "linux")]
-mod launcher;
+pub mod launcher;
 #[cfg(target_os = "linux")]
-mod linux_run_main;
+pub mod linux_run_main;
 #[cfg(target_os = "linux")]
-mod proxy_lifecycle;
+pub mod proxy_lifecycle;
 #[cfg(target_os = "linux")]
-mod proxy_routing;
+pub mod proxy_routing;
 #[cfg(target_os = "linux")]
-mod wslg;
+pub mod wslg;
 
 /// Exit status returned when bundled bubblewrap fails digest verification.
 #[cfg(target_os = "linux")]

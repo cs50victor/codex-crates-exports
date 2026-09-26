@@ -363,8 +363,8 @@ pub async fn spawn_process_no_stdin(
 
 #[cfg(all(test, windows))]
 #[path = "pipe_tests.rs"]
-mod tests;
+pub mod tests;
 
 #[cfg(all(test, unix))]
 #[path = "pipe_unix_tests.rs"]
-mod unix_tests;
+pub mod unix_tests;

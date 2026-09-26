@@ -204,7 +204,7 @@ fn read_windows_vscode_detection_with_timeout(
 
 #[cfg(all(test, unix))]
 #[path = "windows_term_program_tests.rs"]
-mod windows_term_program_tests;
+pub mod windows_term_program_tests;
 
 /// Restore keyboard reporting and return the mouse policy from the same fresh tmux probe.
 pub(super) fn enable_keyboard_enhancement(writer: &mut impl Write) -> super::tmux::MouseCapture {

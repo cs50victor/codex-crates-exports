@@ -37,7 +37,7 @@ use tokio::io::AsyncReadExt;
 use codex_config::types::History;
 use codex_config::types::HistoryPersistence;
 
-mod batch;
+pub mod batch;
 pub use batch::HistoryBatch;
 pub use batch::HistoryBatchCursor;
 pub use batch::HistoryBatchEntry;

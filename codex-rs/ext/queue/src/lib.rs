@@ -4,7 +4,7 @@ use std::sync::Arc;
 
 use codex_extension_api::ExtensionRegistryBuilder;
 
-mod service;
+pub mod service;
 
 pub use service::QueueServiceError;
 pub use service::QueuedItem;

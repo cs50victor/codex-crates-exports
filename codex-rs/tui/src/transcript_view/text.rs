@@ -10,10 +10,10 @@ use std::borrow::Cow;
 use std::ops::Range;
 
 #[path = "text_logical.rs"]
-mod logical;
+pub mod logical;
 
 #[path = "text_tabs.rs"]
-mod tabs;
+pub mod tabs;
 
 use ratatui::buffer::Buffer;
 use ratatui::layout::Alignment;

@@ -1,105 +1,105 @@
 //! App-level orchestration tests for the TUI.
 
 #[path = "tests/daybreak_tests.rs"]
-mod daybreak_tests;
+pub mod daybreak_tests;
 #[path = "tests/math_interruption_tests.rs"]
-mod math_interruption_tests;
+pub mod math_interruption_tests;
 
 #[path = "tests/advanced_reasoning_tests.rs"]
-mod advanced_reasoning_tests;
+pub mod advanced_reasoning_tests;
 #[path = "tests/agents_navigation_tests.rs"]
-mod agents_navigation_tests;
+pub mod agents_navigation_tests;
 #[path = "tests/approvals_reviewer_error_tests.rs"]
-mod approvals_reviewer_error_tests;
+pub mod approvals_reviewer_error_tests;
 #[path = "tests/backend_banner_fallback_tests.rs"]
-mod backend_banner_fallback_tests;
+pub mod backend_banner_fallback_tests;
 #[path = "tests/backend_banner_recovery_tests.rs"]
-mod backend_banner_recovery_tests;
+pub mod backend_banner_recovery_tests;
 #[path = "tests/backend_banner_startup_tests.rs"]
-mod backend_banner_startup_tests;
+pub mod backend_banner_startup_tests;
 #[path = "tests/background_exit_tests.rs"]
-mod background_exit_tests;
+pub mod background_exit_tests;
 #[path = "tests/background_task_defaults_tests.rs"]
-mod background_task_defaults_tests;
+pub mod background_task_defaults_tests;
 #[path = "tests/browsing_pagination_tests.rs"]
-mod browsing_pagination_tests;
+pub mod browsing_pagination_tests;
 #[path = "tests/buffered_replay.rs"]
-mod buffered_replay;
+pub mod buffered_replay;
 #[path = "tests/connector_policy.rs"]
-mod connector_policy;
+pub mod connector_policy;
 #[path = "tests/disconnect_tests.rs"]
-mod disconnect;
+pub mod disconnect;
 #[path = "tests/external_writer_fork_tests.rs"]
-mod external_writer_fork_tests;
+pub mod external_writer_fork_tests;
 #[path = "tests/fork_workspace_roots_tests.rs"]
-mod fork_workspace_roots_tests;
+pub mod fork_workspace_roots_tests;
 #[path = "tests/fresh_sparkle_tests.rs"]
-mod fresh_sparkle_tests;
+pub mod fresh_sparkle_tests;
 #[path = "tests/home_cleanup_tests.rs"]
-mod home_cleanup_tests;
+pub mod home_cleanup_tests;
 #[path = "tests/key_chords.rs"]
-mod key_chords;
+pub mod key_chords;
 #[path = "tests/local_command_scroll_tests.rs"]
-mod local_command_scroll_tests;
+pub mod local_command_scroll_tests;
 #[path = "tests/luna_reserve_recovery_tests.rs"]
-mod luna_reserve_recovery_tests;
+pub mod luna_reserve_recovery_tests;
 #[path = "tests/mcp_startup.rs"]
-mod mcp_startup;
+pub mod mcp_startup;
 #[path = "tests/misalignment_policy_tests.rs"]
-mod misalignment_policy;
-mod model_catalog;
+pub mod misalignment_policy;
+pub mod model_catalog;
 #[path = "tests/model_defaults_tests.rs"]
-mod model_defaults;
+pub mod model_defaults;
 #[path = "tests/pagination_completion_tests.rs"]
-mod pagination_completion_tests;
+pub mod pagination_completion_tests;
 #[path = "tests/patch_approval_tests.rs"]
-mod patch_approval_tests;
+pub mod patch_approval_tests;
 #[path = "tests/permission_selection_tests.rs"]
-mod permission_selection_tests;
+pub mod permission_selection_tests;
 #[path = "tests/unavailable_commands_tests.rs"]
-mod unavailable_commands;
+pub mod unavailable_commands;
 
 #[path = "tests/history_hydration_tests.rs"]
-mod history_hydration_tests;
+pub mod history_hydration_tests;
 #[path = "tests/permission_shortcuts_tests.rs"]
-mod permission_shortcuts_tests;
-mod plugin_catalog;
-mod rate_limits;
+pub mod permission_shortcuts_tests;
+pub mod plugin_catalog;
+pub mod rate_limits;
 #[path = "tests/realtime_handoff_e2e.rs"]
-mod realtime_handoff_e2e;
+pub mod realtime_handoff_e2e;
 #[path = "tests/realtime_requests.rs"]
-mod realtime_requests;
+pub mod realtime_requests;
 #[path = "tests/realtime_start.rs"]
-mod realtime_start;
+pub mod realtime_start;
 #[path = "tests/reasoning_resume_tests.rs"]
-mod reasoning_resume_tests;
+pub mod reasoning_resume_tests;
 #[path = "tests/recap_generation_tests.rs"]
-mod recap_generation;
+pub mod recap_generation;
 #[path = "tests/resume_shutdown_tests.rs"]
-mod resume_shutdown_tests;
-mod safety_buffering;
+pub mod resume_shutdown_tests;
+pub mod safety_buffering;
 #[path = "tests/session_lifecycle_requests.rs"]
-mod session_lifecycle_requests;
-mod session_summary;
-mod startup;
+pub mod session_lifecycle_requests;
+pub mod session_summary;
+pub mod startup;
 #[path = "tests/startup_frame_tests.rs"]
-mod startup_frame_tests;
+pub mod startup_frame_tests;
 #[path = "tests/startup_warnings_tests.rs"]
-mod startup_warnings_tests;
+pub mod startup_warnings_tests;
 #[path = "tests/stream_animation_tests.rs"]
-mod stream_animation_tests;
+pub mod stream_animation_tests;
 #[path = "tests/thread_usage.rs"]
-mod thread_usage;
+pub mod thread_usage;
 #[path = "tests/transcript_composer.rs"]
-mod transcript_composer;
+pub mod transcript_composer;
 #[path = "tests/transcript_selection.rs"]
-mod transcript_selection;
+pub mod transcript_selection;
 #[path = "tests/turn_submission.rs"]
-mod turn_submission;
+pub mod turn_submission;
 #[path = "tests/user_verification_routes_tests.rs"]
-mod user_verification_routes;
+pub mod user_verification_routes;
 #[path = "tests/worktree_background_terminals_tests.rs"]
-mod worktree_background_terminals_tests;
+pub mod worktree_background_terminals_tests;
 
 use super::*;
 use crate::app_backtrack::BacktrackSelection;
@@ -9817,8 +9817,8 @@ async fn start_config_write_test_app_server(app: &App) -> Result<AppServerSessio
 }
 
 #[path = "tests/active_reconnect_tests.rs"]
-mod active_reconnect;
+pub mod active_reconnect;
 
 #[cfg(unix)]
 #[path = "tests/navigation_reconnect_tests.rs"]
-mod navigation_reconnect;
+pub mod navigation_reconnect;

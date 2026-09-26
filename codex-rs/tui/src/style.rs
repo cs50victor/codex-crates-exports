@@ -1,7 +1,7 @@
 //! Shared TUI colors and semantic styles, including the picker and transcript accent.
 //! Informative accents meet minimum contrast on known backgrounds and supported palettes.
 
-mod contrast;
+pub mod contrast;
 
 use crate::color::blend;
 use crate::color::is_light;

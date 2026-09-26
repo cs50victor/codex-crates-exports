@@ -421,4 +421,4 @@ mod tests;
 
 #[cfg(all(test, unix))]
 #[path = "host_io_tests.rs"]
-mod io_tests;
+pub mod io_tests;

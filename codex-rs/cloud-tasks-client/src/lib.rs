@@ -1,4 +1,4 @@
-mod api;
+pub mod api;
 
 pub use api::ApplyOutcome;
 pub use api::ApplyStatus;
@@ -16,5 +16,5 @@ pub use api::TaskSummary;
 pub use api::TaskText;
 pub use api::TurnAttempt;
 
-mod http;
+pub mod http;
 pub use http::HttpClient;

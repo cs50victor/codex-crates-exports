@@ -32,18 +32,18 @@ use crate::config_types::ServiceTier;
 use crate::config_types::Verbosity;
 use crate::protocol::MultiAgentVersion;
 
-mod access_programs;
+pub mod access_programs;
 #[path = "openai_models/guardian.rs"]
-mod guardian;
+pub mod guardian;
 pub use guardian::GuardianModelPolicy;
 pub use guardian::GuardianReviewMode;
 pub use guardian::GuardianScope;
 pub use guardian::GuardianUnscoredAction;
 
 #[path = "openai_models/guardian_v2.rs"]
-mod guardian_v2;
+pub mod guardian_v2;
 #[path = "openai_models/reasoning_effort.rs"]
-mod reasoning_effort;
+pub mod reasoning_effort;
 
 pub use access_programs::ModelAccessPrograms;
 pub use guardian_v2::GuardianV2ModelConfig;

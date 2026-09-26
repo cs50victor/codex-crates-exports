@@ -184,7 +184,7 @@ fn parse_version_from_user_agent(user_agent: &str) -> Result<String> {
 }
 
 #[cfg(all(test, unix))]
-mod tests {
+pub mod tests {
     use pretty_assertions::assert_eq;
 
     use super::parse_version_from_user_agent;

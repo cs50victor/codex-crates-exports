@@ -1,13 +1,13 @@
-mod backfill_state;
-mod graph;
-mod log;
-mod memories;
-mod project;
-mod queued_item;
-mod rollout_migration_state;
-mod thread_attachment;
-mod thread_goal;
-mod thread_metadata;
+pub mod backfill_state;
+pub mod graph;
+pub mod log;
+pub mod memories;
+pub mod project;
+pub mod queued_item;
+pub mod rollout_migration_state;
+pub mod thread_attachment;
+pub mod thread_goal;
+pub mod thread_metadata;
 
 pub use backfill_state::BackfillState;
 pub use backfill_state::BackfillStatus;

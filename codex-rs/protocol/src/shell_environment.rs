@@ -204,7 +204,7 @@ pub const WINDOWS_CORE_ENV_VARS: &[&str] = &[
 mod tests;
 
 #[cfg(all(test, target_os = "windows"))]
-mod windows_tests {
+pub mod windows_tests {
     use super::*;
     use pretty_assertions::assert_eq;
 
@@ -284,7 +284,7 @@ mod windows_tests {
 }
 
 #[cfg(all(test, not(target_os = "windows")))]
-mod non_windows_tests {
+pub mod non_windows_tests {
     use super::*;
     use pretty_assertions::assert_eq;
 

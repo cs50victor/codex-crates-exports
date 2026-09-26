@@ -47,10 +47,10 @@ const STARTUP_EVENT_BATCH_SIZE: usize = 64;
 const STARTUP_PASTE_NEWLINE_TIMEOUT: Duration = Duration::from_millis(120);
 
 #[path = "startup_draft_layout.rs"]
-mod layout;
+pub mod layout;
 
 #[path = "startup_draft_input.rs"]
-mod input;
+pub mod input;
 #[cfg(test)]
 use input::handle_startup_draft_key;
 

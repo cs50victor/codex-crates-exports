@@ -124,4 +124,4 @@ impl ModelProviderSharedState {
 mod tests;
 
 #[path = "shared_state_test_support.rs"]
-pub(crate) mod test_support;
+pub mod test_support;

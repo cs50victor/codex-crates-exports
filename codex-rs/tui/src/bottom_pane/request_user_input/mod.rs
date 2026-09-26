@@ -19,8 +19,8 @@ use crossterm::event::KeyEventKind;
 use crossterm::event::KeyModifiers;
 use ratatui::style::Stylize;
 use ratatui::text::Line;
-mod layout;
-pub(super) mod render;
+pub mod layout;
+pub mod render;
 
 use crate::app_event::AppEvent;
 use crate::app_event_sender::AppEventSender;

@@ -1,7 +1,7 @@
 //! Credential-storage metrics contain only bounded classifications, never credentials or paths.
 //! Shared metrics infrastructure supplies OS/version metadata and startup buffering.
 
-mod originator;
+pub mod originator;
 
 pub use originator::AuthStorageOriginator;
 use std::error::Error;

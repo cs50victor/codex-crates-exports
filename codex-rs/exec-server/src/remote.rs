@@ -51,14 +51,14 @@ use crate::trace_context::current_rendezvous_headers;
 use crate::trace_context::current_trace_context_headers;
 
 #[path = "remote/direct.rs"]
-mod direct;
+pub mod direct;
 
 use direct::run_direct_environment;
 
 const ERROR_BODY_PREVIEW_BYTES: usize = 4096;
 const NOISE_RELAY_SECURITY_PROFILE: &str = "noise_hybrid_ik_v1";
 
-mod registration_retry;
+pub mod registration_retry;
 
 /// Wire transport used after registering a remote exec-server.
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]

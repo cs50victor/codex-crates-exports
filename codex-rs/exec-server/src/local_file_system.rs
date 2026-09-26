@@ -1295,10 +1295,10 @@ fn system_time_to_unix_ms(time: SystemTime) -> i64 {
 
 #[cfg(all(test, any(unix, windows)))]
 #[path = "local_file_system_path_uri_tests.rs"]
-mod path_uri_tests;
+pub mod path_uri_tests;
 
 #[cfg(all(test, unix))]
-mod tests {
+pub mod tests {
     use super::*;
     use pretty_assertions::assert_eq;
     use std::os::unix::fs::symlink;
@@ -1329,7 +1329,7 @@ mod tests {
 }
 
 #[cfg(all(test, windows))]
-mod tests {
+pub mod tests {
     use super::*;
     use pretty_assertions::assert_eq;
 

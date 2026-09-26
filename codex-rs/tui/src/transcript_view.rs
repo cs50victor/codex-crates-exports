@@ -5,21 +5,21 @@
 //! them and rewrapping does not turn a reading position into an unrelated screen row.
 //! Recap tail spacing is reserved by layout and never enters selectable cell content.
 
-mod activity;
-mod bookmark;
-mod composer_gap;
-mod disclosure;
-mod follow_control;
-mod footer;
-mod input;
-mod layout;
-mod mutations;
-mod prompt_header;
-mod search;
-mod selection;
-mod snapshot;
-mod text;
-mod turn_tip;
+pub mod activity;
+pub mod bookmark;
+pub mod composer_gap;
+pub mod disclosure;
+pub mod follow_control;
+pub mod footer;
+pub mod input;
+pub mod layout;
+pub mod mutations;
+pub mod prompt_header;
+pub mod search;
+pub mod selection;
+pub mod snapshot;
+pub mod text;
+pub mod turn_tip;
 
 use std::sync::Arc;
 

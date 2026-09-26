@@ -1,6 +1,6 @@
-mod callbacks;
-mod conversions;
-mod types;
+pub mod callbacks;
+pub mod conversions;
+pub mod types;
 
 use std::collections::HashMap;
 use std::future::Future;

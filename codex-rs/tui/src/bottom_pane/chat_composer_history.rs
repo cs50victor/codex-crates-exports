@@ -28,7 +28,7 @@ use codex_protocol::ThreadId;
 use codex_protocol::user_input::TextElement;
 
 #[path = "chat_composer_history/search_batch.rs"]
-mod search_batch;
+pub mod search_batch;
 #[cfg(test)]
 #[path = "chat_composer_history/search_batch_tests.rs"]
 mod search_batch_tests;

@@ -1,6 +1,6 @@
 // Keep the ACL probe independent of test-harness startup, which writes CODEX_HOME.
 #[cfg(target_os = "windows")]
-mod win;
+pub mod win;
 
 #[cfg(target_os = "windows")]
 fn main() {

@@ -37,9 +37,9 @@ use crate::installation_record::RuntimeAccountRegistration;
 use crate::ipc::ClientIdentity;
 use crate::package_lifecycle::with_owner_impersonation;
 
-mod known_folder;
-mod metadata;
-mod removal;
+pub mod known_folder;
+pub mod metadata;
+pub mod removal;
 
 pub(crate) use metadata::remove as remove_metadata;
 pub(crate) use removal::prepare as prepare_removal;

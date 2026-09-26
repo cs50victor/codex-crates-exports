@@ -1,7 +1,7 @@
 //! Model tools over a caller-bound board. Results stay valid, bounded JSON.
 
-mod arguments;
-mod spec;
+pub mod arguments;
+pub mod spec;
 
 use crate::AgentMessageBoard;
 use crate::ChannelQuery;

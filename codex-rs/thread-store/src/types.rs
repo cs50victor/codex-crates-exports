@@ -29,7 +29,7 @@ use serde::Deserializer;
 use serde::Serialize;
 use serde::Serializer;
 
-mod optional_option {
+pub mod optional_option {
     use super::*;
 
     pub fn serialize<T, S>(value: &Option<Option<T>>, serializer: S) -> Result<S::Ok, S::Error>

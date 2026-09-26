@@ -15,10 +15,10 @@ use super::CheckStatus;
 use super::DoctorCheck;
 
 #[cfg(target_os = "macos")]
-mod macos_security;
-pub(super) mod platform;
+pub mod macos_security;
+pub mod platform;
 #[cfg(any(target_os = "windows", test))]
-mod windows_security;
+pub mod windows_security;
 
 const MAX_DIRECTORY_ENTRIES: usize = 256;
 const MAX_LOG_FILES: usize = 64;

@@ -1,5 +1,5 @@
-mod managed;
-mod shared_instructions;
+pub mod managed;
+pub mod shared_instructions;
 
 use crate::CodexAppsToolsCache;
 use crate::agent::LocalAgentControl;

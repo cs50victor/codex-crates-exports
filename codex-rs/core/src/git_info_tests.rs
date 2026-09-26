@@ -823,7 +823,7 @@ fn write_linked_worktree_metadata(repo_root: &Path, worktree_root: &Path) -> Pat
 }
 
 #[path = "worktree_trust_tests.rs"]
-mod worktree_trust_tests;
+pub mod worktree_trust_tests;
 
 #[tokio::test]
 async fn resolve_root_git_project_for_trust_detects_worktree_and_returns_main_root() {

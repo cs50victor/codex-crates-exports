@@ -870,7 +870,7 @@ fn ensure_success_response(response: &Value) -> Result<(), IdeContextError> {
 }
 
 #[cfg(all(test, unix))]
-mod tests {
+pub mod tests {
     use super::*;
     #[cfg(unix)]
     use pretty_assertions::assert_eq;

@@ -41,9 +41,9 @@ use std::sync::Weak;
 use tokio::sync::Mutex;
 use uuid::Uuid;
 
-mod lifecycle;
-mod paging;
-mod queries;
+pub mod lifecycle;
+pub mod paging;
+pub mod queries;
 
 #[cfg(test)]
 #[path = "local/pools_tests.rs"]

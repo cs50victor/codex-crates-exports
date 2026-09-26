@@ -3,8 +3,8 @@
 //! Interleaved speakers retain separate displays so settled caption text never reanimates.
 //! Speech recovery suppresses stale queued answers while preserving unspoken text fallbacks.
 
-mod recording_controls;
-mod transcript_replay;
+pub mod recording_controls;
+pub mod transcript_replay;
 
 use super::ChatWidget;
 use super::HistoryCell;
@@ -37,7 +37,7 @@ use std::time::Duration;
 use std::time::Instant;
 
 #[path = "realtime_navigation.rs"]
-mod navigation;
+pub mod navigation;
 
 #[cfg(test)]
 #[path = "realtime_tests.rs"]

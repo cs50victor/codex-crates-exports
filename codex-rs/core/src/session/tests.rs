@@ -1,10 +1,10 @@
 use crate::agent::LocalAgentControl;
 #[path = "notification_tests.rs"]
-mod notification_tests;
+pub mod notification_tests;
 
 use super::mcp_refresh::McpRefresh;
 #[path = "turn_start_mcp_tests.rs"]
-mod turn_start_mcp_tests;
+pub mod turn_start_mcp_tests;
 use super::step_settings::ResolvedStepSettings;
 use super::step_settings::StepSettings;
 use super::step_settings::StepSettingsUpdate;
@@ -314,7 +314,7 @@ impl StepContext {
     }
 }
 
-mod guardian_tests;
+pub mod guardian_tests;
 
 fn user_message(text: &str) -> ResponseItem {
     ResponseItem::Message {

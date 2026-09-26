@@ -1,8 +1,8 @@
 //! Normalize tool schemas and prune unreachable definitions before applying the size policy.
 
-mod compaction;
-mod traversal;
-mod types;
+pub mod compaction;
+pub mod traversal;
+pub mod types;
 
 pub use types::AdditionalProperties;
 pub use types::JsonSchema;

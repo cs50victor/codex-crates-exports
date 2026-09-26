@@ -61,7 +61,7 @@ use std::path::PathBuf;
 use std::time::Duration;
 use tokio_util::sync::CancellationToken;
 
-mod launch;
+pub mod launch;
 
 use launch::with_launch_failure_events;
 

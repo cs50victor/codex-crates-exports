@@ -1,9 +1,9 @@
-mod answered_question;
+pub mod answered_question;
 pub use answered_question::AnsweredQuestion;
-mod additional_context;
-mod annotated_content;
-mod fragment;
-mod recap_prompt;
+pub mod additional_context;
+pub mod annotated_content;
+pub mod fragment;
+pub mod recap_prompt;
 
 pub use additional_context::AdditionalContextDeveloperFragment;
 pub use additional_context::AdditionalContextUserFragment;

@@ -88,11 +88,11 @@ use tungstenite::stream::MaybeTlsStream;
 use url::Url;
 use uuid::Uuid;
 
-mod loopback_responses_server;
-mod plugin_analytics_capture;
-mod plugin_analytics_mutation_smoke;
-mod plugin_analytics_smoke;
-mod request_user_input;
+pub mod loopback_responses_server;
+pub mod plugin_analytics_capture;
+pub mod plugin_analytics_mutation_smoke;
+pub mod plugin_analytics_smoke;
+pub mod request_user_input;
 
 const NOTIFICATIONS_TO_OPT_OUT: &[&str] = &[
     // v2 item deltas.

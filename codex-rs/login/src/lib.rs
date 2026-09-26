@@ -7,14 +7,14 @@ pub use auth::WorkspaceRoutingRequest;
 pub use auth::WorkspaceRoutingResolver;
 pub use auth::WorkspaceRoutingSession;
 
-mod callback_params;
-mod device_code_auth;
-mod gateway_auth;
-mod oauth;
-mod outbound_proxy;
-mod pkce;
-mod server;
-mod success_page;
+pub mod callback_params;
+pub mod device_code_auth;
+pub mod gateway_auth;
+pub mod oauth;
+pub mod outbound_proxy;
+pub mod pkce;
+pub mod server;
+pub mod success_page;
 
 pub use callback_params::LoginCallbackResult;
 pub use callback_params::LoginOnboardingEntrypoint;

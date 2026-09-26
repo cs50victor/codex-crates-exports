@@ -13,10 +13,10 @@ use codex_login::LoginOnboardingEntrypoint;
 use codex_login::login_with_bedrock_access_keys;
 use codex_model_provider::is_supported_amazon_bedrock_region;
 
-mod bedrock_setup;
-mod gateway_oauth;
-mod rate_limit_resets;
-mod workspace_routing;
+pub mod bedrock_setup;
+pub mod gateway_oauth;
+pub mod rate_limit_resets;
+pub mod workspace_routing;
 
 // Duration before a browser ChatGPT login attempt is abandoned.
 const LOGIN_CHATGPT_TIMEOUT: Duration = Duration::from_secs(10 * 60);

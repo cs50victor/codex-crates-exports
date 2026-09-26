@@ -1,13 +1,13 @@
-pub(crate) mod buffered;
-mod client;
-mod config;
-mod error;
-pub(crate) mod names;
-mod process;
-pub(crate) mod runtime_metrics;
-pub(crate) mod tags;
-pub(crate) mod timer;
-pub(crate) mod validation;
+pub mod buffered;
+pub mod client;
+pub mod config;
+pub mod error;
+pub mod names;
+pub mod process;
+pub mod runtime_metrics;
+pub mod tags;
+pub mod timer;
+pub mod validation;
 
 use crate::config::StatsigMetricsSettings;
 pub use crate::metrics::buffered::record_global_operation;

@@ -16,15 +16,15 @@
 //!
 //! If the keyring is not available or fails, we fall back to CODEX_HOME/.credentials.json which is consistent with other coding CLI agents.
 
-mod credential_store;
-mod ema_identity;
-mod enterprise_generation;
-mod issuer_binding;
-mod refresh_lock;
-mod refresh_transaction;
-mod resolved_store;
-mod runtime;
-mod store_lock;
+pub mod credential_store;
+pub mod ema_identity;
+pub mod enterprise_generation;
+pub mod issuer_binding;
+pub mod refresh_lock;
+pub mod refresh_transaction;
+pub mod resolved_store;
+pub mod runtime;
+pub mod store_lock;
 
 #[cfg(test)]
 #[path = "oauth/test_support.rs"]

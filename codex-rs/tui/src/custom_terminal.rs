@@ -49,7 +49,7 @@ use ratatui::style::Color;
 use ratatui::style::Modifier;
 use ratatui::widgets::WidgetRef;
 
-mod cursor;
+pub mod cursor;
 
 #[cfg(test)]
 #[path = "custom_terminal_test_support.rs"]

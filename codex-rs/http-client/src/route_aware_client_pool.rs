@@ -1,4 +1,4 @@
-mod execution;
+pub mod execution;
 
 use std::collections::HashMap;
 use std::fmt;

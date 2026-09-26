@@ -18,7 +18,7 @@ use tempfile::TempDir;
 use tracing::warn;
 use zip::ZipArchive;
 
-mod http_client;
+pub mod http_client;
 
 const GITHUB_API_BASE_URL: &str = "https://api.github.com";
 const GITHUB_API_ACCEPT_HEADER: &str = "application/vnd.github+json";

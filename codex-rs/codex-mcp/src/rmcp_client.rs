@@ -9,7 +9,7 @@
 //! [`crate::connection_manager`].
 
 #[path = "rmcp_client/status.rs"]
-mod status;
+pub mod status;
 
 use std::borrow::Cow;
 use std::collections::BTreeMap;

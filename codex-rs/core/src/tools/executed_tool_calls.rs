@@ -4,8 +4,8 @@
 #[cfg(test)]
 #[path = "executed_tool_calls_direct_tests.rs"]
 mod direct_tests;
-mod mcp_attribution;
-mod request_metadata;
+pub mod mcp_attribution;
+pub mod request_metadata;
 
 use std::collections::HashMap;
 use std::collections::HashSet;
@@ -41,7 +41,7 @@ use crate::tools::metadata_metrics;
 use crate::tools::router::ToolCall;
 use crate::utils::json::serialized_json_bytes;
 
-mod seen_ids;
+pub mod seen_ids;
 
 use seen_ids::SeenIds;
 

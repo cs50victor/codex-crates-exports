@@ -1,10 +1,10 @@
-mod client;
-mod helper_exit;
+pub mod client;
+pub mod helper_exit;
 #[cfg(any(target_os = "linux", test))]
-mod linux_alsa;
-mod message_reader;
-mod protocol;
-mod session;
+pub mod linux_alsa;
+pub mod message_reader;
+pub mod protocol;
+pub mod session;
 
 pub use client::ConnectionError;
 pub use client::VoiceHost;

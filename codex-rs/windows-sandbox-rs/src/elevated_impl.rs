@@ -22,7 +22,7 @@ pub struct ElevatedSandboxProfileCaptureRequest<'a> {
     pub deny_write_paths_override: &'a [AbsolutePathBuf],
 }
 
-mod windows_impl {
+pub mod windows_impl {
     use super::ElevatedSandboxProfileCaptureRequest;
     use crate::acl::allow_null_device;
     use crate::cap::load_or_create_cap_sids;
@@ -306,7 +306,7 @@ mod windows_impl {
 pub use windows_impl::run_windows_sandbox_capture_for_permission_profile;
 
 #[cfg(not(target_os = "windows"))]
-mod stub {
+pub mod stub {
     use super::ElevatedSandboxProfileCaptureRequest;
     use anyhow::Result;
     use anyhow::bail;

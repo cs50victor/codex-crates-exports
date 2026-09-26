@@ -1,5 +1,5 @@
-mod assertion;
-mod exchange;
+pub mod assertion;
+pub mod exchange;
 
 use std::path::PathBuf;
 use std::sync::Arc;

@@ -25,10 +25,10 @@ use std::time::Duration;
 use std::time::Instant;
 use unicode_width::UnicodeWidthStr;
 
-mod input;
-mod layout;
-mod render;
-mod state;
+pub mod input;
+pub mod layout;
+pub mod render;
+pub mod state;
 
 const OTHER_OPTION_LABEL: &str = "Other";
 pub(super) const TIP_SEPARATOR: &str = "   ";

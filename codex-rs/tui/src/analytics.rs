@@ -1,40 +1,40 @@
 //! Authenticated account analytics dashboard.
 //! Stable report tabs share bounded account loads, selection, and inline details.
 
-mod activity_chart;
-mod chart;
-mod summary;
-mod summary_panel;
+pub mod activity_chart;
+pub mod chart;
+pub mod summary;
+pub mod summary_panel;
 pub(crate) use activity_chart::TokenActivityView;
-mod chat_panel;
-mod chats;
-mod chrome;
-mod client;
-mod controls;
-mod dashboard;
-mod data;
+pub mod chat_panel;
+pub mod chats;
+pub mod chrome;
+pub mod client;
+pub mod controls;
+pub mod dashboard;
+pub mod data;
 #[cfg(test)]
 #[path = "analytics/test_fixtures.rs"]
 mod fixture;
-mod hints;
-mod models;
-mod mouse;
-mod normalize;
-mod panels;
-mod plan;
-mod plan_panel;
-mod plot;
-mod render;
-mod report_data;
-mod sections;
-mod styles;
-mod task_panel;
-mod tasks;
+pub mod hints;
+pub mod models;
+pub mod mouse;
+pub mod normalize;
+pub mod panels;
+pub mod plan;
+pub mod plan_panel;
+pub mod plot;
+pub mod render;
+pub mod report_data;
+pub mod sections;
+pub mod styles;
+pub mod task_panel;
+pub mod tasks;
 #[cfg(test)]
 #[path = "analytics/test_support.rs"]
 mod test_support;
-mod tokens;
-mod tool_panel;
+pub mod tokens;
+pub mod tool_panel;
 
 #[cfg(test)]
 #[path = "analytics_tests.rs"]

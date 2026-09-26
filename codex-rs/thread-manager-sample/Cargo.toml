@@ -1,8 +1,10 @@
+lib = { path = "src/main.rs", doctest = false }
 [package]
 name = "codex-thread-manager-sample"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
+metadata = { codex-crates-exports = { added-library-target = true } }
 
 [lints]
 workspace = true

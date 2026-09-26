@@ -186,7 +186,7 @@ async fn detect() -> bool {
 
 #[cfg(windows)]
 #[path = "screen_reader_windows.rs"]
-mod windows_screen_reader;
+pub mod windows_screen_reader;
 
 #[cfg(test)]
 #[path = "screen_reader_tests.rs"]

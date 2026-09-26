@@ -1,7 +1,7 @@
-mod provider;
-mod retry;
-mod sse;
-mod telemetry;
+pub mod provider;
+pub mod retry;
+pub mod sse;
+pub mod telemetry;
 
 pub use crate::provider::Provider;
 pub use crate::provider::RetryConfig;

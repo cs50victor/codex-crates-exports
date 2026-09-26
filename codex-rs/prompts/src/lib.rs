@@ -1,13 +1,13 @@
-mod compact;
-mod guardian_instructions;
-mod model_instructions;
-mod model_messages;
-mod multi_agent_instructions;
-mod permissions_instructions;
-mod realtime;
-mod review_exit;
-mod review_request;
-mod update_plan_instructions;
+pub mod compact;
+pub mod guardian_instructions;
+pub mod model_instructions;
+pub mod model_messages;
+pub mod multi_agent_instructions;
+pub mod permissions_instructions;
+pub mod realtime;
+pub mod review_exit;
+pub mod review_request;
+pub mod update_plan_instructions;
 
 pub use compact::SUMMARIZATION_PROMPT;
 pub use compact::SUMMARY_PREFIX;

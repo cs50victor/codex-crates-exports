@@ -9,15 +9,15 @@ const _: () = assert!(
     "bundled SQLite must include the WAL-reset corruption fix",
 );
 
-mod audit;
-mod extract;
+pub mod audit;
+pub mod extract;
 pub mod log_db;
-mod migrations;
-mod model;
-mod paths;
-mod runtime;
-mod sqlite;
-mod telemetry;
+pub mod migrations;
+pub mod model;
+pub mod paths;
+pub mod runtime;
+pub mod sqlite;
+pub mod telemetry;
 
 pub use log_db::LogWriteFailureReporter;
 pub use model::CreatedProject;

@@ -30,13 +30,13 @@ use std::sync::atomic::Ordering;
 use tempfile::tempdir;
 
 #[path = "api_key_discovery_tests.rs"]
-mod api_key_discovery_tests;
+pub mod api_key_discovery_tests;
 
 #[path = "cache_identity_tests.rs"]
-mod cache_identity_tests;
+pub mod cache_identity_tests;
 
 #[path = "model_info_overrides_tests.rs"]
-mod model_info_overrides_tests;
+pub mod model_info_overrides_tests;
 
 const DEFAULT_HTTP_CLIENT_FACTORY: HttpClientFactory =
     HttpClientFactory::new(OutboundProxyPolicy::ReqwestDefault);

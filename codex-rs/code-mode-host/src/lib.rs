@@ -46,11 +46,11 @@ use self::peer::HostPeer;
 pub use self::grpc::GrpcCodeModeHost;
 pub use self::transport::DEFAULT_LISTEN_URL;
 
-mod delegate;
-mod grpc;
-mod grpc_transport;
-mod peer;
-mod transport;
+pub mod delegate;
+pub mod grpc;
+pub mod grpc_transport;
+pub mod peer;
+pub mod transport;
 
 const MAX_IN_FLIGHT_REQUESTS: usize = 256;
 const MAX_ACTIVE_CELLS: usize = 128;

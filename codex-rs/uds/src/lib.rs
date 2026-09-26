@@ -1,7 +1,7 @@
 //! Cross-platform async Unix domain socket helpers.
 
 #[cfg(unix)]
-mod daemon_directory;
+pub mod daemon_directory;
 #[cfg(unix)]
 pub use daemon_directory::prepare_shared_daemon_socket_directory;
 #[cfg(unix)]
@@ -99,7 +99,7 @@ impl AsyncWrite for UnixStream {
 }
 
 #[cfg(unix)]
-mod platform {
+pub mod platform {
     use std::io;
     use std::io::ErrorKind;
     use std::io::Result as IoResult;
@@ -176,7 +176,7 @@ mod platform {
 }
 
 #[cfg(windows)]
-mod platform {
+pub mod platform {
     use std::io;
     use std::io::Result as IoResult;
     use std::net::Shutdown;
@@ -357,12 +357,12 @@ mod platform {
 mod lib_tests;
 
 #[cfg(windows)]
-mod windows_security;
+pub mod windows_security;
 
 #[cfg(windows)]
-mod windows_socket_validation;
+pub mod windows_socket_validation;
 #[cfg(windows)]
 pub use windows_socket_validation::validate_private_socket_path;
 
 #[cfg(windows)]
-mod windows_peer;
+pub mod windows_peer;

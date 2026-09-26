@@ -139,23 +139,23 @@ use crate::rpc_server_requests::MAX_IN_FLIGHT_SERVER_CALLS;
 use codex_http_client::HttpClientFactory;
 
 #[path = "client/accepted.rs"]
-pub(crate) mod accepted;
-pub(crate) mod http_client;
-mod network_policy_audit;
+pub mod accepted;
+pub mod http_client;
+pub mod network_policy_audit;
 #[cfg(test)]
 #[path = "../tests/unit/client_provisioning_tests.rs"]
 mod provisioning_tests;
 #[path = "client_recovery.rs"]
-mod recovery;
+pub mod recovery;
 #[path = "client_refresh.rs"]
-mod refresh;
+pub mod refresh;
 pub(crate) use connection_failure::can_retry_connection_attempt;
 #[cfg(test)]
 pub(crate) use recovery::is_environment_offline_error;
 pub(crate) use recovery::is_retryable_recovery_error;
 
 #[path = "client/connection_failure.rs"]
-mod connection_failure;
+pub mod connection_failure;
 use connection_failure::ConnectionFailure;
 pub(crate) use recovery::is_retryable_registry_error;
 pub(crate) use recovery::registry_recovery_retry_delay;

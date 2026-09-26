@@ -42,9 +42,9 @@ use codex_rmcp_client::OAuthDiscoveryTimeout;
 use codex_rmcp_client::StreamableHttpRedirectMode;
 use codex_rmcp_client::perform_oauth_login_silent;
 
-mod local;
-mod reconcile;
-mod search;
+pub mod local;
+pub mod reconcile;
+pub mod search;
 
 fn plugin_redirect_mode(plugin_root: &Path) -> StreamableHttpRedirectMode {
     if is_agent_plugin_manifest(plugin_root) {

@@ -45,7 +45,7 @@ impl codex_rollout::RolloutConfigView for Config {
     }
 }
 
-pub(crate) mod list {
+pub mod list {
     pub use codex_rollout::find_thread_path_by_id_str;
 }
 
@@ -56,6 +56,6 @@ pub(crate) mod recorder {
 
 pub(crate) use crate::session_rollout_init_error::map_session_init_error;
 
-pub(crate) mod truncation {
+pub mod truncation {
     pub(crate) use crate::thread_rollout_truncation::*;
 }

@@ -1,5 +1,5 @@
 #[path = "plugins/basics.rs"]
-mod basics;
+pub mod basics;
 
 #[path = "plugins/marketplaces.rs"]
-mod marketplaces;
+pub mod marketplaces;

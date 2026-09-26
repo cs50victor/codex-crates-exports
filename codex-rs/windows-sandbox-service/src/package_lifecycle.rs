@@ -37,8 +37,8 @@ use windows_sys::Win32::System::RemoteDesktop::WTSQueryUserToken;
 use crate::installation_record::InstallationRecord;
 use crate::ipc::OwnedHandle;
 
-mod cleanup;
-mod registered;
+pub mod cleanup;
+pub mod registered;
 
 pub(crate) use registered::runtime_owner_removed;
 

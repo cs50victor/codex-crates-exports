@@ -1,0 +1,84 @@
+name: Export and verify crates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 5 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: exports-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    permissions:
+      contents: write
+      statuses: write
+    env:
+      CARGO_TARGET_DIR: ${{ github.workspace }}/target
+      CARGO_BUILD_JOBS: 2
+      CARGO_PROFILE_DEV_DEBUG: 0
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends pkg-config libssl-dev libcap-dev libasound2-dev
+      - name: Install upstream Rust toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          toolchain=$(python3 -c 'import tomllib; print(tomllib.load(open("codex-rs/rust-toolchain.toml", "rb"))["toolchain"]["channel"])')
+          rustup toolchain install "$toolchain" --profile minimal
+          echo "RUSTUP_TOOLCHAIN=$toolchain" >> "$GITHUB_ENV"
+      - uses: Swatinem/rust-cache@49a0bdc70d2e1b713ca9e2869b211fcce03d3c1c
+        with:
+          workspaces: |
+            _exports/exporter -> ../../target
+            codex-rs -> ../target
+          cache-on-failure: true
+      - name: Test exporter
+        run: |
+          cargo test --locked --manifest-path _exports/exporter/Cargo.toml
+          python3 -m unittest discover -s _exports -p 'test_*.py'
+      - name: Refresh upstream
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: python3 _exports/sync.py
+      - name: Check complete catalog and deterministic generation
+        run: python3 _exports/validate.py --invariants
+      - name: Commit candidate snapshot locally
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add --all
+          git diff --cached --quiet || git commit -m "chore: synchronize exported Codex crates"
+      - name: Compile external Git consumer and exposed APIs
+        run: python3 _exports/validate.py --git
+      - name: Compile every exported crate as an external Git dependency
+        run: python3 _exports/validate.py --all --git
+      - name: Check sync freshness
+        run: python3 _exports/sync.py --freshness-hours 48
+      - name: Publish verified snapshot
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: git push origin HEAD:main
+      - name: Mark the published revision verified
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          revision=$(git rev-parse HEAD)
+          gh api --method POST "repos/$GITHUB_REPOSITORY/statuses/$revision" \
+            -f state=success -f context=exports/verified \
+            -f description='Export tests and external consumer compilation passed' \
+            -f target_url="https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"

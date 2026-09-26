@@ -1,5 +1,5 @@
 #[path = "memory_readiness.rs"]
-mod readiness;
+pub mod readiness;
 
 use super::threads::ThreadFilterOptions;
 use super::threads::push_thread_filters;

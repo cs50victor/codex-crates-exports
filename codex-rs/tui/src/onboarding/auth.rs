@@ -77,7 +77,7 @@ pub(crate) fn mark_underlined_hyperlink(buf: &mut Buffer, area: Rect, url: &str)
 
 use super::onboarding_screen::StepState;
 
-mod headless_chatgpt_login;
+pub mod headless_chatgpt_login;
 
 #[derive(Clone)]
 pub(crate) enum SignInState {

@@ -1,8 +1,8 @@
-mod capabilities;
-mod environment_config;
-mod network_policy;
-mod process_id;
-mod protocol;
+pub mod capabilities;
+pub mod environment_config;
+pub mod network_policy;
+pub mod process_id;
+pub mod protocol;
 pub mod rpc;
 
 pub use capabilities::*;

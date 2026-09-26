@@ -1,17 +1,17 @@
-mod build_identity;
-mod file_system_handler;
-mod handler;
-mod process_handler;
-mod processor;
-mod registry;
-mod release_version;
-mod request_dispatcher;
-mod session_registry;
-mod transport;
+pub mod build_identity;
+pub mod file_system_handler;
+pub mod handler;
+pub mod process_handler;
+pub mod processor;
+pub mod registry;
+pub mod release_version;
+pub mod request_dispatcher;
+pub mod session_registry;
+pub mod transport;
 
 #[cfg(all(test, unix))]
 #[path = "server/process_otel_tests.rs"]
-mod process_otel_tests;
+pub mod process_otel_tests;
 
 pub(crate) use handler::ExecServerHandler;
 pub(crate) use processor::ConnectionProcessor;

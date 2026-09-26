@@ -2,12 +2,12 @@
 //! a usable process security environment and never enters MXC's ACL fallbacks.
 
 #[cfg(windows)]
-mod native;
+pub mod native;
 #[cfg(any(windows, test))]
-mod policy;
-mod transport;
+pub mod policy;
+pub mod transport;
 #[cfg(windows)]
-mod windows;
+pub mod windows;
 
 use std::collections::HashMap;
 use std::path::Path;

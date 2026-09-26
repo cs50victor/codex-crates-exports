@@ -1,21 +1,21 @@
-mod agents_md;
-mod apps_instructions;
-mod collaboration_mode;
-mod compact_permissions;
-mod context_window_guidance;
-mod environment;
-mod environments_instructions;
-mod managed_developer_instructions;
-mod model;
-mod multi_agent_mode;
-mod multi_agent_usage_hint;
-mod permissions;
-mod persistent_mode;
-mod plugins_instructions;
-mod realtime;
+pub mod agents_md;
+pub mod apps_instructions;
+pub mod collaboration_mode;
+pub mod compact_permissions;
+pub mod context_window_guidance;
+pub mod environment;
+pub mod environments_instructions;
+pub mod managed_developer_instructions;
+pub mod model;
+pub mod multi_agent_mode;
+pub mod multi_agent_usage_hint;
+pub mod permissions;
+pub mod persistent_mode;
+pub mod plugins_instructions;
+pub mod realtime;
 #[cfg(test)]
 mod test_support;
-mod tools;
+pub mod tools;
 
 use crate::context::ContextualUserFragment;
 use codex_extension_api::PreviousWorldStateSection;

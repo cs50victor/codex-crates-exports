@@ -9,7 +9,7 @@
 
 #![allow(unsafe_op_in_unsafe_fn)]
 
-mod cwd_junction;
+pub mod cwd_junction;
 #[cfg(test)]
 #[path = "win/input_loop_tests.rs"]
 mod input_loop_tests;

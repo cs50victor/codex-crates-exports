@@ -3,11 +3,11 @@
 //! Protocol version 1 multiplexes session operations and delegate callbacks by
 //! request ID over one ordered connection.
 
-mod codec;
-mod error;
-mod message;
-mod payload;
-mod types;
+pub mod codec;
+pub mod error;
+pub mod message;
+pub mod payload;
+pub mod types;
 
 /// Maximum number of unresolved delegate callbacks allowed per host connection.
 pub const MAX_PENDING_DELEGATE_CALLS: usize = 1_024;

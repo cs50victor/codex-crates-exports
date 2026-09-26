@@ -471,7 +471,7 @@ fn lock_unpoisoned<T>(mutex: &Mutex<T>) -> std::sync::MutexGuard<'_, T> {
         .unwrap_or_else(std::sync::PoisonError::into_inner)
 }
 
-mod persistence;
+pub mod persistence;
 
 #[cfg(test)]
 mod tests;

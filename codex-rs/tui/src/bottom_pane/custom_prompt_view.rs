@@ -2,7 +2,7 @@
 //!
 //! Presentation does not change submission, paste-burst, Vim, or suggestion state.
 
-mod picker;
+pub mod picker;
 
 use crossterm::event::KeyCode;
 use crossterm::event::KeyEvent;

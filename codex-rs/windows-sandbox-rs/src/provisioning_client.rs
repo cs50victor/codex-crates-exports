@@ -36,8 +36,8 @@ use windows_sys::Win32::System::Services;
 
 const PROVISIONING_TIMEOUT: Duration = Duration::from_secs(120);
 
-mod group_change;
-mod refresh_retry;
+pub mod group_change;
+pub mod refresh_retry;
 
 impl WindowsSandboxProvisioningSettings {
     /// Derives the full firewall settings using the same environment handling as elevated setup.

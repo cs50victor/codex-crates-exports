@@ -37,14 +37,14 @@ use serde::de::DeserializeOwned;
 use std::fmt;
 use std::time::Duration;
 
-pub(crate) mod analytics;
-mod chatgpt_turn_cost;
-pub(crate) mod plan_history;
-pub(crate) mod profile;
-mod rate_limit_resets;
-pub(crate) mod task_usage;
-mod thread_usage;
-pub(crate) mod turn_usage;
+pub mod analytics;
+pub mod chatgpt_turn_cost;
+pub mod plan_history;
+pub mod profile;
+pub mod rate_limit_resets;
+pub mod task_usage;
+pub mod thread_usage;
+pub mod turn_usage;
 
 pub use chatgpt_turn_cost::ChatgptThreadTurnCosts;
 pub use chatgpt_turn_cost::ChatgptTurnCost;

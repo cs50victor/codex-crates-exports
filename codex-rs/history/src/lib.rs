@@ -1,16 +1,16 @@
 //! Model-history and persisted-rollout domain types.
 
-mod heartbeat;
+pub mod heartbeat;
 pub use heartbeat::HEARTBEAT_CONTENT_KIND;
 pub use heartbeat::Heartbeat;
 pub use heartbeat::UserInputOrigin;
 
-mod compaction_resume_metadata;
+pub mod compaction_resume_metadata;
 pub use compaction_resume_metadata::CompactionResumeMetadata;
 pub use compaction_resume_metadata::PreviousTurnSettings;
 pub use compaction_resume_metadata::resume_multi_agent_version;
 
-mod compaction_checkpoint;
+pub mod compaction_checkpoint;
 pub use compaction_checkpoint::CompactionCheckpoint;
 
 use std::borrow::Borrow;
@@ -248,10 +248,10 @@ impl JsonSchema for RolloutItem {
     }
 }
 
-mod guardian_history;
-mod reconciled_retained_context;
-mod retained_context;
-mod sender_user_messages;
+pub mod guardian_history;
+pub mod reconciled_retained_context;
+pub mod retained_context;
+pub mod sender_user_messages;
 
 pub use sender_user_messages::SenderUserMessages;
 
@@ -267,7 +267,7 @@ pub use retained_context::RetainedSourceRole;
 pub use retained_context::RetainedUserMessage;
 pub use retained_context::VerifiedAnswer;
 pub use retained_context::VerifiedQuestionAnswer;
-mod rollout_payload;
+pub mod rollout_payload;
 
 pub use guardian_history::GuardianHistoryCheckpoint;
 

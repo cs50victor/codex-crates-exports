@@ -24,10 +24,10 @@ use super::callback::CallbackListener;
 use crate::test_support::transport_default_auth_route_config;
 
 #[path = "gateway_auth_login_tests.rs"]
-mod login_tests;
+pub mod login_tests;
 
 #[path = "gateway_auth_storage_tests.rs"]
-mod storage_tests;
+pub mod storage_tests;
 
 fn client(
     config: GatewayAuthConfig,

@@ -21,7 +21,7 @@ use crate::TranscriptRetentionConfig;
 use crate::TruncationObservation;
 
 use self::window::TranscriptWindow;
-mod window;
+pub mod window;
 
 const MIN_RECENT_TOOL_ENTRIES: usize = 5;
 

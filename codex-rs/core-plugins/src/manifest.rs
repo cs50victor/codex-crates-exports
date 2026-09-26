@@ -14,7 +14,7 @@ const MAX_DEFAULT_PROMPT_COUNT: usize = 3;
 const MAX_DEFAULT_PROMPT_LEN: usize = 128;
 
 #[path = "agent_plugin_manifest.rs"]
-mod agent_plugin_manifest;
+pub mod agent_plugin_manifest;
 
 #[cfg(test)]
 #[path = "agent_plugin_manifest_tests.rs"]

@@ -1,5 +1,5 @@
 #[path = "plugin_measurement_catalog.rs"]
-mod measurement_catalog;
+pub mod measurement_catalog;
 pub(crate) use measurement_catalog::fetch_measurement_reference_bundle;
 
 use crate::app_mcp_routing::apply_app_mcp_routing_policy;
@@ -50,11 +50,11 @@ use std::time::Duration;
 use tracing::instrument;
 use url::Url;
 
-mod catalog_cache;
-mod plugin_capabilities;
-mod remote_installed_plugin_sync;
-mod search;
-mod share;
+pub mod catalog_cache;
+pub mod plugin_capabilities;
+pub mod remote_installed_plugin_sync;
+pub mod search;
+pub mod share;
 
 #[cfg(test)]
 #[path = "remote_tests.rs"]

@@ -1,11 +1,11 @@
-mod interface;
-mod invocation;
-mod loading;
-mod mentions;
-mod model;
-mod name_counts;
-mod parser;
-mod selection;
+pub mod interface;
+pub mod invocation;
+pub mod loading;
+pub mod mentions;
+pub mod model;
+pub mod name_counts;
+pub mod parser;
+pub mod selection;
 
 pub use interface::SkillInterfaceAssetPolicy;
 pub use interface::SkillInterfaceFile;

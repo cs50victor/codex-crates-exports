@@ -3410,7 +3410,7 @@ fn review_scope(action: &serde_json::Value) -> Option<GuardianScope> {
 }
 
 #[path = "budget_tests.rs"]
-mod budget;
+pub mod budget;
 
 fn seed_cached_score(
     progress: &GuardianV2ScoreProgress,

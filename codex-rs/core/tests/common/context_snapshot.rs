@@ -15,11 +15,11 @@ use normalize::portable_tool_schema;
 use serde_json::Value;
 use text::render_text;
 
-mod normalize;
+pub mod normalize;
 #[cfg(test)]
 #[path = "context_snapshot/context_snapshot_tests.rs"]
 mod tests;
-mod text;
+pub mod text;
 
 const MAX_SNAPSHOT_LINE_CHARS: usize = 160;
 

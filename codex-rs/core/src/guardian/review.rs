@@ -2,7 +2,7 @@
 //! Guardian's extension owns routing, execution, reporting and denial accounting.
 
 #[path = "review_request.rs"]
-mod request;
+pub mod request;
 
 use codex_analytics::GuardianApprovalRequestSource;
 use codex_analytics::GuardianReviewAnalyticsResult;

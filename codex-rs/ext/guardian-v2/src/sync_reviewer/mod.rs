@@ -32,7 +32,7 @@ use codex_protocol::protocol::InternalSessionSource;
 use codex_protocol::protocol::SessionSource;
 use codex_protocol::protocol::ThreadSource;
 
-mod reviewer_config;
+pub mod reviewer_config;
 
 /// Owns reviewer agents through the same thread manager as the parent conversation.
 #[derive(Debug)]

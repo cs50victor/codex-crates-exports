@@ -1,11 +1,11 @@
-mod discovery;
-mod environment;
-mod host;
-mod host_merge;
+pub mod discovery;
+pub mod environment;
+pub mod host;
+pub mod host_merge;
 #[cfg(test)]
 mod io_test_support;
-mod metadata;
-mod namespace;
+pub mod metadata;
+pub mod namespace;
 
 pub(crate) use environment::load_environment_skills_from_discovery;
 pub(crate) use environment::load_environment_skills_from_root;

@@ -306,4 +306,4 @@ pub fn kill_child_process_group(_child: &mut Child) -> io::Result<()> {
 
 #[cfg(all(test, target_os = "macos"))]
 #[path = "process_group_tests.rs"]
-mod tests;
+pub mod tests;

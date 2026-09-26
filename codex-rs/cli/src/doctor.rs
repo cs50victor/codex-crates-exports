@@ -72,23 +72,23 @@ use http::Method;
 use serde::Serialize;
 use supports_color::Stream;
 
-mod background;
-mod desktop;
-mod disk;
-mod filesystem_paths;
-mod git;
-mod network;
-mod output;
-mod progress;
-mod runtime;
-mod sandbox;
-mod security;
-mod system;
-mod thread_inventory;
-mod title;
-mod updates;
+pub mod background;
+pub mod desktop;
+pub mod disk;
+pub mod filesystem_paths;
+pub mod git;
+pub mod network;
+pub mod output;
+pub mod progress;
+pub mod runtime;
+pub mod sandbox;
+pub mod security;
+pub mod system;
+pub mod thread_inventory;
+pub mod title;
+pub mod updates;
 #[cfg(target_os = "windows")]
-mod windows_dev_drive;
+pub mod windows_dev_drive;
 
 #[cfg(test)]
 #[path = "doctor/desktop_tests.rs"]

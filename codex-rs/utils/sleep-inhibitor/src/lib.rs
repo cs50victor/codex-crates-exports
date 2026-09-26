@@ -8,13 +8,13 @@
 //! - Other platforms: No-op backend.
 
 #[cfg(not(any(target_os = "linux", target_os = "macos", target_os = "windows")))]
-mod dummy;
+pub mod dummy;
 #[cfg(target_os = "linux")]
-mod linux_inhibitor;
+pub mod linux_inhibitor;
 #[cfg(target_os = "macos")]
-mod macos;
+pub mod macos;
 #[cfg(target_os = "windows")]
-mod windows_inhibitor;
+pub mod windows_inhibitor;
 
 #[cfg(not(any(target_os = "linux", target_os = "macos", target_os = "windows")))]
 use dummy as imp;

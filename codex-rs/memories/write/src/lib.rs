@@ -4,18 +4,18 @@
 //! helpers, Phase 1 and Phase 2 prompt rendering, extension pruning, and
 //! workspace diffing.
 
-mod control;
-mod extensions;
-mod guard;
-mod metrics;
-mod phase1;
-mod phase1_output;
-mod phase2;
-mod prompts;
-mod rollout_input;
-mod runtime;
-mod start;
-mod storage;
+pub mod control;
+pub mod extensions;
+pub mod guard;
+pub mod metrics;
+pub mod phase1;
+pub mod phase1_output;
+pub mod phase2;
+pub mod prompts;
+pub mod rollout_input;
+pub mod runtime;
+pub mod start;
+pub mod storage;
 pub mod workspace;
 
 use codex_utils_absolute_path::AbsolutePathBuf;
@@ -34,22 +34,22 @@ pub use storage::sync_rollout_summaries_from_memories;
 #[cfg(test)]
 mod startup_tests;
 
-mod artifacts {
+pub mod artifacts {
     pub(super) const EXTENSIONS_SUBDIR: &str = "extensions";
     pub(super) const ROLLOUT_SUMMARIES_SUBDIR: &str = "rollout_summaries";
     pub(super) const RAW_MEMORIES_FILENAME: &str = "raw_memories.md";
 }
 
-mod extension_resources {
+pub mod extension_resources {
     pub(super) const FILENAME_TS_FORMAT: &str = "%Y-%m-%dT%H-%M-%S";
     pub(super) const RETENTION_DAYS: i64 = 7;
 }
 
-mod guard_limits {
+pub mod guard_limits {
     pub(super) const CODEX_LIMIT_ID: &str = "codex";
 }
 
-mod prompt_blocks {
+pub mod prompt_blocks {
     pub(super) const EXTENSIONS_FOLDER_STRUCTURE: &str = r#"
 Memory extensions (under {{ memory_extensions_root }}/):
 
@@ -77,7 +77,7 @@ signal to remove stale memories derived only from those resources.
 "#;
 }
 
-mod stage_one {
+pub mod stage_one {
     pub(super) const REASONING_EFFORT: codex_protocol::openai_models::ReasoningEffort =
         codex_protocol::openai_models::ReasoningEffort::Low;
     pub(super) const CONCURRENCY_LIMIT: usize = 8;
@@ -101,7 +101,7 @@ mod stage_one {
     pub(super) const CONTEXT_WINDOW_PERCENT: i64 = 70;
 }
 
-mod stage_two {
+pub mod stage_two {
     pub(super) const REASONING_EFFORT: codex_protocol::openai_models::ReasoningEffort =
         codex_protocol::openai_models::ReasoningEffort::Medium;
     pub(super) const JOB_LEASE_SECONDS: i64 = 3_600;
@@ -109,7 +109,7 @@ mod stage_two {
     pub(super) const JOB_HEARTBEAT_SECONDS: u64 = 90;
 }
 
-mod workspace_diff {
+pub mod workspace_diff {
     /// Generated diff file the Phase 2 consolidation agent reads before editing memories.
     pub(super) const FILENAME: &str = "phase2_workspace_diff.md";
     pub(super) const MAX_BYTES: usize = 4 * 1024 * 1024;

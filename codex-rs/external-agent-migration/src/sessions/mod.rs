@@ -1,12 +1,12 @@
 //! Parsing and export helpers for external-agent session histories.
 
-mod append;
-mod export;
-pub(crate) mod ledger;
-pub(crate) mod records_cla;
-mod records_common;
-pub(crate) mod records_cur;
-mod title;
+pub mod append;
+pub mod export;
+pub mod ledger;
+pub mod records_cla;
+pub mod records_common;
+pub mod records_cur;
+pub mod title;
 
 use codex_protocol::ThreadId;
 use codex_rollout::RolloutItem;

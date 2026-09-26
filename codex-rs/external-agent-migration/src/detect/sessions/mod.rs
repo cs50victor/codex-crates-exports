@@ -1,8 +1,8 @@
-mod cla;
-mod common;
-mod connectors_cla;
-mod connectors_cur;
-mod cur;
+pub mod cla;
+pub mod common;
+pub mod connectors_cla;
+pub mod connectors_cur;
+pub mod cur;
 
 use crate::model::DetectedConnectorCandidate;
 use std::collections::BTreeMap;

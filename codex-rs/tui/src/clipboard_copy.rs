@@ -19,8 +19,8 @@
 //! so callers must distinguish them from confirmed native clipboard writes.
 //! Image paste lives in `clipboard_paste`.
 
-mod tmux;
-pub(crate) mod worker;
+pub mod tmux;
+pub mod worker;
 
 use base64::Engine;
 use std::io::Write;

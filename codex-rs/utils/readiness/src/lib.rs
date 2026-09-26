@@ -186,7 +186,7 @@ impl Readiness for ReadinessFlag {
     }
 }
 
-mod errors {
+pub mod errors {
     use thiserror::Error;
 
     #[derive(Debug, Error)]

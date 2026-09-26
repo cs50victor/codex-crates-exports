@@ -9,10 +9,10 @@ use anyhow::anyhow;
 use crate::setup::OFFLINE_USERNAME;
 use crate::setup::ONLINE_USERNAME;
 
-mod firewall;
-mod principals;
-mod processes;
-mod retained_logons;
+pub mod firewall;
+pub mod principals;
+pub mod processes;
+pub mod retained_logons;
 
 /// Removes sandbox resources created for one authenticated packaged installation.
 /// Keep a supplied home and its ancestors pinned until `clean_up_desktop` starts.

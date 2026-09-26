@@ -78,7 +78,7 @@ use crate::world_state_catalogs::CatalogContext;
 use crate::world_state_catalogs::CatalogStatus;
 
 #[path = "cloud_skill.rs"]
-mod cloud_skill;
+pub mod cloud_skill;
 
 struct SkillsExtension<C> {
     providers: SkillProviders,

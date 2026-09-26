@@ -15,7 +15,7 @@ use windows_sys::Win32::Security as security;
 use windows_sys::Win32::System::Pipes;
 use windows_sys::Win32::System::Threading;
 
-mod registered;
+pub mod registered;
 
 pub(crate) use registered::authorize_setup_runtime;
 #[cfg(test)]

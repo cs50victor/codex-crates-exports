@@ -1,5 +1,5 @@
-mod grpc_session;
-mod remote_session;
+pub mod grpc_session;
+pub mod remote_session;
 
 pub use codex_code_mode_protocol::*;
 pub use grpc_session::GrpcCodeModeSessionProvider;

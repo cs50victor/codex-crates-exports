@@ -33,7 +33,7 @@ use std::sync::atomic::AtomicBool;
 use std::sync::atomic::Ordering;
 
 #[path = "client_tool_metadata.rs"]
-mod tool_metadata;
+pub mod tool_metadata;
 
 use crate::CodexResponsesHeaders;
 use crate::tools::ExecutedToolCalls;

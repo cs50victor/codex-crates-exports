@@ -1,12 +1,12 @@
 #[path = "remote_mutations.rs"]
-mod remote_mutations;
+pub mod remote_mutations;
 pub use remote_mutations::RemotePluginInstallOutcome;
 pub use remote_mutations::RemotePluginInstallRequest;
 pub use remote_mutations::RemotePluginOperationError;
 pub use remote_mutations::RemotePluginOperationErrorKind;
 pub use remote_mutations::RemotePluginUninstallOutcome;
 #[path = "marketplace_context.rs"]
-mod marketplace_context;
+pub mod marketplace_context;
 pub use marketplace_context::PluginMarketplaceContext;
 pub use marketplace_context::PluginMarketplaceScope;
 

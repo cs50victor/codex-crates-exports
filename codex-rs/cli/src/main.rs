@@ -51,31 +51,31 @@ use supports_color::Stream;
 static ALLOCATOR: tikv_jemallocator::Jemalloc = tikv_jemallocator::Jemalloc;
 
 #[cfg(any(target_os = "macos", target_os = "windows"))]
-mod app_cmd;
-mod cloud_config;
-mod daemon_install;
-mod daemon_telemetry;
+pub mod app_cmd;
+pub mod cloud_config;
+pub mod daemon_install;
+pub mod daemon_telemetry;
 #[cfg(any(target_os = "macos", target_os = "windows"))]
-mod desktop_app;
-mod doctor;
+pub mod desktop_app;
+pub mod doctor;
 #[cfg(test)]
 #[path = "exec_server_args_tests.rs"]
 mod exec_server_args_tests;
-mod exec_server_auth;
-mod exec_server_command;
-mod exec_server_telemetry;
-mod marketplace_cmd;
-mod mcp_cmd;
-mod mcp_login;
-mod migrate_rollouts;
-mod plugin_cmd;
-mod queue_cmd;
-mod remote_control_cmd;
+pub mod exec_server_auth;
+pub mod exec_server_command;
+pub mod exec_server_telemetry;
+pub mod marketplace_cmd;
+pub mod mcp_cmd;
+pub mod mcp_login;
+pub mod migrate_rollouts;
+pub mod plugin_cmd;
+pub mod queue_cmd;
+pub mod remote_control_cmd;
 #[cfg(target_os = "windows")]
-mod sandbox_setup;
-mod state_db_recovery;
+pub mod sandbox_setup;
+pub mod state_db_recovery;
 #[cfg(not(windows))]
-mod wsl_paths;
+pub mod wsl_paths;
 
 use crate::exec_server_command::ExecServerCommand;
 use crate::mcp_cmd::McpCli;
@@ -4906,4 +4906,4 @@ mod tests {
 
 #[cfg(all(test, unix))]
 #[path = "daemon_update_tests.rs"]
-mod daemon_update_tests;
+pub mod daemon_update_tests;

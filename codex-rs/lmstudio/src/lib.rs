@@ -1,4 +1,4 @@
-mod client;
+pub mod client;
 
 pub use client::LMStudioClient;
 use codex_core::config::Config;

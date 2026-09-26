@@ -1,5 +1,5 @@
-mod plugin;
-mod render;
+pub mod plugin;
+pub mod render;
 
 use render::rewrite_terms;
 use render::slugify_name;

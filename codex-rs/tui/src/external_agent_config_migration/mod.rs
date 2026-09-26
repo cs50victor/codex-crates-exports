@@ -12,10 +12,10 @@ use ratatui::prelude::Stylize as _;
 use ratatui::text::Line;
 use tokio_stream::StreamExt;
 
-pub(crate) mod flow;
-mod model;
-mod render;
-mod source;
+pub mod flow;
+pub mod model;
+pub mod render;
+pub mod source;
 
 use self::model::ExternalAgentConfigMigrationGroupModel;
 use self::model::external_agent_config_migration_count_summary;

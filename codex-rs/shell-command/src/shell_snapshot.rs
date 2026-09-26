@@ -1,15 +1,15 @@
 //! Capture, prepare credential-safe state, and render restorable shell snapshots.
 
 #[path = "shell_snapshot_capture.rs"]
-mod capture;
+pub mod capture;
 #[path = "shell_snapshot_credentials.rs"]
-mod credentials;
+pub mod credentials;
 #[path = "shell_snapshot_exports.rs"]
-mod exports;
+pub mod exports;
 #[path = "shell_snapshot_literals.rs"]
-mod literals;
+pub mod literals;
 #[path = "shell_snapshot_render.rs"]
-mod render;
+pub mod render;
 
 pub use capture::CapturedSnapshot;
 pub use capture::CapturedStartupEnvironment;
@@ -24,7 +24,7 @@ use capture::BASH_SH_SNAPSHOT_HEADER;
 
 #[cfg(all(test, unix))]
 #[path = "shell_snapshot_tests.rs"]
-mod tests;
+pub mod tests;
 
 /// Returns the POSIX shell helper used to resolve supported `ENV` startup paths.
 ///

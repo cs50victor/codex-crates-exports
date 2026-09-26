@@ -23,12 +23,12 @@ use tracing::warn;
 /// plenty for an interactive CLI.
 pub const CHANNEL_CAPACITY: usize = 128;
 
-mod remote_control;
-mod stdio;
-mod unix_socket;
+pub mod remote_control;
+pub mod stdio;
+pub mod unix_socket;
 #[cfg(test)]
 mod unix_socket_tests;
-mod websocket;
+pub mod websocket;
 
 pub use remote_control::REMOTE_CONTROL_DISABLED_ENV_VAR;
 pub use remote_control::RemoteControlDisabledByRequirements;

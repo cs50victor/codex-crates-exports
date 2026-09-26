@@ -1,8 +1,8 @@
-mod compact;
-mod lifecycle;
-mod regular;
-mod review;
-mod user_shell;
+pub mod compact;
+pub mod lifecycle;
+pub mod regular;
+pub mod review;
+pub mod user_shell;
 
 use std::sync::Arc;
 use std::time::Duration;

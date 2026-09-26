@@ -32,14 +32,14 @@ pub(crate) use send_message::Handler as SendMessageHandler;
 pub(crate) use spawn::Handler as SpawnAgentHandler;
 pub(crate) use wait::Handler as WaitAgentHandler;
 
-mod analytics;
-mod followup_task;
-mod interrupt_agent;
-mod list_agents;
-mod message_tool;
-mod send_message;
-mod spawn;
-pub(crate) mod wait;
+pub mod analytics;
+pub mod followup_task;
+pub mod interrupt_agent;
+pub mod list_agents;
+pub mod message_tool;
+pub mod send_message;
+pub mod spawn;
+pub mod wait;
 
 pub(crate) async fn emit_sub_agent_activity(
     session: &crate::session::session::Session,

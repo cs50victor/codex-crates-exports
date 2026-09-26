@@ -25,8 +25,8 @@ use toml_edit::value;
 
 const NOTICE_TABLE_KEY: &str = "notice";
 
-mod bedrock;
-mod document_helpers;
+pub mod bedrock;
+pub mod document_helpers;
 
 /// Discrete config mutations supported by the persistence engine.
 #[derive(Clone, Debug)]

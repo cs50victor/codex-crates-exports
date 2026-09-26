@@ -1,7 +1,7 @@
 //! PID reservations serialize detached launches; process identities protect stale-record cleanup.
 
 #[path = "pid_identity.rs"]
-mod identity;
+pub mod identity;
 
 #[cfg(any(unix, windows))]
 use std::borrow::Cow;
@@ -755,7 +755,7 @@ async fn read_process_details(pid: u32) -> Result<(String, String)> {
 
 #[cfg(all(test, any(unix, windows)))]
 #[path = "pid_tests.rs"]
-mod tests;
+pub mod tests;
 
 #[cfg(windows)]
 use super::windows::try_lock_file;
@@ -788,8 +788,8 @@ use force_terminate_process as terminate_process;
 
 #[cfg(windows)]
 #[path = "pid_windows.rs"]
-mod windows;
+pub mod windows;
 
 #[cfg(any(unix, windows))]
 #[path = "pid_start.rs"]
-mod start;
+pub mod start;

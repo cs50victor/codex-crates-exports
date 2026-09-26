@@ -185,4 +185,4 @@ fn npm_command() -> &'static str {
 
 #[cfg(all(test, unix))]
 #[path = "npm_source_tests.rs"]
-mod tests;
+pub mod tests;

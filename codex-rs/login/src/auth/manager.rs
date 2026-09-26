@@ -1,4 +1,4 @@
-mod workspace_routing;
+pub mod workspace_routing;
 
 use chrono::Utc;
 use http::StatusCode;

@@ -40,7 +40,7 @@ use std::process::Command;
 use std::thread;
 
 #[path = "export_user_verification.rs"]
-mod user_verification;
+pub mod user_verification;
 
 pub(crate) const GENERATED_TS_HEADER: &str = "// GENERATED CODE! DO NOT MODIFY BY HAND!\n\n";
 const IGNORED_DEFINITIONS: &[&str] = &["Option<()>"];

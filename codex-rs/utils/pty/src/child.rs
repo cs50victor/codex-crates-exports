@@ -13,11 +13,11 @@ use tokio::process::ChildStdout;
 
 #[cfg(any(target_os = "macos", target_os = "linux"))]
 #[path = "posix_child.rs"]
-pub(super) mod posix;
+pub mod posix;
 
 #[cfg(unix)]
 #[path = "child_reaper.rs"]
-pub(super) mod reaper;
+pub mod reaper;
 
 /// A local subprocess with owned stdio and cancellation-safe exit handling.
 pub struct Child {
@@ -122,7 +122,7 @@ impl Child {
 
 #[cfg(all(test, unix))]
 #[path = "child_tests.rs"]
-mod tests;
+pub mod tests;
 
 impl Drop for ChildKind {
     fn drop(&mut self) {

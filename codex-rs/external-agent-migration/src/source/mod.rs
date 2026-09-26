@@ -1,5 +1,5 @@
-mod cla;
-mod cur;
+pub mod cla;
+pub mod cur;
 
 use crate::invalid_data_error;
 use serde_json::Value as JsonValue;

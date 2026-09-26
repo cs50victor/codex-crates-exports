@@ -10,7 +10,7 @@ pub use auth::resolve_oauth_callback;
 pub use auth::resolve_oauth_scopes;
 pub use auth::should_retry_without_scopes;
 
-pub(crate) mod auth;
+pub mod auth;
 
 use std::collections::HashMap;
 use std::collections::HashSet;

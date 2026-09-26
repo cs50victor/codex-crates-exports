@@ -41,7 +41,7 @@ use tracing::Instrument;
 use tracing::info_span;
 
 #[path = "shell_snapshot_sandbox.rs"]
-mod sandbox;
+pub mod sandbox;
 
 pub(crate) use sandbox::ShellSnapshotSandbox;
 pub(crate) use sandbox::snapshot_read_permissions;

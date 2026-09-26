@@ -48,7 +48,7 @@ use codex_config::types::AuthKeyringBackendKind;
 use codex_config::types::OAuthCredentialsStoreMode;
 
 #[path = "oauth_callback_input.rs"]
-mod callback_input;
+pub mod callback_input;
 pub use callback_input::perform_oauth_login_with_callback_input;
 
 #[derive(Clone, Copy)]

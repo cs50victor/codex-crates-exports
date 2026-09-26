@@ -1,4 +1,4 @@
-mod backoff;
+pub mod backoff;
 
 pub use backoff::backoff;
 

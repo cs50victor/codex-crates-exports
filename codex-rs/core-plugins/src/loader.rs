@@ -62,7 +62,7 @@ use tracing::instrument;
 use tracing::warn;
 
 #[path = "agent_plugin_mcp_overlay.rs"]
-mod agent_plugin_mcp_overlay;
+pub mod agent_plugin_mcp_overlay;
 
 const DEFAULT_SKILLS_DIR_NAME: &str = "skills";
 const DEFAULT_HOOKS_CONFIG_FILE: &str = "hooks/hooks.json";

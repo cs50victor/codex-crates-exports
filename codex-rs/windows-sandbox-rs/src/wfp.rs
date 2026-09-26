@@ -1,4 +1,4 @@
-mod filter_specs;
+pub mod filter_specs;
 
 use crate::to_wide;
 use anyhow::Result;

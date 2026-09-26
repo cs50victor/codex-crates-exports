@@ -9,7 +9,7 @@ use tracing::warn;
     non_upper_case_globals,
     clippy::all
 )]
-mod iokit {
+pub mod iokit {
     #[link(name = "IOKit", kind = "framework")]
     unsafe extern "C" {}
 

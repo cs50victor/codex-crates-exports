@@ -5,12 +5,12 @@
 //! syntax and outputs exceeding the caller's width return errors, leaving source fallback to
 //! the caller. This crate performs no I/O and does not depend on a Mermaid implementation.
 
-mod draw;
-mod output;
-mod parse;
-mod relations;
-mod sequence;
-mod state;
+pub mod draw;
+pub mod output;
+pub mod parse;
+pub mod relations;
+pub mod sequence;
+pub mod state;
 
 pub use output::Role;
 pub use output::Span;

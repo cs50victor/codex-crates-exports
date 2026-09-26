@@ -32,9 +32,9 @@ use serde::Serialize;
 use std::collections::HashMap;
 use std::sync::Arc;
 
-mod bindings;
-mod chords;
-mod vim_search;
+pub mod bindings;
+pub mod chords;
+pub mod vim_search;
 pub(crate) use vim_search::VimSearchKeymap;
 
 #[cfg(test)]

@@ -7,15 +7,15 @@ use codex_extension_api::McpServerContributor;
 use codex_mcp::CODEX_APPS_MCP_SERVER_NAME;
 use codex_mcp::hosted_plugin_runtime_mcp_server_config;
 
-mod cloud_plugin;
+pub mod cloud_plugin;
 #[cfg(test)]
 #[path = "event_stream_tests.rs"]
 mod event_stream_tests;
-mod plugin;
-mod plugin_contributor;
-mod plugin_contributor_state;
-mod plugin_providers;
-mod stream_manager;
+pub mod plugin;
+pub mod plugin_contributor;
+pub mod plugin_contributor_state;
+pub mod plugin_providers;
+pub mod stream_manager;
 
 pub use codex_core_plugins::PluginListQuery;
 pub use codex_core_plugins::PluginProvider;

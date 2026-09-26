@@ -13,8 +13,8 @@ use serde::Serialize;
 use sha2::Digest;
 use sha2::Sha256;
 
-mod local;
-mod sanitizer;
+pub mod local;
+pub mod sanitizer;
 
 pub use local::LocalSecretsBackend;
 pub use local::LocalSecretsNamespace;

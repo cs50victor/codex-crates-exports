@@ -22,14 +22,14 @@ use crate::payload::RawPayloadRef;
 use crate::raw_event::RawTraceEvent;
 use crate::raw_event::RawTraceEventPayload;
 
-mod code_cell;
-mod compaction;
-mod conversation;
-mod inference;
+pub mod code_cell;
+pub mod compaction;
+pub mod conversation;
+pub mod inference;
 #[cfg(test)]
 pub(crate) mod test_support;
-mod thread;
-mod tool;
+pub mod thread;
+pub mod tool;
 
 use self::code_cell::PendingCodeCellLifecycleEvent;
 use self::code_cell::PendingCodeCellStart;

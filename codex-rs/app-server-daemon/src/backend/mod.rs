@@ -1,6 +1,6 @@
-mod pid;
+pub mod pid;
 #[cfg(windows)]
-pub(crate) mod windows;
+pub mod windows;
 
 use std::collections::BTreeMap;
 use std::path::Path;

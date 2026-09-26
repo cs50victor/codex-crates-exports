@@ -34,7 +34,7 @@ use nucleo::pattern::AtomKind;
 #[cfg(test)]
 use nucleo::pattern::Pattern;
 
-mod cli;
+pub mod cli;
 
 pub use cli::Cli;
 

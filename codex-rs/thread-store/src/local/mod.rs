@@ -1,28 +1,28 @@
-mod archive_thread;
-mod create_thread;
-mod delete_thread;
-mod helpers;
-mod list_threads;
-mod live_writer;
-mod model_context;
-mod move_thread_to_section;
-mod paginated_fork;
-mod pending_thread_metadata;
-mod projects;
-mod read_thread;
-mod revert_thread;
-mod rollout_migration;
+pub mod archive_thread;
+pub mod create_thread;
+pub mod delete_thread;
+pub mod helpers;
+pub mod list_threads;
+pub mod live_writer;
+pub mod model_context;
+pub mod move_thread_to_section;
+pub mod paginated_fork;
+pub mod pending_thread_metadata;
+pub mod projects;
+pub mod read_thread;
+pub mod revert_thread;
+pub mod rollout_migration;
 // This lands before the reader PRs that consume the shared lineage resolver.
 #[allow(dead_code)]
-mod rollout_lineage;
-mod search_threads;
-mod thread_attachments;
-mod thread_history;
-mod thread_history_materialization;
-mod thread_rollout_resolver;
-mod thread_sections;
-mod unarchive_thread;
-mod update_thread_metadata;
+pub mod rollout_lineage;
+pub mod search_threads;
+pub mod thread_attachments;
+pub mod thread_history;
+pub mod thread_history_materialization;
+pub mod thread_rollout_resolver;
+pub mod thread_sections;
+pub mod unarchive_thread;
+pub mod update_thread_metadata;
 
 #[cfg(test)]
 #[path = "compression_writer_tests.rs"]

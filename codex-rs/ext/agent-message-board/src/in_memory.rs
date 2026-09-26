@@ -30,7 +30,7 @@ use std::sync::Weak;
 use tokio::sync::Mutex;
 use uuid::Uuid;
 
-mod queries;
+pub mod queries;
 
 #[cfg(test)]
 #[path = "in_memory_tests.rs"]

@@ -1,5 +1,5 @@
-mod json;
-mod truncate;
+pub mod json;
+pub mod truncate;
 
 pub use json::to_ascii_json_string;
 pub use json::to_json_string_bounded;

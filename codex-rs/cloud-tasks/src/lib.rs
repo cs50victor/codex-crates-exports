@@ -1,10 +1,10 @@
-mod app;
-mod cli;
-pub(crate) mod env_detect;
-mod new_task;
-pub(crate) mod scrollable_diff;
-mod ui;
-pub(crate) mod util;
+pub mod app;
+pub mod cli;
+pub mod env_detect;
+pub mod new_task;
+pub mod scrollable_diff;
+pub mod ui;
+pub mod util;
 pub use cli::Cli;
 
 use anyhow::anyhow;

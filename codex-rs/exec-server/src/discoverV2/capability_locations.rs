@@ -1,6 +1,6 @@
 //! Prewarms installed cache packages and fixed standalone skill locations before discovery.
 
-mod candidates;
+pub mod candidates;
 use candidates::CandidateCapabilityLocations;
 
 use std::collections::BTreeMap;

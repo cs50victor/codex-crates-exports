@@ -43,7 +43,7 @@ const MANUAL_RECAP_EMPTY_HISTORY_MESSAGE: &str = "There is no conversation histo
 pub(super) const RECAP_PROMPT_MAX_BYTES: usize = RecapPrompt::MAX_BYTES;
 
 #[path = "recap_history.rs"]
-mod history;
+pub mod history;
 use history::recap_history;
 
 #[derive(Debug, Deserialize, PartialEq, Eq)]

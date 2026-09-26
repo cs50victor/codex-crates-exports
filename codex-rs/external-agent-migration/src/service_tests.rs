@@ -71,10 +71,10 @@ fn import_success(
 }
 
 #[path = "service_tests/general.rs"]
-mod general;
+pub mod general;
 
 #[path = "service_tests/memory.rs"]
-mod memory;
+pub mod memory;
 
 #[path = "service_tests/plugins.rs"]
-mod plugins;
+pub mod plugins;

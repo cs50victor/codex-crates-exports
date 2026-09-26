@@ -1,7 +1,7 @@
-mod git;
-mod metadata;
-mod paths;
-mod settings;
+pub mod git;
+pub mod metadata;
+pub mod paths;
+pub mod settings;
 
 use crate::git::GitOperation;
 use crate::git::git_output;

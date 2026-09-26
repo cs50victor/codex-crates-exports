@@ -1,9 +1,9 @@
-pub(crate) mod command_runner;
-pub(crate) mod discovery;
-pub(crate) mod dispatcher;
-pub(crate) mod mcp_runner;
-pub(crate) mod output_parser;
-pub(crate) mod schema_loader;
+pub mod command_runner;
+pub mod discovery;
+pub mod dispatcher;
+pub mod mcp_runner;
+pub mod output_parser;
+pub mod schema_loader;
 
 use crate::events::compact::PostCompactRequest;
 use crate::events::compact::PreCompactOutcome;

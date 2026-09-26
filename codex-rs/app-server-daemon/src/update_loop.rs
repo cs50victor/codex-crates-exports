@@ -37,9 +37,9 @@ use crate::settings::DaemonSettings;
 use crate::settings::UpdaterSettings;
 
 #[path = "manual_update.rs"]
-mod manual_update;
+pub mod manual_update;
 #[path = "migration.rs"]
-mod migration;
+pub mod migration;
 
 pub(crate) async fn request_manual_update(
     daemon: &Daemon,

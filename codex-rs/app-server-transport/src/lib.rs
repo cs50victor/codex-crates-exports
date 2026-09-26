@@ -1,15 +1,15 @@
 pub mod daemon_recovery;
 #[cfg(any(windows, test))]
-mod daemon_shutdown;
+pub mod daemon_shutdown;
 #[cfg(windows)]
 pub use daemon_shutdown::DAEMON_SHUTDOWN_FILE_ENV;
 #[cfg(windows)]
 pub use daemon_shutdown::daemon_shutdown_signal;
 /// Only managed app-server launches accept the local socket shutdown request.
 pub const DAEMON_SHUTDOWN_SOCKET_ENV: &str = "CODEX_DAEMON_SHUTDOWN_SOCKET";
-mod connection_auth;
-mod outgoing_message;
-mod transport;
+pub mod connection_auth;
+pub mod outgoing_message;
+pub mod transport;
 
 pub use connection_auth::ConnectionAuth;
 pub use outgoing_message::ConnectionId;

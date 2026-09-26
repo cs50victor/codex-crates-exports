@@ -1,16 +1,16 @@
 pub mod auth_storage;
-pub(crate) mod config;
-mod events;
-pub(crate) mod metrics;
-pub(crate) mod provider;
-pub(crate) mod trace_context;
+pub mod config;
+pub mod events;
+pub mod metrics;
+pub mod provider;
+pub mod trace_context;
 
-mod agent_response;
-mod guardian_assessment;
-mod network_policy;
-mod otlp;
-mod targets;
-mod tool_result;
+pub mod agent_response;
+pub mod guardian_assessment;
+pub mod network_policy;
+pub mod otlp;
+pub mod targets;
+pub mod tool_result;
 
 use crate::metrics::Result as MetricsResult;
 use codex_protocol::auth::AuthMode;

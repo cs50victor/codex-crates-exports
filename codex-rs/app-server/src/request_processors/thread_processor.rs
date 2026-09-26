@@ -1,8 +1,8 @@
 #[path = "daemon_continuation.rs"]
-mod daemon_continuation;
+pub mod daemon_continuation;
 
 #[path = "daemon_snapshot.rs"]
-mod daemon_snapshot;
+pub mod daemon_snapshot;
 
 use super::persisted_resume_settings::PersistedResumeSettings;
 use super::persisted_resume_settings::latest_persisted_resume_settings;

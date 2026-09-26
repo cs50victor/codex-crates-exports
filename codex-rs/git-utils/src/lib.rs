@@ -1,15 +1,15 @@
-mod apply;
-mod baseline;
-mod branch;
-mod errors;
-mod fsmonitor;
-mod git_process;
-mod info;
-mod operations;
-mod platform;
-mod status;
-mod trust;
-mod worktree;
+pub mod apply;
+pub mod baseline;
+pub mod branch;
+pub mod errors;
+pub mod fsmonitor;
+pub mod git_process;
+pub mod info;
+pub mod operations;
+pub mod platform;
+pub mod status;
+pub mod trust;
+pub mod worktree;
 
 /// Git configuration that rejects implicitly discovered bare repositories while
 /// preserving repositories selected explicitly through `GIT_DIR` or `--git-dir`.

@@ -1,5 +1,5 @@
 #[path = "transport_network_tests.rs"]
-mod network;
+pub mod network;
 
 use super::*;
 use pretty_assertions::assert_eq;

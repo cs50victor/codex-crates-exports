@@ -3,13 +3,13 @@
 //! This module owns the typed JSON-RPC calls needed by the TUI and keeps
 //! request/response plumbing out of `App` and `ChatWidget`.
 
-mod external_agent_config;
-pub(crate) mod fs;
-mod history;
-mod models;
-mod realtime;
-mod rollout_history;
-mod thread_list;
+pub mod external_agent_config;
+pub mod fs;
+pub mod history;
+pub mod models;
+pub mod realtime;
+pub mod rollout_history;
+pub mod thread_list;
 
 #[cfg(test)]
 #[path = "app_server_session/collaboration_catalog_tests.rs"]

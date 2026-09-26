@@ -1,15 +1,15 @@
 //! Extension crate for the `/goal` feature.
 
-mod accounting;
-mod analytics;
-mod api;
-mod events;
-mod extension;
-mod metrics;
-mod runtime;
-mod spec;
-mod steering;
-mod tool;
+pub mod accounting;
+pub mod analytics;
+pub mod api;
+pub mod events;
+pub mod extension;
+pub mod metrics;
+pub mod runtime;
+pub mod spec;
+pub mod steering;
+pub mod tool;
 
 pub use api::GoalObjectiveUpdate;
 pub use api::GoalService;

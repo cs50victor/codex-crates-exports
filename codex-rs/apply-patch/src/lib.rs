@@ -1,10 +1,10 @@
-mod file_update;
-mod invocation;
-mod parser;
-mod seek_sequence;
-mod standalone_executable;
-mod streaming_parser;
-mod text_file;
+pub mod file_update;
+pub mod invocation;
+pub mod parser;
+pub mod seek_sequence;
+pub mod standalone_executable;
+pub mod streaming_parser;
+pub mod text_file;
 
 use std::collections::HashMap;
 use std::io;

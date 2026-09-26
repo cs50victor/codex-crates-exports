@@ -1,8 +1,8 @@
-mod discoverable;
-mod injection;
-mod mentions;
-pub(crate) mod metrics;
-mod render;
+pub mod discoverable;
+pub mod injection;
+pub mod mentions;
+pub mod metrics;
+pub mod render;
 #[cfg(test)]
 #[path = "skill_snapshot_tests.rs"]
 mod skill_snapshot_tests;

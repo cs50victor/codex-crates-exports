@@ -3,8 +3,8 @@ use std::marker::PhantomData;
 use std::pin::Pin;
 use std::sync::Arc;
 
-mod executor;
-mod host;
+pub mod executor;
+pub mod host;
 
 use crate::HostSkillsSnapshot;
 use codex_exec_server::ExecutorCapabilityDiscoverySnapshot;

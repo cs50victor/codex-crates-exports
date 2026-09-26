@@ -1,13 +1,13 @@
-mod config_rules;
-mod declarations;
-mod engine;
-pub(crate) mod events;
-mod legacy_notify;
-mod mcp;
-mod output_spill;
-mod registry;
-mod schema;
-mod types;
+pub mod config_rules;
+pub mod declarations;
+pub mod engine;
+pub mod events;
+pub mod legacy_notify;
+pub mod mcp;
+pub mod output_spill;
+pub mod registry;
+pub mod schema;
+pub mod types;
 
 use codex_protocol::protocol::HookEventName;
 

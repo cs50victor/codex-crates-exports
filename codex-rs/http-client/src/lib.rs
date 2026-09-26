@@ -1,21 +1,21 @@
-mod chatgpt_cloudflare_cookies;
-mod chatgpt_hosts;
-mod client;
-mod client_builder;
-mod client_tls;
-mod custom_ca;
-mod error;
-mod network_policy;
-mod outbound_proxy;
-mod request;
-mod request_builder;
-mod request_draft;
-mod response;
-mod retry_after;
-mod route_aware_client_pool;
-mod route_aware_redirect;
-mod tls_backend_fallback;
-mod transport;
+pub mod chatgpt_cloudflare_cookies;
+pub mod chatgpt_hosts;
+pub mod client;
+pub mod client_builder;
+pub mod client_tls;
+pub mod custom_ca;
+pub mod error;
+pub mod network_policy;
+pub mod outbound_proxy;
+pub mod request;
+pub mod request_builder;
+pub mod request_draft;
+pub mod response;
+pub mod retry_after;
+pub mod route_aware_client_pool;
+pub mod route_aware_redirect;
+pub mod tls_backend_fallback;
+pub mod transport;
 
 pub use crate::chatgpt_cloudflare_cookies::with_chatgpt_cloudflare_cookie_store;
 pub use crate::chatgpt_hosts::is_allowed_chatgpt_host;
@@ -72,7 +72,7 @@ pub use crate::transport::ReqwestTransport;
 pub use crate::transport::StreamResponse;
 
 #[cfg(windows)]
-mod windows_tls;
+pub mod windows_tls;
 
 #[cfg(windows)]
 pub use crate::windows_tls::build_windows_platform_tls_config;

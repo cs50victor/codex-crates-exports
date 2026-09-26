@@ -4,7 +4,7 @@ use super::*;
 use pretty_assertions::assert_eq;
 
 #[path = "curated_skill_tests.rs"]
-mod skills;
+pub mod skills;
 
 #[tokio::test]
 async fn curated_git_policy_controls_catalog_install_and_cached_activation() {

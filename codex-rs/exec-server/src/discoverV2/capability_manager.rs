@@ -18,7 +18,7 @@ use tokio::sync::Mutex;
 use tokio::sync::OnceCell;
 use tokio::sync::Semaphore;
 
-mod capability_watchers;
+pub mod capability_watchers;
 use capability_watchers::CapabilityWatchers;
 
 const MAX_CACHED_SANDBOX_CONTEXTS: usize = 16;

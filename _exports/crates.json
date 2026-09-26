@@ -1,0 +1,1112 @@
+[
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "app_test_support",
+    "path": "codex-rs/app-server/tests/common"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-agent-extension",
+    "path": "codex-rs/ext/agent"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-agent-graph-store",
+    "path": "codex-rs/agent-graph-store"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-agent-identity",
+    "path": "codex-rs/agent-identity"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-agent-message-board-client",
+    "path": "codex-rs/agent-message-board-client"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-agent-message-board-extension",
+    "path": "codex-rs/ext/agent-message-board"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-agent-roles",
+    "path": "codex-rs/agent-roles"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-analytics",
+    "path": "codex-rs/analytics"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-ansi-escape",
+    "path": "codex-rs/ansi-escape"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-api",
+    "path": "codex-rs/codex-api"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-app-server",
+    "path": "codex-rs/app-server"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-app-server-client",
+    "path": "codex-rs/app-server-client"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-app-server-daemon",
+    "path": "codex-rs/app-server-daemon"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-app-server-protocol",
+    "path": "codex-rs/app-server-protocol"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "proc-macro",
+    "name": "codex-app-server-protocol-noop-macros",
+    "path": "codex-rs/app-server-protocol-noop-macros"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-app-server-test-client",
+    "path": "codex-rs/app-server-test-client"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-app-server-transport",
+    "path": "codex-rs/app-server-transport"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-apply-patch",
+    "path": "codex-rs/apply-patch"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-arg0",
+    "path": "codex-rs/arg0"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-async-utils",
+    "path": "codex-rs/async-utils"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-attachment-store",
+    "path": "codex-rs/attachment-store"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-aws-auth",
+    "path": "codex-rs/aws-auth"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-backend-client",
+    "path": "codex-rs/backend-client"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-backend-openapi-models",
+    "path": "codex-rs/codex-backend-openapi-models"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-build-info",
+    "path": "codex-rs/build-info"
+  },
+  {
+    "added_library_target": true,
+    "features": {},
+    "kind": "binary-adapter",
+    "name": "codex-bwrap",
+    "path": "codex-rs/bwrap"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-chatgpt",
+    "path": "codex-rs/chatgpt"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-cli",
+    "path": "codex-rs/cli"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-client",
+    "path": "codex-rs/codex-client"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-cloud-config",
+    "path": "codex-rs/cloud-config"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-cloud-tasks",
+    "path": "codex-rs/cloud-tasks"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-cloud-tasks-client",
+    "path": "codex-rs/cloud-tasks-client"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-cloud-tasks-mock-client",
+    "path": "codex-rs/cloud-tasks-mock-client"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-code-mode",
+    "path": "codex-rs/code-mode"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-code-mode-host",
+    "path": "codex-rs/code-mode-host"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-code-mode-protocol",
+    "path": "codex-rs/code-mode-protocol"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-code-mode-runtime",
+    "path": "codex-rs/code-mode-runtime"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-collaboration-mode-templates",
+    "path": "codex-rs/collaboration-mode-templates"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-config",
+    "path": "codex-rs/config"
+  },
+  {
+    "added_library_target": true,
+    "features": {},
+    "kind": "binary-adapter",
+    "name": "codex-config-schema",
+    "path": "codex-rs/config-schema"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-connectors",
+    "path": "codex-rs/connectors"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-connectors-extension",
+    "path": "codex-rs/ext/connectors"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-context-fragments",
+    "path": "codex-rs/context-fragments"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-core",
+    "path": "codex-rs/core"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-core-api",
+    "path": "codex-rs/core-api"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-core-plugin-common",
+    "path": "codex-rs/core-plugin-common"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-core-plugins",
+    "path": "codex-rs/core-plugins"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-diagnostics",
+    "path": "codex-rs/diagnostics"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-exec",
+    "path": "codex-rs/exec"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-exec-server",
+    "path": "codex-rs/exec-server"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-exec-server-protocol",
+    "path": "codex-rs/exec-server-protocol"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-exec-server-test-support",
+    "path": "codex-rs/exec-server/tests/support"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-execpolicy",
+    "path": "codex-rs/execpolicy"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "proc-macro",
+    "name": "codex-experimental-api-macros",
+    "path": "codex-rs/codex-experimental-api-macros"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-extension-api",
+    "path": "codex-rs/ext/extension-api"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-extension-items",
+    "path": "codex-rs/ext/items"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-external-agent-migration",
+    "path": "codex-rs/external-agent-migration"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-features",
+    "path": "codex-rs/features"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-feedback",
+    "path": "codex-rs/feedback"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-file-search",
+    "path": "codex-rs/file-search"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-file-system",
+    "path": "codex-rs/file-system"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-file-watcher",
+    "path": "codex-rs/file-watcher"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-git-attribution",
+    "path": "codex-rs/ext/git-attribution"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-git-utils",
+    "path": "codex-rs/git-utils"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-goal-extension",
+    "path": "codex-rs/ext/goal"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-guardian-context",
+    "path": "codex-rs/guardian-context"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-guardian-reviewer",
+    "path": "codex-rs/ext/guardian-reviewer"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-guardian-v2",
+    "path": "codex-rs/ext/guardian-v2"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-history",
+    "path": "codex-rs/history"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-history-notes-extension",
+    "path": "codex-rs/ext/history-notes"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-home",
+    "path": "codex-rs/codex-home"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-hooks",
+    "path": "codex-rs/hooks"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-http-client",
+    "path": "codex-rs/http-client"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-image-generation-extension",
+    "path": "codex-rs/ext/image-generation"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-install-context",
+    "path": "codex-rs/install-context"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-keyring-store",
+    "path": "codex-rs/keyring-store"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-linux-sandbox",
+    "path": "codex-rs/linux-sandbox"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-lmstudio",
+    "path": "codex-rs/lmstudio"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-login",
+    "path": "codex-rs/login"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-mcp",
+    "path": "codex-rs/codex-mcp"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-mcp-extension",
+    "path": "codex-rs/ext/mcp"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-memories-extension",
+    "path": "codex-rs/ext/memories"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-memories-read",
+    "path": "codex-rs/memories/read"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-memories-write",
+    "path": "codex-rs/memories/write"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-mermaid",
+    "path": "codex-rs/mermaid"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-message-history",
+    "path": "codex-rs/message-history"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-model-provider",
+    "path": "codex-rs/model-provider"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-model-provider-info",
+    "path": "codex-rs/model-provider-info"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-models-manager",
+    "path": "codex-rs/models-manager"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-mxc-sandbox",
+    "path": "codex-rs/mxc-sandbox"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-network-proxy",
+    "path": "codex-rs/network-proxy"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-ollama",
+    "path": "codex-rs/ollama"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-otel",
+    "path": "codex-rs/otel"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-otel-trace-websocket",
+    "path": "codex-rs/otel-trace-websocket"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-plugin",
+    "path": "codex-rs/plugin"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-process-hardening",
+    "path": "codex-rs/process-hardening"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-prompts",
+    "path": "codex-rs/prompts"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-protocol",
+    "path": "codex-rs/protocol"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-queue-extension",
+    "path": "codex-rs/ext/queue"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-realtime-webrtc",
+    "path": "codex-rs/realtime-webrtc"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-response-debug-context",
+    "path": "codex-rs/response-debug-context"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-responses-api-proxy",
+    "path": "codex-rs/responses-api-proxy"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-rmcp-client",
+    "path": "codex-rs/rmcp-client"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-rollout",
+    "path": "codex-rs/rollout"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-rollout-trace",
+    "path": "codex-rs/rollout-trace"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-sandboxing",
+    "path": "codex-rs/sandboxing"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-secrets",
+    "path": "codex-rs/secrets"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-shell-command",
+    "path": "codex-rs/shell-command"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-shell-escalation",
+    "path": "codex-rs/shell-escalation"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-skills",
+    "path": "codex-rs/skills"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-skills-extension",
+    "path": "codex-rs/ext/skills"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-state",
+    "path": "codex-rs/state"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-stdio-to-uds",
+    "path": "codex-rs/stdio-to-uds"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-tcp-tunnel",
+    "path": "codex-rs/tcp-tunnel"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-terminal-detection",
+    "path": "codex-rs/terminal-detection"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-test-binary-support",
+    "path": "codex-rs/test-binary-support"
+  },
+  {
+    "added_library_target": true,
+    "features": {},
+    "kind": "binary-adapter",
+    "name": "codex-thread-manager-sample",
+    "path": "codex-rs/thread-manager-sample"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-thread-store",
+    "path": "codex-rs/thread-store"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-tools",
+    "path": "codex-rs/tools"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-tui",
+    "path": "codex-rs/tui"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-uds",
+    "path": "codex-rs/uds"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-user-verification",
+    "path": "codex-rs/user-verification"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-absolute-path",
+    "path": "codex-rs/utils/absolute-path"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-approval-presets",
+    "path": "codex-rs/utils/approval-presets"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-audio",
+    "path": "codex-rs/utils/audio"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-cache",
+    "path": "codex-rs/utils/cache"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-cargo-bin",
+    "path": "codex-rs/utils/cargo-bin"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-cli",
+    "path": "codex-rs/utils/cli"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-elapsed",
+    "path": "codex-rs/utils/elapsed"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-fuzzy-match",
+    "path": "codex-rs/utils/fuzzy-match"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-git-discovery",
+    "path": "codex-rs/utils/git-discovery"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-home-dir",
+    "path": "codex-rs/utils/home-dir"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-image",
+    "path": "codex-rs/utils/image"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-json-to-toml",
+    "path": "codex-rs/utils/json-to-toml"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-oss",
+    "path": "codex-rs/utils/oss"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-output-truncation",
+    "path": "codex-rs/utils/output-truncation"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-path",
+    "path": "codex-rs/utils/path-utils"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-path-uri",
+    "path": "codex-rs/utils/path-uri"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-plugins",
+    "path": "codex-rs/utils/plugins"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-pty",
+    "path": "codex-rs/utils/pty"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-readiness",
+    "path": "codex-rs/utils/readiness"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-redacted-string",
+    "path": "codex-rs/utils/redacted-string"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-rustls-provider",
+    "path": "codex-rs/utils/rustls-provider"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-sandbox-summary",
+    "path": "codex-rs/utils/sandbox-summary"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-sleep-inhibitor",
+    "path": "codex-rs/utils/sleep-inhibitor"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-stream-parser",
+    "path": "codex-rs/utils/stream-parser"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-string",
+    "path": "codex-rs/utils/string"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-utils-template",
+    "path": "codex-rs/utils/template"
+  },
+  {
+    "added_library_target": false,
+    "features": {
+      "sandbox": [
+        "v8/v8_enable_sandbox"
+      ]
+    },
+    "kind": "library",
+    "name": "codex-v8-poc",
+    "path": "codex-rs/v8-poc"
+  },
+  {
+    "added_library_target": true,
+    "features": {},
+    "kind": "binary-adapter",
+    "name": "codex-voice-host",
+    "path": "codex-rs/voice-host"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-web-search-extension",
+    "path": "codex-rs/ext/web-search"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-websocket-auth",
+    "path": "codex-rs/websocket-auth"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-websocket-client",
+    "path": "codex-rs/websocket-client"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-windows-sandbox",
+    "path": "codex-rs/windows-sandbox-rs"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-windows-sandbox-service",
+    "path": "codex-rs/windows-sandbox-service"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-workload-identity",
+    "path": "codex-rs/workload-identity"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-worktree",
+    "path": "codex-rs/worktree"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "core_test_support",
+    "path": "codex-rs/core/tests/common"
+  }
+]

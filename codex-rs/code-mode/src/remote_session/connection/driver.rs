@@ -20,14 +20,14 @@ pub(super) use self::types::DriverCommand;
 pub(super) use self::types::DriverEvent;
 pub(in crate::remote_session) use self::types::RemoteSession;
 
-mod cell_ids;
-mod cleanup;
-mod commands;
-mod delegate_runtime;
-mod request_tracker;
-mod responses;
-mod session_registry;
-mod types;
+pub mod cell_ids;
+pub mod cleanup;
+pub mod commands;
+pub mod delegate_runtime;
+pub mod request_tracker;
+pub mod responses;
+pub mod session_registry;
+pub mod types;
 
 pub(super) struct DriverLifecycle {
     pub(super) alive: Arc<AtomicBool>,

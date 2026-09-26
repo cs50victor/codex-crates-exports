@@ -2,7 +2,7 @@
 //! An explicit registered-runtime request never falls through to copying or PATH lookup;
 //! the service and startup handshake independently verify the installed image.
 
-mod copy;
+pub mod copy;
 use copy::CopyOutcome;
 use copy::copy_from_source_if_needed;
 

@@ -339,7 +339,7 @@ fn load_environments_toml(path: &Path) -> Result<Option<EnvironmentsToml>, ExecS
         .map(Some)
 }
 
-mod option_duration_secs {
+pub mod option_duration_secs {
     use std::time::Duration;
 
     use serde::Deserialize;

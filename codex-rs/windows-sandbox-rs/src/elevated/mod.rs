@@ -1,4 +1,4 @@
-pub(crate) mod ipc_framed;
-pub(crate) mod runner_client;
-pub(crate) mod runner_metrics;
-pub(crate) mod runner_pipe;
+pub mod ipc_framed;
+pub mod runner_client;
+pub mod runner_metrics;
+pub mod runner_pipe;

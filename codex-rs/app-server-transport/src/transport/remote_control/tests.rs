@@ -66,10 +66,10 @@ use tokio_tungstenite::accept_hdr_async;
 use tokio_tungstenite::tungstenite;
 use tokio_util::sync::CancellationToken;
 
-mod clients_tests;
-mod pairing_tests;
+pub mod clients_tests;
+pub mod pairing_tests;
 #[path = "tests/retry_tests.rs"]
-mod retry_tests;
+pub mod retry_tests;
 
 const TEST_INSTALLATION_ID: &str = "11111111-1111-4111-8111-111111111111";
 const TEST_REMOTE_CONTROL_URL: &str = "http://127.0.0.1:1/backend-api/wham/remote/control";

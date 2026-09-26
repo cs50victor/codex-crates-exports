@@ -1,5 +1,5 @@
-mod bel;
-mod osc9;
+pub mod bel;
+pub mod osc9;
 
 use std::io;
 

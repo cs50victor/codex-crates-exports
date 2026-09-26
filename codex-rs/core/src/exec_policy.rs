@@ -40,8 +40,8 @@ use codex_shell_command::bash::parse_shell_lc_plain_commands;
 use codex_utils_absolute_path::AbsolutePathBuf;
 use shlex::try_join as shlex_try_join;
 
-mod executable_identity;
-mod model_policy;
+pub mod executable_identity;
+pub mod model_policy;
 
 pub(crate) use model_policy::AllowPrefixRules;
 

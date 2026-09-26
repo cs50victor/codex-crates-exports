@@ -1,12 +1,12 @@
-pub(crate) mod amend;
-pub(crate) mod decision;
-pub(crate) mod error;
-pub(crate) mod execpolicycheck;
-mod executable_name;
-pub(crate) mod parser;
-pub(crate) mod policy;
+pub mod amend;
+pub mod decision;
+pub mod error;
+pub mod execpolicycheck;
+pub mod executable_name;
+pub mod parser;
+pub mod policy;
 pub mod rule;
-mod sandbox_migration;
+pub mod sandbox_migration;
 
 pub use amend::AmendError;
 pub use amend::blocking_append_allow_prefix_rule;

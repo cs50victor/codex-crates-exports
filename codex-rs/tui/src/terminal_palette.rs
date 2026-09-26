@@ -143,7 +143,7 @@ pub(crate) fn set_default_colors_from_startup_probe(
 }
 
 #[cfg(all(unix, not(test)))]
-mod imp {
+pub mod imp {
     use super::DefaultColors;
     use std::sync::Mutex;
     use std::sync::OnceLock;
@@ -212,7 +212,7 @@ mod imp {
 }
 
 #[cfg(windows)]
-mod imp {
+pub mod imp {
     use super::DefaultColors;
     use std::sync::Mutex;
     use std::sync::OnceLock;
@@ -276,7 +276,7 @@ mod imp {
 }
 
 #[cfg(not(any(all(unix, not(test)), windows)))]
-mod imp {
+pub mod imp {
     use super::DefaultColors;
 
     pub(super) fn default_colors() -> Option<DefaultColors> {

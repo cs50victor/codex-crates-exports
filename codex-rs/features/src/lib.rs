@@ -13,8 +13,8 @@ use std::collections::BTreeMap;
 use std::collections::BTreeSet;
 use toml::Table;
 
-mod feature_configs;
-mod legacy;
+pub mod feature_configs;
+pub mod legacy;
 pub use feature_configs::CodeModeConfigToml;
 pub use feature_configs::CodeModeHostConfigToml;
 pub use feature_configs::ContextManagementConfigToml;

@@ -53,13 +53,13 @@
 //!   |      |
 //!   o<-----x
 //!
-pub(crate) mod escalate_client;
-pub(crate) mod escalate_protocol;
-pub(crate) mod escalate_server;
-pub(crate) mod escalation_policy;
-pub(crate) mod execve_wrapper;
-pub(crate) mod socket;
-pub(crate) mod stopwatch;
+pub mod escalate_client;
+pub mod escalate_protocol;
+pub mod escalate_server;
+pub mod escalation_policy;
+pub mod execve_wrapper;
+pub mod socket;
+pub mod stopwatch;
 
 pub use self::escalate_client::run_shell_escalation_execve_wrapper;
 pub use self::escalate_protocol::ESCALATE_SOCKET_ENV_VAR;

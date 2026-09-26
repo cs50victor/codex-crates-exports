@@ -1,0 +1,27 @@
+Add individual packages to your Cargo.toml using a full commit from this repository:
+
+[dependencies]
+codex-websocket-client = { git = "https://github.com/cs50victor/codex-crates-exports", rev = "<full commit SHA>" }
+codex-api = { git = "https://github.com/cs50victor/codex-crates-exports", rev = "<same full commit SHA>" }
+
+All discovered workspace packages are inventoried in crates.json. Their original names, feature sets and dependency graphs are preserved. The exporter adds a library target to packages which previously had only one binary, labels these binary-adapter in the catalog, and exposes their main entrypoint. These entrypoints preserve command-line parsing and process-global/exit behavior; they are not redesigned service APIs. Compilation still requires each crate's upstream system libraries, compiler version, target platform and feature compatibility. Adding a dependency does not grant access to OpenAI services, subscriptions or models.
+
+The syn-based exporter edits only visibility spans, preserving comments, formatting, cfg attributes and macro tokens. It exposes module paths so upstream-declared public APIs are reachable. Types, fields, functions, methods, function-local items, use imports, macro bodies, trait implementations and procedural macro internals retain their original visibility. Macro-generated private APIs are not promised public. New unsupported syntax or binary package shapes stop the export. The upstream implementation APIs have no stability guarantee; pin one repository revision consistently across all dependencies.
+
+Upstream crates.io patches are also written as explicit pinned Git sources on matching direct dependencies, so the normal external Git consumer smoke test requires no root patch table. Dependencies outside this repository may independently select different registry versions. The all-crates consumer check detects concrete incompatibilities in the tested target/configuration; arbitrary downstream feature combinations remain untested.
+
+The daily GitHub Actions job fetches upstream main, records its SHA, regenerates the exports, runs exporter tests, verifies idempotence and checks external consumers before pushing. Any failed step prevents publication and makes that workflow red. A separate six-hour workflow fails if no successful sync has been recorded in 48 hours. GitHub can delay, disable or omit scheduled jobs; a job that never starts cannot turn itself red. Independent external monitoring is required to detect a complete GitHub scheduler outage. The timestamp changes on every successful daily check, including days without upstream changes.
+
+To reproduce locally, use the toolchain from codex-rs/rust-toolchain.toml, then run:
+  cargo test --locked --manifest-path _exports/exporter/Cargo.toml
+  python3 _exports/validate.py --invariants
+  python3 _exports/validate.py --git
+  python3 _exports/validate.py --all --git
+
+Crates depending on the V8 runtime require OpenAI's sandbox-enabled native archives and matching bindings. The upstream package helper downloads and verifies them against committed SHA-256 manifests. The all-crates check invokes that helper. For your own V8-dependent consumer, run:
+  python3 /path/to/codex-crates-exports/_exports/native_env.py cargo build --manifest-path /path/to/consumer/Cargo.toml
+The API and WebSocket smoke crates do not require this setup. Plain Cargo with V8 enabled otherwise tries the default rusty_v8 release, which lacks these sandbox artifacts.
+
+The Git consumer checks read the committed HEAD through a separate temporary Cargo project with no workspace inheritance or patch table. The smoke consumer uses the API, WebSocket and redacted-string crates and explicitly accesses the newly exposed API auth module. The all-crates check adds every catalog package as a dependency, with default features, on Linux x86_64 in CI. The smoke consumer is also linked and executed. The all-crates check is a compilation check, not a functional or service entitlement test. It does not run upstream application tests or guarantee every target/feature combination.
+
+Upstream source is recorded in upstream.json. The original Apache-2.0 LICENSE and third-party notices remain in the repository. Exporter additions are Apache-2.0 licensed. The repository preserves upstream history but is hosted as an independent derivative because this account already owns another fork in GitHub's upstream network.

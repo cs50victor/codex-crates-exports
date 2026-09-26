@@ -24,10 +24,10 @@ use crate::protocol::NetworkAccess;
 use crate::protocol::SandboxPolicy;
 use crate::protocol::WritableRoot;
 
-mod deny_read_validator;
-mod local_aliases;
-mod target;
-mod windows_glob;
+pub mod deny_read_validator;
+pub mod local_aliases;
+pub mod target;
+pub mod windows_glob;
 
 use local_aliases::LocalPolicyContext;
 

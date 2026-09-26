@@ -1,5 +1,5 @@
 #[cfg(all(target_os = "linux", bwrap_available))]
-fn main() {
+pub fn main() {
     use std::ffi::CStr;
     use std::ffi::CString;
     use std::os::raw::c_char;
@@ -29,7 +29,7 @@ fn main() {
 }
 
 #[cfg(all(target_os = "linux", not(bwrap_available)))]
-fn main() {
+pub fn main() {
     panic!(
         r#"bubblewrap is not available in this build.
 Notes:
@@ -40,6 +40,6 @@ Notes:
 }
 
 #[cfg(not(target_os = "linux"))]
-fn main() {
+pub fn main() {
     panic!("bwrap is only supported on Linux");
 }

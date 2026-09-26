@@ -9,17 +9,17 @@ use serde::Deserialize;
 use serde::Serialize;
 
 pub mod accessible;
-mod app_info;
-mod app_tool_policy;
-mod connector_runtime;
-mod directory_cache;
+pub mod app_info;
+pub mod app_tool_policy;
+pub mod connector_runtime;
+pub mod directory_cache;
 pub mod filter;
 pub mod merge;
 pub mod metadata;
-mod metadata_store;
-mod plugin_config;
-mod runtime_projection;
-mod snapshot;
+pub mod metadata_store;
+pub mod plugin_config;
+pub mod runtime_projection;
+pub mod snapshot;
 
 pub use app_info::AppBranding;
 pub use app_info::AppInfo;

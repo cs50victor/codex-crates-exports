@@ -1142,7 +1142,7 @@ pub struct ExecClosedNotification {
     pub seq: u64,
 }
 
-mod base64_bytes {
+pub mod base64_bytes {
     use super::BASE64_STANDARD;
     use base64::Engine as _;
     use serde::Deserialize;

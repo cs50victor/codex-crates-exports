@@ -1,6 +1,6 @@
-mod environment_accessor;
-mod exec_permission_profile_serde;
-mod find_up;
+pub mod environment_accessor;
+pub mod exec_permission_profile_serde;
+pub mod find_up;
 
 use bytes::Bytes;
 use codex_protocol::config_types::WindowsSandboxLevel;

@@ -102,7 +102,7 @@ use crate::utils::build_default_headers;
 use codex_config::types::OAuthCredentialsStoreMode;
 
 #[path = "streamable_http_retry.rs"]
-mod streamable_http_retry;
+pub mod streamable_http_retry;
 
 use self::streamable_http_retry::HandshakeError;
 use self::streamable_http_retry::STREAMABLE_HTTP_RETRY_DELAYS_MS;

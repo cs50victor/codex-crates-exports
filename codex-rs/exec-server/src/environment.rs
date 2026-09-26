@@ -1,4 +1,4 @@
-mod connect_options;
+pub mod connect_options;
 
 use std::collections::HashMap;
 use std::collections::HashSet;
@@ -49,7 +49,7 @@ use tracing::Instrument;
 use tracing::instrument::WithSubscriber;
 
 #[path = "environment/accepted.rs"]
-mod accepted;
+pub mod accepted;
 
 pub use connect_options::RemoteEnvironmentOptions;
 

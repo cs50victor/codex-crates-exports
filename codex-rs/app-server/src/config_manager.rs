@@ -31,7 +31,7 @@ use tracing::instrument;
 use tracing::warn;
 
 #[path = "application_network.rs"]
-pub(crate) mod application_network;
+pub mod application_network;
 
 #[derive(Debug, thiserror::Error)]
 #[error(

@@ -39,23 +39,23 @@ use std::sync::atomic::AtomicI64;
 use std::time::Instant;
 use tracing::warn;
 
-mod backfill;
-mod external_agent_config_imports;
-mod goals;
-mod logs;
-mod memories;
-mod memory_versions;
-mod projects;
-mod queued_items;
-mod recovery;
-mod remote_control;
-mod rollout_migration;
+pub mod backfill;
+pub mod external_agent_config_imports;
+pub mod goals;
+pub mod logs;
+pub mod memories;
+pub mod memory_versions;
+pub mod projects;
+pub mod queued_items;
+pub mod recovery;
+pub mod remote_control;
+pub mod rollout_migration;
 #[cfg(test)]
 pub(crate) mod test_support;
-mod thread_attachments;
-mod thread_section_order;
-mod thread_sections;
-mod threads;
+pub mod thread_attachments;
+pub mod thread_section_order;
+pub mod thread_sections;
+pub mod threads;
 
 pub use external_agent_config_imports::ExternalAgentConfigImportDetailsRecord;
 pub use external_agent_config_imports::ExternalAgentConfigImportFailureRecord;

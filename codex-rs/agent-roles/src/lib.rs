@@ -1,6 +1,6 @@
-mod agent_role_config;
-mod discovery;
-mod loader;
+pub mod agent_role_config;
+pub mod discovery;
+pub mod loader;
 
 pub use agent_role_config::AgentRoleConfig;
 pub use agent_role_config::ResolvedAgentRoleFile;

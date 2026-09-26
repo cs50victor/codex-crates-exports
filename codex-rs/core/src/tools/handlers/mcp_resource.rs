@@ -34,9 +34,9 @@ use crate::tools::context::ToolOutput;
 use crate::tools::context::boxed_tool_output;
 use codex_protocol::protocol::McpInvocation;
 
-mod list_mcp_resource_templates;
-mod list_mcp_resources;
-mod read_mcp_resource;
+pub mod list_mcp_resource_templates;
+pub mod list_mcp_resources;
+pub mod read_mcp_resource;
 
 pub use list_mcp_resource_templates::ListMcpResourceTemplatesHandler;
 pub use list_mcp_resources::ListMcpResourcesHandler;

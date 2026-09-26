@@ -4,17 +4,17 @@
 //! References start with worker service; unmute rejects earlier device capture buffers.
 
 #[path = "audio_sink.rs"]
-mod audio_sink;
+pub mod audio_sink;
 #[path = "device_buffers.rs"]
-mod buffers;
+pub mod buffers;
 #[path = "capture_worker.rs"]
-mod capture_worker;
+pub mod capture_worker;
 #[path = "playback.rs"]
-mod playback;
+pub mod playback;
 #[path = "playout.rs"]
-mod playout;
+pub mod playout;
 #[path = "processing.rs"]
-mod processing;
+pub mod processing;
 
 use std::io;
 use std::sync::Arc;

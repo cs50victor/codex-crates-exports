@@ -1,38 +1,38 @@
 #![deny(clippy::print_stdout, clippy::print_stderr)]
 
-mod attribution;
-mod authorization_path;
-mod brokered_tunnel;
-mod certs;
-mod config;
-mod connect_policy;
-mod connection_lifecycle;
-mod credential_broker;
-mod environment_policy;
-mod http_proxy;
-mod mitm;
-mod mitm_hook;
-mod native_certs;
-mod network_policy;
-mod policy;
-mod process_log_metadata;
-mod proxy;
-mod reasons;
-mod remote_config;
-mod request_cancellation;
-mod request_disconnect;
-mod responses;
-mod runtime;
-mod socket_path;
-mod socks5;
-mod state;
+pub mod attribution;
+pub mod authorization_path;
+pub mod brokered_tunnel;
+pub mod certs;
+pub mod config;
+pub mod connect_policy;
+pub mod connection_lifecycle;
+pub mod credential_broker;
+pub mod environment_policy;
+pub mod http_proxy;
+pub mod mitm;
+pub mod mitm_hook;
+pub mod native_certs;
+pub mod network_policy;
+pub mod policy;
+pub mod process_log_metadata;
+pub mod proxy;
+pub mod reasons;
+pub mod remote_config;
+pub mod request_cancellation;
+pub mod request_disconnect;
+pub mod responses;
+pub mod runtime;
+pub mod socket_path;
+pub mod socks5;
+pub mod state;
 #[cfg(target_os = "macos")]
-mod system_dns;
-mod upstream;
+pub mod system_dns;
+pub mod upstream;
 #[cfg(target_os = "windows")]
-mod windows_proxy_ingress;
+pub mod windows_proxy_ingress;
 #[cfg(target_os = "windows")]
-mod windows_tcp_attribution;
+pub mod windows_tcp_attribution;
 
 pub use attribution::PROXY_ATTRIBUTION_TOKEN_ENV_KEY;
 pub use attribution::write_attribution_frame;

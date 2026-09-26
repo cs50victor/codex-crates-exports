@@ -40,7 +40,7 @@ const INVALID_REQUEST_ERROR_CODE: i64 = -32600;
 const NOT_FOUND_ERROR_CODE: i64 = -32004;
 
 #[path = "remote_file_stream.rs"]
-mod file_stream;
+pub mod file_stream;
 
 type InFlightMetadataRequest = OnceCell<Result<FileMetadata, Arc<io::Error>>>;
 
@@ -428,7 +428,7 @@ fn map_remote_error(error: ExecServerError) -> io::Error {
 
 #[cfg(all(test, any(unix, windows)))]
 #[path = "remote_file_system_path_uri_tests.rs"]
-mod path_uri_tests;
+pub mod path_uri_tests;
 
 #[cfg(test)]
 mod tests {

@@ -16,8 +16,8 @@ use std::os::unix::fs::OpenOptionsExt;
 #[cfg(unix)]
 use std::os::unix::fs::PermissionsExt;
 
-mod error_metrics;
-mod read_metrics;
+pub mod error_metrics;
+pub mod read_metrics;
 
 use error_metrics::FailureMetric;
 use read_metrics::ReadFailureSource;
@@ -302,7 +302,7 @@ impl RolloutLineReader {
 
 type BlockingLineReader = std::io::Lines<std::io::BufReader<Box<dyn Read + Send>>>;
 
-mod worker {
+pub mod worker {
     use std::ffi::OsStr;
     use std::fs::File;
     use std::fs::FileTimes;
@@ -1107,7 +1107,7 @@ mod worker {
     }
 }
 
-mod metrics {
+pub mod metrics {
     use super::RolloutCompressionTrigger;
     use std::time::Duration;
 
@@ -1254,7 +1254,7 @@ pub async fn existing_rollout_path(path: &Path) -> Option<PathBuf> {
     path::existing_rollout_path(path).await
 }
 
-mod path {
+pub mod path {
     use std::ffi::OsStr;
     use std::fs::Metadata;
     use std::path::Path;
@@ -1320,7 +1320,7 @@ mod path {
     }
 }
 
-mod file_name {
+pub mod file_name {
     use super::COMPRESSED_SUFFIX;
 
     pub(super) fn parse_rollout_file_name(name: &str) -> Option<&str> {
@@ -1333,7 +1333,7 @@ mod file_name {
     }
 }
 
-mod reader {
+pub mod reader {
     use std::fs::File;
     use std::io;
     use std::io::BufRead;

@@ -10,7 +10,7 @@
 //! bumps the active-cell revision tracked by `ChatWidget`, so the cache key changes whenever the
 //! rendered transcript output can change.
 
-mod activity_group;
+pub mod activity_group;
 pub(crate) use activity_group::ActivityGroup;
 
 use crate::diff_model::FileChange;
@@ -101,26 +101,26 @@ use url::Url;
 
 const RAW_DIFF_SUMMARY_WIDTH: usize = 10_000;
 
-mod activity_details;
-pub(crate) mod activity_preview;
-mod approvals;
-mod base;
-mod dynamic;
-mod exec;
-mod hook_cell;
-mod markdown_render_cache;
-mod mcp;
-mod messages;
-mod notices;
-mod patches;
-mod plans;
-mod request_user_input;
-mod search;
-mod separators;
-mod session;
-mod spoken_artifacts;
-mod startup_warnings;
-mod warnings;
+pub mod activity_details;
+pub mod activity_preview;
+pub mod approvals;
+pub mod base;
+pub mod dynamic;
+pub mod exec;
+pub mod hook_cell;
+pub mod markdown_render_cache;
+pub mod mcp;
+pub mod messages;
+pub mod notices;
+pub mod patches;
+pub mod plans;
+pub mod request_user_input;
+pub mod search;
+pub mod separators;
+pub mod session;
+pub mod spoken_artifacts;
+pub mod startup_warnings;
+pub mod warnings;
 
 pub(crate) use activity_details::ActivityDetails;
 pub(crate) use approvals::*;

@@ -50,7 +50,7 @@ use super::LunaSamplingRequest;
 use super::MAX_CONCURRENT_REQUESTS;
 
 #[path = "sampler_routing_tests.rs"]
-mod routing;
+pub mod routing;
 
 impl LunaSampler {
     /// Waits for warm sockets to enter the client pool, beyond the server handshake.

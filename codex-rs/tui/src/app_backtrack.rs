@@ -21,9 +21,9 @@
 //! `TranscriptOverlay::sync_live_tail`. This preserves the invariant that the overlay reflects
 //! both committed history and in-flight activity without changing flush or coalescing behavior.
 
-mod browsing;
-mod legacy_input;
-mod prompt_navigation;
+pub mod browsing;
+pub mod legacy_input;
+pub mod prompt_navigation;
 
 use std::any::TypeId;
 use std::sync::Arc;

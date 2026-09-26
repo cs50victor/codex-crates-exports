@@ -1,10 +1,10 @@
 //! Status filters and viewport state survive refreshes of the shared task projection.
 
-mod hints;
-mod input;
-mod navigation;
-mod render;
-mod rows;
+pub mod hints;
+pub mod input;
+pub mod navigation;
+pub mod render;
+pub mod rows;
 
 use super::*;
 

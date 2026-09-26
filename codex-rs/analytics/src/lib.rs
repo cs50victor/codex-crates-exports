@@ -1,12 +1,12 @@
-mod accepted_lines;
+pub mod accepted_lines;
 #[cfg(debug_assertions)]
-mod analytics_capture;
-mod client;
-mod events;
-mod facts;
-mod guardian_v2;
-mod reducer;
-mod thread_hint;
+pub mod analytics_capture;
+pub mod client;
+pub mod events;
+pub mod facts;
+pub mod guardian_v2;
+pub mod reducer;
+pub mod thread_hint;
 
 use std::time::SystemTime;
 use std::time::UNIX_EPOCH;

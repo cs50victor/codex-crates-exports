@@ -22,8 +22,8 @@ use crate::cloud_plugin::hosted_plugin_connectors;
 use crate::plugin_contributor::PluginContributor;
 use crate::plugin_contributor_state::CachedSelectedRoot;
 
-mod discovery;
-mod provider;
+pub mod discovery;
+pub mod provider;
 
 impl PluginContributor {
     /// Returns metadata for one stable selected root.

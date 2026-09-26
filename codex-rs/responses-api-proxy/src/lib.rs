@@ -28,8 +28,8 @@ use tiny_http::Response;
 use tiny_http::Server;
 use tiny_http::StatusCode;
 
-mod dump;
-mod read_api_key;
+pub mod dump;
+pub mod read_api_key;
 use dump::ExchangeDumper;
 use read_api_key::read_auth_header_from_stdin;
 

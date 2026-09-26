@@ -11,16 +11,16 @@ use codex_tools::ToolExecutor;
 use crate::ExtensionData;
 use crate::ExtensionMetrics;
 
-mod approval_review;
-mod context;
-mod mcp;
-mod prompt;
-mod skill_invocation;
-mod thread_lifecycle;
-mod tool_lifecycle;
-mod turn_input;
-mod turn_lifecycle;
-mod world_state;
+pub mod approval_review;
+pub mod context;
+pub mod mcp;
+pub mod prompt;
+pub mod skill_invocation;
+pub mod thread_lifecycle;
+pub mod tool_lifecycle;
+pub mod turn_input;
+pub mod turn_lifecycle;
+pub mod world_state;
 
 pub use approval_review::ApprovalDecision;
 pub use approval_review::ApprovalDecisionInput;

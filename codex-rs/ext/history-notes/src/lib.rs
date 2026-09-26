@@ -1,5 +1,5 @@
-mod backend;
-mod extension;
-mod tools;
+pub mod backend;
+pub mod extension;
+pub mod tools;
 
 pub use extension::install;

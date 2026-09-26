@@ -47,15 +47,15 @@ use crate::shell::ShellType;
 use crate::tools::network_approval::DeferredNetworkApproval;
 use codex_core_plugins::PluginMetricsSidecar;
 
-mod async_watcher;
-mod errors;
-mod head_tail_buffer;
-mod oneshot;
-mod process;
-mod process_manager;
-mod process_state;
-mod shell_snapshot;
-mod stdin_approval;
+pub mod async_watcher;
+pub mod errors;
+pub mod head_tail_buffer;
+pub mod oneshot;
+pub mod process;
+pub mod process_manager;
+pub mod process_state;
+pub mod shell_snapshot;
+pub mod stdin_approval;
 
 pub(crate) fn set_deterministic_process_ids_for_tests(enabled: bool) {
     process_manager::set_deterministic_process_ids_for_tests(enabled);

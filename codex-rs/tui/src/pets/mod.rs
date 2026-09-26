@@ -15,15 +15,15 @@
 
 use std::io::Write;
 
-mod ambient;
-mod asset_pack;
-mod catalog;
-mod frames;
-mod image_protocol;
-mod model;
-mod picker;
-mod preview;
-mod sixel;
+pub mod ambient;
+pub mod asset_pack;
+pub mod catalog;
+pub mod frames;
+pub mod image_protocol;
+pub mod model;
+pub mod picker;
+pub mod preview;
+pub mod sixel;
 
 use anyhow::Context;
 use anyhow::Result;

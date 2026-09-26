@@ -2,10 +2,10 @@
 //! Full and read-ACL setup remain helper entrypoints; only they may launch a read-ACL child.
 //! Command-line account provisioning cannot enter the service's admitted Core path.
 
-mod firewall;
-mod service;
+pub mod firewall;
+pub mod service;
 pub use service::provision_sandbox_in_process;
-mod read_acl_mutex;
+pub mod read_acl_mutex;
 
 use crate::DirectoryOpenDisposition;
 use crate::SETUP_VERSION;
@@ -93,8 +93,8 @@ const DENY_ACCESS: i32 = 3;
 const WRITE_ROOT_ALLOW_MASK: u32 =
     FILE_GENERIC_READ | FILE_GENERIC_WRITE | FILE_GENERIC_EXECUTE | DELETE;
 
-mod sandbox_users;
-mod setup_runtime_bin;
+pub mod sandbox_users;
+pub mod setup_runtime_bin;
 use read_acl_mutex::acquire_read_acl_mutex;
 use read_acl_mutex::read_acl_mutex_exists;
 use sandbox_users::commit_setup_marker;

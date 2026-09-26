@@ -9,7 +9,7 @@ use ratatui::style::Stylize;
 use ratatui::text::Span;
 
 #[path = "shimmer.rs"]
-mod shimmer;
+pub mod shimmer;
 
 use shimmer::shimmer_spans;
 

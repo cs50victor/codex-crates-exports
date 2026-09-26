@@ -1,10 +1,10 @@
-mod application;
-mod layer_io;
-mod local;
+pub mod application;
+pub mod layer_io;
+pub mod local;
 #[cfg(target_os = "macos")]
-mod macos;
-mod managed_requirements;
-mod project_discovery;
+pub mod macos;
+pub mod managed_requirements;
+pub mod project_discovery;
 #[cfg(test)]
 mod tests;
 
@@ -12,7 +12,7 @@ mod tests;
 #[path = "projectless_directory_tests.rs"]
 mod projectless_directory_tests;
 #[cfg(windows)]
-mod windows;
+pub mod windows;
 
 pub use application::LocalApplicationRequirements;
 pub use application::load_local_application_requirements;

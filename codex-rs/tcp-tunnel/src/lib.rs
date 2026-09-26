@@ -35,7 +35,7 @@ use tokio::sync::watch;
 use url::Host;
 use url::Url;
 
-mod control;
+pub mod control;
 
 use control::read_auth_token;
 use control::read_connect_headers;

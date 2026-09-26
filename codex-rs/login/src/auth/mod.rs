@@ -1,19 +1,19 @@
-mod access_token;
-mod agent_identity;
-mod auth_headers;
-mod bedrock_access_keys;
-mod bedrock_api_key;
-mod change_state;
+pub mod access_token;
+pub mod agent_identity;
+pub mod auth_headers;
+pub mod bedrock_access_keys;
+pub mod bedrock_api_key;
+pub mod change_state;
 pub mod default_client;
 pub mod error;
-mod personal_access_token;
-mod storage;
-mod util;
-mod workload_identity;
+pub mod personal_access_token;
+pub mod storage;
+pub mod util;
+pub mod workload_identity;
 
-mod external_bearer;
-mod manager;
-mod revoke;
+pub mod external_bearer;
+pub mod manager;
+pub mod revoke;
 
 pub use auth_headers::AuthHeaders;
 pub use bedrock_access_keys::BedrockAccessKeysAuth;

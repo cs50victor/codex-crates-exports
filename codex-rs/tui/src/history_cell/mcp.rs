@@ -9,13 +9,13 @@ use crate::line_truncation::truncate_line_with_ellipsis_if_overflow;
 use codex_protocol::mcp::is_node_repl_backed_server;
 
 #[path = "mcp_result.rs"]
-mod result;
+pub mod result;
 
 #[path = "mcp_preview.rs"]
-mod preview;
+pub mod preview;
 
 #[path = "computer_activity.rs"]
-mod computer_activity;
+pub mod computer_activity;
 pub(crate) use computer_activity::ComputerActivityCell;
 
 use crate::style::StatusTone;

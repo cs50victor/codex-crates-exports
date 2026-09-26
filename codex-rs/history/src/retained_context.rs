@@ -4,9 +4,9 @@
 //! Their parent verified answers are unavailable, so adopted authorization stays incomplete.
 
 #[path = "retained_assistant_messages.rs"]
-mod assistant_messages;
+pub mod assistant_messages;
 #[path = "retained_source.rs"]
-mod source;
+pub mod source;
 pub use source::RetainedSource;
 pub use source::RetainedSourceId;
 pub use source::RetainedSourceRole;

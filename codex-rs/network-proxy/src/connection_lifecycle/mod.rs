@@ -1,6 +1,6 @@
-mod listeners;
-mod scope;
-mod service;
+pub mod listeners;
+pub mod scope;
+pub mod service;
 
 pub(crate) use listeners::ProxyListeners;
 #[cfg(test)]

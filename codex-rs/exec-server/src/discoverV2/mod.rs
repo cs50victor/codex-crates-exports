@@ -4,6 +4,6 @@
 // Staged implementation; the RPC is registered in E04.
 #![allow(dead_code)]
 
-pub(crate) mod capability_discoveries;
-pub(crate) mod capability_locations;
-pub(crate) mod capability_manager;
+pub mod capability_discoveries;
+pub mod capability_locations;
+pub mod capability_manager;

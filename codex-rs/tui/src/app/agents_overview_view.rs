@@ -2,10 +2,10 @@
 //! Search, rename, status filters and selection survive metadata refreshes.
 
 #[path = "agent_center/mod.rs"]
-pub(super) mod command_center;
+pub mod command_center;
 
 #[path = "agents_overview_grouping.rs"]
-mod grouping;
+pub mod grouping;
 
 pub(super) use grouping::AgentsOverviewGrouping;
 use grouping::model_name;

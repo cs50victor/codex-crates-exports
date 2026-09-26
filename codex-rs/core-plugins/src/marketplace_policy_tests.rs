@@ -12,7 +12,7 @@ use std::path::PathBuf;
 use tempfile::TempDir;
 
 #[path = "marketplace_policy/curated_tests.rs"]
-mod curated;
+pub mod curated;
 
 fn config_layer_stack(requirements_toml: &str) -> ConfigLayerStack {
     config_layer_stack_with_user_config(requirements_toml, /*user_config*/ None)

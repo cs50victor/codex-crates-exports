@@ -1,7 +1,7 @@
-mod config;
-mod discovery;
-mod signing;
-mod transport;
+pub mod config;
+pub mod discovery;
+pub mod signing;
+pub mod transport;
 
 use std::sync::Arc;
 use std::time::SystemTime;

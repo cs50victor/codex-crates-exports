@@ -1,12 +1,12 @@
 //! The blossom welcome animation for onboarding, with a full-color final pose.
 //! Visible time pauses while hidden; conversation lifecycle tracking is retained for the header.
 
-mod geometry;
-mod lighting;
-mod paths;
-mod policy;
-mod renderer;
-mod sequence;
+pub mod geometry;
+pub mod lighting;
+pub mod paths;
+pub mod policy;
+pub mod renderer;
+pub mod sequence;
 
 use std::sync::OnceLock;
 use std::time::Duration;

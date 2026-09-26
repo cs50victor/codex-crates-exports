@@ -41,10 +41,10 @@ use winapi::um::processthreadsapi::*;
 use winapi::um::synchapi::WaitForSingleObject;
 use winapi::um::winbase::INFINITE;
 
-pub(crate) mod conpty;
-mod job;
-mod procthreadattr;
-mod psuedocon;
+pub mod conpty;
+pub mod job;
+pub mod procthreadattr;
+pub mod psuedocon;
 
 pub use conpty::ConPtySystem;
 pub use job::JobObject;

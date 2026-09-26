@@ -37,15 +37,15 @@ use self::transport::SharedTransport;
 use crate::remote_session::ShutdownResultReceiver;
 use crate::remote_session::wait_for_watch;
 
-mod callbacks;
-mod completion;
-mod conversion;
-mod deadline;
-mod generation;
-mod operations;
-mod reconnect;
-mod state;
-mod transport;
+pub mod callbacks;
+pub mod completion;
+pub mod conversion;
+pub mod deadline;
+pub mod generation;
+pub mod operations;
+pub mod reconnect;
+pub mod state;
+pub mod transport;
 
 type GrpcClient = CodeModeHostClient<GrpcTransport>;
 

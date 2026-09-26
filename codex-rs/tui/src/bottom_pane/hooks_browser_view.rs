@@ -651,7 +651,7 @@ impl BottomPaneView for HooksBrowserView {
 }
 
 #[path = "hooks_browser_render.rs"]
-mod render;
+pub mod render;
 
 fn hook_is_active(hook: &HookMetadata) -> bool {
     hook.enabled

@@ -1,6 +1,6 @@
 //! Provisions an authenticated client's sandbox through its selected setup path.
 
-mod registered;
+pub mod registered;
 
 use std::os::windows::fs::MetadataExt;
 use std::os::windows::io::BorrowedHandle;

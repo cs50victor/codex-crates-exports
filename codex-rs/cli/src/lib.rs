@@ -1,6 +1,6 @@
-pub(crate) mod debug_sandbox;
-mod exit_status;
-pub(crate) mod login;
+pub mod debug_sandbox;
+pub mod exit_status;
+pub mod login;
 
 use clap::Args;
 use clap::Parser;

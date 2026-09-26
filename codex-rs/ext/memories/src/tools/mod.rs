@@ -20,10 +20,10 @@ use crate::backend::MemoriesBackend;
 use crate::backend::MemoriesBackendError;
 use crate::schema;
 
-mod ad_hoc_note;
-mod list;
-mod read;
-mod search;
+pub mod ad_hoc_note;
+pub mod list;
+pub mod read;
+pub mod search;
 
 pub(crate) fn memory_tools<B>(
     backend: B,

@@ -200,7 +200,7 @@ fn restore_locked(state: &mut StderrState) -> io::Result<()> {
 }
 
 #[cfg(all(test, target_os = "macos"))]
-mod tests {
+pub mod tests {
     use std::fs::File;
     use std::io::Read;
     use std::io::Seek;

@@ -85,9 +85,9 @@ use tracing::error;
 use tracing::info;
 use tracing::warn;
 
-mod bem;
-mod existing_call;
-mod sideband;
+pub mod bem;
+pub mod existing_call;
+pub mod sideband;
 
 use self::bem::ChannelParser as BemChannelParser;
 use self::bem::message_phase as bem_message_phase;

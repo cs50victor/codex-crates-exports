@@ -24,10 +24,10 @@ const MACOS_SEATBELT_PREFERENCES_POLICY: &str = include_str!("seatbelt_preferenc
 const MACOS_RESTRICTED_READ_ONLY_PLATFORM_DEFAULTS: &str =
     include_str!("seatbelt_read_only_platform_defaults.sbpl");
 #[path = "seatbelt_daemon.rs"]
-mod daemon;
+pub mod daemon;
 
 #[path = "seatbelt_scratch.rs"]
-mod scratch;
+pub mod scratch;
 
 #[derive(Clone, Copy, Debug, Default, Eq, PartialEq)]
 pub(crate) enum MacosSeatbeltProfile {

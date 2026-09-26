@@ -29,7 +29,7 @@ use tokio_util::sync::CancellationToken;
 
 #[cfg(all(test, unix))]
 #[path = "shell_snapshot_sandbox_tests.rs"]
-mod tests;
+pub mod tests;
 
 #[derive(Clone)]
 pub(crate) struct ShellSnapshotSandbox {

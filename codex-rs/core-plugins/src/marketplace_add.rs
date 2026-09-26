@@ -8,9 +8,9 @@ use std::path::Path;
 use std::path::PathBuf;
 use tempfile::Builder;
 
-mod install;
-mod metadata;
-mod source;
+pub mod install;
+pub mod metadata;
+pub mod source;
 
 use install::clone_git_source;
 use install::ensure_marketplace_destination_is_inside_install_root;

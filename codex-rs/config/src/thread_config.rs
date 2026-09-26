@@ -11,7 +11,7 @@ use toml::Value as TomlValue;
 
 use crate::ConfigLayerEntry;
 
-mod remote;
+pub mod remote;
 
 pub use remote::RemoteThreadConfigLoader;
 

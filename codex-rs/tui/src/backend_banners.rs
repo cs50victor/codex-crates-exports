@@ -5,8 +5,8 @@
 use codex_protocol::account::PlanType;
 use serde::Deserialize;
 
-mod actions;
-mod render;
+pub mod actions;
+pub mod render;
 
 pub(crate) const LUNA_RESERVE_BANNER: &str = "luna_reserve";
 pub(crate) const LUNA_RESERVE_RECOVERY_VIEW_ID: &str = "luna-reserve-recovery";

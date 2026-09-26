@@ -18,7 +18,7 @@ use crate::session::session::Session;
 // Compile the extension's actual setup with this test crate's Config type, rather
 // than keeping a second settings implementation in the context-adapter test host.
 #[path = "../../../ext/guardian-v2/src/sync_reviewer/reviewer_config.rs"]
-mod reviewer_config;
+pub mod reviewer_config;
 pub(super) use reviewer_config::build_reviewer_config;
 
 pub(crate) fn install(session: &Session, config: &Config) {

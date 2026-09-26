@@ -59,12 +59,12 @@ use futures::StreamExt;
 use tokio_util::sync::CancellationToken;
 
 #[path = "compact_remote_v2_attempt.rs"]
-mod attempt;
+pub mod attempt;
 use attempt::RemoteCompactV2Attempt;
 use attempt::run_remote_compact_v2_attempt;
 
 #[path = "compact_remote_v2_images.rs"]
-mod images;
+pub mod images;
 
 #[derive(Clone, Copy, PartialEq, Eq)]
 enum RetainedImageBudget {

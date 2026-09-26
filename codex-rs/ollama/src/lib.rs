@@ -1,8 +1,8 @@
-mod client;
-mod line_buffer;
-mod parser;
-mod pull;
-mod url;
+pub mod client;
+pub mod line_buffer;
+pub mod parser;
+pub mod pull;
+pub mod url;
 
 pub use client::OllamaClient;
 use codex_core::config::Config;

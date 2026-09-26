@@ -1,4 +1,4 @@
-pub(crate) mod common;
+pub mod common;
 pub mod compact;
 pub mod interrupt;
 pub mod permission_request;

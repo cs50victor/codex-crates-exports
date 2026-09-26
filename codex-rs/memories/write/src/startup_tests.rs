@@ -60,7 +60,7 @@ use tokio::time::Duration;
 use tokio::time::Instant;
 
 #[path = "startup_dual_write_tests.rs"]
-mod dual_write;
+pub mod dual_write;
 
 #[tokio::test]
 async fn memories_startup_creates_memory_root() -> anyhow::Result<()> {

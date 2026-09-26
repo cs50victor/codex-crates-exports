@@ -17,10 +17,10 @@
 //! the edited config so the app layer can decide how to save, reload, and
 //! surface errors.
 
-mod actions;
-mod capture;
-mod debug;
-mod picker;
+pub mod actions;
+pub mod capture;
+pub mod debug;
+pub mod picker;
 
 #[cfg(test)]
 #[path = "keymap_setup/menu_tests.rs"]

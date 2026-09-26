@@ -7,9 +7,9 @@ use std::time::SystemTime;
 use std::time::UNIX_EPOCH;
 
 #[cfg(unix)]
-mod unix;
+pub mod unix;
 #[cfg(windows)]
-mod windows;
+pub mod windows;
 
 #[cfg(unix)]
 use unix as imp;

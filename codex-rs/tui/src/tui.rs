@@ -61,34 +61,34 @@ use crate::tui::scrollback::ScrollbackStrategy;
 use codex_config::types::NotificationCondition;
 use codex_config::types::NotificationMethod;
 
-mod alternate_screen;
-mod event_stream;
-mod frame_rate_limiter;
-mod frame_requester;
-mod history_tail;
-mod input_boundary;
+pub mod alternate_screen;
+pub mod event_stream;
+pub mod frame_rate_limiter;
+pub mod frame_requester;
+pub mod history_tail;
+pub mod input_boundary;
 #[cfg(unix)]
-mod job_control;
-mod keyboard_modes;
+pub mod job_control;
+pub mod keyboard_modes;
 #[cfg(test)]
 #[path = "tui/owned_screen_tests.rs"]
 mod owned_screen_tests;
 #[cfg(all(test, unix))]
 #[path = "tui_panic_tests.rs"]
-mod panic_tests;
-mod screen_size;
-mod scrollback;
-mod selection_clipboard;
-mod size_monitor;
+pub mod panic_tests;
+pub mod screen_size;
+pub mod scrollback;
+pub mod selection_clipboard;
+pub mod size_monitor;
 #[cfg(all(test, unix))]
 #[path = "tui_startup_tests.rs"]
-mod startup_tests;
-mod terminal_stderr;
+pub mod startup_tests;
+pub mod terminal_stderr;
 #[cfg(test)]
 pub(crate) mod test_support;
-mod tmux;
+pub mod tmux;
 #[cfg(any(windows, test))]
-mod windows_console;
+pub mod windows_console;
 
 /// Target frame interval for UI redraw scheduling.
 pub(crate) const TARGET_FRAME_INTERVAL: Duration = frame_rate_limiter::MIN_FRAME_INTERVAL;

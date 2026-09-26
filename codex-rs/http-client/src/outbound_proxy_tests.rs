@@ -16,7 +16,7 @@ use tracing_subscriber::Layer;
 use tracing_subscriber::layer::SubscriberExt;
 
 #[path = "outbound_proxy_redirect_coverage_tests.rs"]
-mod redirect_coverage_tests;
+pub mod redirect_coverage_tests;
 
 struct MapEnv {
     values: HashMap<String, String>,

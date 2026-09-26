@@ -1,5 +1,5 @@
-mod ad_hoc;
-mod prune;
+pub mod ad_hoc;
+pub mod prune;
 
 use std::path::Path;
 

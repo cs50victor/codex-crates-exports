@@ -1,9 +1,9 @@
-mod additional_context;
-mod auto_compact_window;
-mod service;
-mod session;
-mod turn;
-mod turn_token_usage;
+pub mod additional_context;
+pub mod auto_compact_window;
+pub mod service;
+pub mod session;
+pub mod turn;
+pub mod turn_token_usage;
 
 pub(crate) use crate::tools::ExecutedToolCalls;
 pub(crate) use additional_context::AdditionalContextStore;

@@ -208,7 +208,7 @@ async fn sync_phase2_workspace_inputs(
     Ok(())
 }
 
-mod job {
+pub mod job {
     use super::*;
 
     pub(super) async fn claim(
@@ -287,7 +287,7 @@ mod job {
     }
 }
 
-mod agent {
+pub mod agent {
     use super::*;
     use tracing::warn;
 

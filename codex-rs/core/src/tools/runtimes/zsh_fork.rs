@@ -29,10 +29,10 @@ pub(crate) async fn maybe_prepare_unified_exec(
 
 #[cfg(unix)]
 #[path = "zsh_fork/unix_escalation.rs"]
-mod unix_escalation;
+pub mod unix_escalation;
 
 #[cfg(unix)]
-mod imp {
+pub mod imp {
     use super::*;
     use crate::tools::runtimes::zsh_fork::unix_escalation;
     use crate::unified_exec::SpawnLifecycle;
@@ -89,7 +89,7 @@ mod imp {
 }
 
 #[cfg(not(unix))]
-mod imp {
+pub mod imp {
     use super::*;
 
     pub(super) async fn maybe_prepare_unified_exec(

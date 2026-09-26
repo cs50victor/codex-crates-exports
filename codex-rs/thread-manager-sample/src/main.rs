@@ -92,7 +92,7 @@ struct Args {
     prompt: Vec<String>,
 }
 
-fn main() -> anyhow::Result<()> {
+pub fn main() -> anyhow::Result<()> {
     arg0_dispatch_or_else(run_main)
 }
 

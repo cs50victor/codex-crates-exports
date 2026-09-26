@@ -1,5 +1,5 @@
 #[path = "../../src/proto/codex.exec_server.relay.v1.rs"]
-mod relay_proto;
+pub mod relay_proto;
 
 use std::sync::Arc;
 use std::sync::Mutex;

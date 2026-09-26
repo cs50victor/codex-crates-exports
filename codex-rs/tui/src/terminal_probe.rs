@@ -14,14 +14,14 @@
 use std::time::Duration;
 
 #[cfg(unix)]
-mod startup_replay;
+pub mod startup_replay;
 
 #[cfg(unix)]
-mod terminal_identity;
+pub mod terminal_identity;
 
 #[cfg(any(windows, test))]
 #[path = "terminal_probe/windows_replay.rs"]
-mod windows_replay;
+pub mod windows_replay;
 
 /// Default wall-clock budget for each terminal probe or startup probe group.
 pub(crate) const DEFAULT_TIMEOUT: Duration = Duration::from_millis(/*millis*/ 250);
@@ -37,7 +37,7 @@ pub(crate) struct DefaultColors {
 
 #[cfg(unix)]
 #[cfg_attr(test, allow(dead_code))]
-mod imp {
+pub mod imp {
     use super::DefaultColors;
     use super::parse_default_colors;
     use super::startup_replay::startup_replay_input;
@@ -795,7 +795,7 @@ mod imp {
 
 #[cfg(windows)]
 #[path = "terminal_probe/windows.rs"]
-mod imp;
+pub mod imp;
 
 #[cfg(any(unix, windows, test))]
 fn parse_osc_color(buffer: &[u8], slot: u8) -> Option<(u8, u8, u8)> {

@@ -3,14 +3,14 @@
 //! Only the immediate attachment of a dashboard-created task is treated as fresh.
 
 #[path = "agents_overview_new.rs"]
-mod new;
+pub mod new;
 pub(crate) use new::PendingWorktree;
 
 #[path = "agents_overview_errors.rs"]
-mod errors;
+pub mod errors;
 
 #[path = "agents_overview_loading.rs"]
-mod loading;
+pub mod loading;
 
 use super::agents_overview_view::AgentsOverviewGroup;
 use super::agents_overview_view::AgentsOverviewRow;

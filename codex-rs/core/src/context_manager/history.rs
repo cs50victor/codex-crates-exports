@@ -10,7 +10,7 @@
 //! sources recovered from legacy Guardian checkpoints before their raw history is dropped.
 
 #[path = "history_user_authorization.rs"]
-mod user_authorization;
+pub mod user_authorization;
 
 use crate::context::ContextualUserFragment;
 use crate::context::ModelSwitchInstructions;

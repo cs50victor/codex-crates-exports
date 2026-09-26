@@ -1,11 +1,11 @@
-pub(crate) mod agent_resolver;
-pub(crate) mod api;
-pub(crate) mod child_config;
-pub(crate) mod control;
-mod registry;
-pub(crate) mod role;
-pub(crate) mod status;
-pub(crate) mod types;
+pub mod agent_resolver;
+pub mod api;
+pub mod child_config;
+pub mod control;
+pub mod registry;
+pub mod role;
+pub mod status;
+pub mod types;
 
 pub(crate) use codex_protocol::protocol::AgentStatus;
 pub(crate) use control::LocalAgentControl;

@@ -1,9 +1,9 @@
-mod audio;
-mod callbacks;
-mod globals;
-mod module_loader;
-mod timers;
-mod value;
+pub mod audio;
+pub mod callbacks;
+pub mod globals;
+pub mod module_loader;
+pub mod timers;
+pub mod value;
 
 use std::collections::HashMap;
 use std::panic::AssertUnwindSafe;

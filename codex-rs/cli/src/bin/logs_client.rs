@@ -319,13 +319,13 @@ fn heuristic_formatting(message: &str) -> String {
     }
 }
 
-mod matcher {
+pub mod matcher {
     pub(super) fn apply_patch(message: &str) -> bool {
         message.contains("ToolCall: apply_patch")
     }
 }
 
-mod formatter {
+pub mod formatter {
     use chrono::DateTime;
     use chrono::SecondsFormat;
     use chrono::Utc;

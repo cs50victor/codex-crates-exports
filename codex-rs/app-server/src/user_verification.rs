@@ -13,7 +13,7 @@ use tokio::sync::oneshot;
 use tokio_util::sync::CancellationToken;
 
 #[path = "user_verification_adapter.rs"]
-mod adapter;
+pub mod adapter;
 
 use adapter::error;
 use adapter::native_error;

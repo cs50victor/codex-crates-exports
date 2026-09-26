@@ -63,7 +63,7 @@ use tokio::time::Instant;
 use uuid::Uuid;
 
 #[path = "dynamic_tools_response.rs"]
-mod response;
+pub mod response;
 
 pub(crate) const NAMESPACE: &str = "codex_tui";
 pub(crate) const DELEGATION_TOOLS: [&str; 3] =

@@ -1,7 +1,7 @@
-mod artifact;
-mod backend;
-mod extension;
-mod tool;
+pub mod artifact;
+pub mod backend;
+pub mod extension;
+pub mod tool;
 
 pub use extension::install;
 

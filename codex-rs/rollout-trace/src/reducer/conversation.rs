@@ -23,7 +23,7 @@ use crate::model::InferenceCallId;
 use crate::model::ProducerRef;
 use crate::payload::RawPayloadRef;
 
-mod normalize;
+pub mod normalize;
 
 impl TraceReducer {
     /// Reduces an inference request input snapshot into model-visible conversation items.

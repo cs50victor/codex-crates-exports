@@ -2,8 +2,8 @@ use super::*;
 use crate::app_info::app_info_to_api;
 use codex_connectors::AppToolPolicyEvaluator;
 
-mod installed;
-mod read;
+pub mod installed;
+pub mod read;
 
 pub(super) use read::APP_READ_MAX_IDS;
 

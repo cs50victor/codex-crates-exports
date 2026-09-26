@@ -42,16 +42,16 @@ use super::thread_history::RolloutProjectionStep;
 use crate::ThreadStoreError;
 use crate::ThreadStoreResult;
 
-mod canonicalizer;
-mod legacy_event;
-mod line_parser;
-mod publish;
-mod rollback;
-mod rollback_plan;
-mod rollback_replay;
-mod startup;
-mod subagent;
-mod telemetry;
+pub mod canonicalizer;
+pub mod legacy_event;
+pub mod line_parser;
+pub mod publish;
+pub mod rollback;
+pub mod rollback_plan;
+pub mod rollback_replay;
+pub mod startup;
+pub mod subagent;
+pub mod telemetry;
 
 use canonicalizer::LegacyRolloutCanonicalizer;
 use publish::compress_rollout_to_path;

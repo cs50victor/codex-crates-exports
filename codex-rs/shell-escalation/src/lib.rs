@@ -1,5 +1,5 @@
 #[cfg(unix)]
-mod unix;
+pub mod unix;
 
 #[cfg(unix)]
 pub use unix::ESCALATE_SOCKET_ENV_VAR;

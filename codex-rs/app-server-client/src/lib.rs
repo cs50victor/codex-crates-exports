@@ -16,8 +16,8 @@
 //! runtime remain bounded; the local consumer event queue is unbounded so
 //! unread notifications cannot prevent request responses from being delivered.
 
-mod path;
-mod remote;
+pub mod path;
+pub mod remote;
 
 use std::error::Error;
 use std::fmt;

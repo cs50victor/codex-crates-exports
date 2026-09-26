@@ -35,7 +35,7 @@ const SECRET: &str = "enterprise-secret-sentinel";
 const CREDENTIAL_NAME: &str = "ema-idp:enterprise-secret-sentinel";
 
 #[path = "enterprise_oauth_logout_tests.rs"]
-mod logout;
+pub mod logout;
 
 async fn isolated_process(test_name: &str) -> Result<bool> {
     const CHILD: &str = "CODEX_ENTERPRISE_LOGIN_TEST_CHILD";

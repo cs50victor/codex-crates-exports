@@ -1,17 +1,17 @@
 //! Device credentials and signing, independent of RPC routing, UI, and backend registration.
 
-mod credential;
-mod error;
-mod guard;
-mod key_namespace;
+pub mod credential;
+pub mod error;
+pub mod guard;
+pub mod key_namespace;
 #[cfg(any(target_os = "macos", test))]
-mod lifecycle_lock;
+pub mod lifecycle_lock;
 #[cfg(any(target_os = "macos", test))]
-mod native_operation;
+pub mod native_operation;
 #[cfg(any(target_os = "macos", test))]
-mod platform_macos;
+pub mod platform_macos;
 #[cfg(not(target_os = "macos"))]
-mod unsupported;
+pub mod unsupported;
 
 pub use credential::UserVerificationKeyCreation;
 pub use credential::UserVerificationKeyDeletion;

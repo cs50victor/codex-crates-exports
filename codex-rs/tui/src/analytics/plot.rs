@@ -1,9 +1,9 @@
 //! Daily stacked bars with fixed calendar ticks, a selection cursor, and an anchored value.
 //! Relative usage retains the server's scale; signed credits keep both bands.
 
-mod annotations;
-mod layout;
-mod painting;
+pub mod annotations;
+pub mod layout;
+pub mod painting;
 
 use self::layout::Layout;
 use self::painting::Band;

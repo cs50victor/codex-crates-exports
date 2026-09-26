@@ -655,7 +655,7 @@ pub enum McpServerTransportConfig {
     },
 }
 
-mod option_duration_secs {
+pub mod option_duration_secs {
     use serde::Deserialize;
     use serde::Deserializer;
     use serde::Serializer;

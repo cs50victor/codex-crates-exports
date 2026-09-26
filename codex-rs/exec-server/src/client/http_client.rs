@@ -14,11 +14,11 @@
 //!   HTTP request there when the orchestrator uses [`ExecServerClient`]
 
 #[path = "http_response_body_stream.rs"]
-pub(crate) mod response_body_stream;
+pub mod response_body_stream;
 #[path = "route_aware_http_client.rs"]
-mod route_aware_http_client;
+pub mod route_aware_http_client;
 #[path = "rpc_http_client.rs"]
-mod rpc_http_client;
+pub mod rpc_http_client;
 
 pub use response_body_stream::HttpResponseBodyStream;
 pub(crate) use route_aware_http_client::PendingRouteAwareHttpBodyStream;

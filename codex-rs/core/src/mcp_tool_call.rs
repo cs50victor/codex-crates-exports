@@ -103,8 +103,8 @@ use tracing::error;
 use tracing::field::Empty;
 use url::Url;
 
-mod account;
-mod telemetry;
+pub mod account;
+pub mod telemetry;
 
 use account::McpToolAccountError;
 use telemetry::McpCallMetricOutcome;

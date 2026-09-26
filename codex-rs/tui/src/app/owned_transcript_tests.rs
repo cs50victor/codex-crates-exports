@@ -1283,7 +1283,7 @@ async fn double_escape_browses_prompts_without_reverting_and_explains_editing() 
 }
 
 #[path = "owned_transcript_browsing_tests.rs"]
-mod browsing;
+pub mod browsing;
 
 #[tokio::test]
 async fn find_refreshes_live_details_before_searching_the_first_query() -> Result<()> {

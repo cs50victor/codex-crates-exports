@@ -531,7 +531,7 @@ impl WorkerRuntime {
 }
 
 #[path = "turn_cost_worker_chatgpt.rs"]
-mod chatgpt;
+pub mod chatgpt;
 
 #[cfg(test)]
 #[path = "turn_cost_worker_tests.rs"]

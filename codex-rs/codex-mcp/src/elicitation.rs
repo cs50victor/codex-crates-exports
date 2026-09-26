@@ -47,7 +47,7 @@ static NEXT_ELICITATION_REQUEST_ID: AtomicU64 = AtomicU64::new(0);
 const STRICT_AUTO_REVIEW_DECLINE_MESSAGE: &str = "Automated review of this operation failed. Do not proceed without asking the user for explicit approval.";
 
 #[path = "user_verification_elicitation.rs"]
-mod user_verification_elicitation;
+pub mod user_verification_elicitation;
 
 #[derive(Debug, Clone)]
 pub struct ElicitationReviewRequest {

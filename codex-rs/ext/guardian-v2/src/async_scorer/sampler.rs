@@ -1,8 +1,8 @@
 //! Builds tool-less risk requests and publishes the first classifier output.
 //! Both transports share request identity, retry, cancellation, and output handling.
 
-mod connection_pool;
-mod execution;
+pub mod connection_pool;
+pub mod execution;
 
 use connection_pool::ConnectionPool;
 use std::collections::VecDeque;

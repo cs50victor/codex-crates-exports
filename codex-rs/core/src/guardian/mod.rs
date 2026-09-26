@@ -2,26 +2,26 @@
 //! The extension chooses policy and evidence; core enforces permissions and mandatory
 //! review requirements. Each approval retains its issuing context and cancellation.
 
-mod approval_request;
-mod coverage;
-mod decision;
-mod feedback;
-mod input_budget;
-mod permissions;
-mod prompt;
+pub mod approval_request;
+pub mod coverage;
+pub mod decision;
+pub mod feedback;
+pub mod input_budget;
+pub mod permissions;
+pub mod prompt;
 pub(crate) use input_budget::PendingReviewContext;
 pub(crate) use input_budget::check_pending as check_pending_guardian_input;
 pub(crate) use input_budget::finalize as finalize_guardian_input;
 pub(crate) use permissions::for_tool as tool_permission_context;
-mod request_budget;
+pub mod request_budget;
 pub(crate) use request_budget::ExhaustedReviewBudget;
 pub(crate) use request_budget::observe as observe_guardian_request;
 pub(crate) use request_budget::prepare_prompt as prepare_guardian_prompt;
-mod review;
-mod review_session;
-mod reviewer_config;
+pub mod review;
+pub mod review_session;
+pub mod reviewer_config;
 pub(crate) use reviewer_config::resolve_review_model;
-mod runtime;
+pub mod runtime;
 #[cfg(test)]
 pub(crate) mod test_host;
 

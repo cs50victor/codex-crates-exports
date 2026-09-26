@@ -18,7 +18,7 @@ use std::collections::BTreeSet;
 use std::sync::Arc;
 
 #[path = "warnings_view_render.rs"]
-mod render;
+pub mod render;
 
 pub(super) struct WarningsView {
     entries: Vec<WarningEntry>,

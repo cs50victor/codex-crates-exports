@@ -1,4 +1,4 @@
-mod thread_list_cwd_filter_tests {
+pub mod thread_list_cwd_filter_tests {
     use super::super::normalize_thread_list_cwd_filters;
     use codex_app_server_protocol::ThreadListCwdFilter;
     use codex_utils_absolute_path::AbsolutePathBuf;
@@ -36,7 +36,7 @@ mod thread_list_cwd_filter_tests {
     }
 }
 
-mod background_terminal_pagination_tests {
+pub mod background_terminal_pagination_tests {
     use super::super::paginate_background_terminals;
     use codex_app_server_protocol::ThreadBackgroundTerminal;
     use codex_utils_path_uri::LegacyAppPathString;
@@ -95,7 +95,7 @@ mod background_terminal_pagination_tests {
     }
 }
 
-mod thread_processor_behavior_tests {
+pub mod thread_processor_behavior_tests {
     async fn forked_from_id_from_rollout(path: &Path) -> Option<String> {
         codex_core::read_session_meta_line(path)
             .await

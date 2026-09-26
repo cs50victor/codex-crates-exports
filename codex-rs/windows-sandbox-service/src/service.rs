@@ -38,7 +38,7 @@ use windows_sys::Win32::System::Services::SERVICE_WIN32_OWN_PROCESS;
 use windows_sys::Win32::System::Services::SetServiceStatus;
 use windows_sys::Win32::System::Services::StartServiceCtrlDispatcherW;
 
-mod runtime_lifecycle;
+pub mod runtime_lifecycle;
 
 pub(crate) use runtime_lifecycle::retry_cleanup;
 

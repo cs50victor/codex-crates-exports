@@ -1,11 +1,11 @@
-mod experimental_api;
+pub mod experimental_api;
 #[cfg(test)]
 mod export;
-mod precomputed_exports;
+pub mod precomputed_exports;
 #[cfg(test)]
 #[path = "precomputed_exports_tests.rs"]
 mod precomputed_exports_tests;
-mod protocol;
+pub mod protocol;
 pub mod rpc;
 #[cfg(test)]
 mod schema_fixtures;

@@ -1,6 +1,6 @@
 //! Calendar and weekly token charts for the account Summary. Bucketing is independent of view state.
 
-mod palette;
+pub mod palette;
 
 use std::collections::BTreeMap;
 

@@ -1,11 +1,11 @@
-mod configured;
-mod destination;
-mod environment;
-mod matching;
-mod provider_config;
-mod providers;
-mod registry;
-mod replacement;
+pub mod configured;
+pub mod destination;
+pub mod environment;
+pub mod matching;
+pub mod provider_config;
+pub mod providers;
+pub mod registry;
+pub mod replacement;
 
 use crate::config::NetworkProxyConfig;
 use crate::policy::normalize_host;

@@ -1,24 +1,24 @@
 //! Managed app-server lifecycle, serialized across CLI invocations and the updater.
 
-mod backend;
+pub mod backend;
 #[cfg(windows)]
 pub use backend::windows::DetachedLaunchRestricted;
 #[cfg(windows)]
 use backend::windows::try_lock_file;
-mod client;
-mod install_lock;
-mod launch;
+pub mod client;
+pub mod install_lock;
+pub mod launch;
 pub use launch::restart_with_features;
 pub use launch::start_with_features;
-mod managed_install;
-mod prepare_install;
+pub mod managed_install;
+pub mod prepare_install;
 pub use prepare_install::InstallRequest;
 pub use prepare_install::update_from_cli;
-mod remote_control_client;
-mod settings;
+pub mod remote_control_client;
+pub mod settings;
 pub mod telemetry;
-mod thread_recovery;
-mod update_loop;
+pub mod thread_recovery;
+pub mod update_loop;
 
 use std::collections::BTreeMap;
 use std::path::Path;
@@ -1120,7 +1120,7 @@ fn try_lock_file(_file: &tokio::fs::File) -> Result<bool> {
 }
 
 #[cfg(all(test, any(unix, windows)))]
-mod tests {
+pub mod tests {
     use pretty_assertions::assert_eq;
     use tempfile::TempDir;
 

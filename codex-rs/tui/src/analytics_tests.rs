@@ -2,28 +2,28 @@
 
 use crate::analytics::sections::Section;
 #[path = "analytics/compact_tests.rs"]
-mod compact;
+pub mod compact;
 #[path = "analytics/recovery_tests.rs"]
-mod recovery;
+pub mod recovery;
 #[path = "analytics/redesign_tests.rs"]
-mod redesign;
+pub mod redesign;
 #[path = "analytics/summary_tests.rs"]
-mod summary;
+pub mod summary;
 
 #[path = "analytics/account_layout_tests.rs"]
-mod account_layout;
+pub mod account_layout;
 
 #[path = "analytics/navigation_tests.rs"]
-mod navigation;
+pub mod navigation;
 
 #[path = "analytics/consumer_refresh_tests.rs"]
-mod consumer_refresh;
+pub mod consumer_refresh;
 
 #[path = "analytics/tool_panel_tests.rs"]
-mod tools_panel;
+pub mod tools_panel;
 
 #[path = "analytics/styles_tests.rs"]
-mod terminal_styles;
+pub mod terminal_styles;
 
 use super::*;
 use crate::keymap::RuntimeKeymap;
@@ -611,7 +611,7 @@ fn analytics_empty_turns_keep_geometry_and_disable_details() {
 }
 
 #[path = "analytics/chat_panel_tests.rs"]
-mod chats_table;
+pub mod chats_table;
 
 #[test]
 fn analytics_details_reflow_and_keep_focus() {
@@ -661,7 +661,7 @@ fn analytics_details_reflow_and_keep_focus() {
 }
 
 #[path = "analytics/dashboard_tests.rs"]
-mod dashboard;
+pub mod dashboard;
 
 #[path = "analytics/mouse_tests.rs"]
-mod mouse;
+pub mod mouse;

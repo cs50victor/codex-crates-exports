@@ -1,6 +1,6 @@
-mod analytics_session;
-mod client;
-pub(crate) mod types;
+pub mod analytics_session;
+pub mod client;
+pub mod types;
 
 pub use analytics_session::AnalyticsAccount;
 pub use analytics_session::AnalyticsSession;

@@ -10,7 +10,7 @@ use gstreamer as gst;
 use gstreamer_audio as audio;
 use std::sync::OnceLock;
 
-mod imp {
+pub mod imp {
     use super::*;
     #[derive(Default)]
     pub struct Sink {

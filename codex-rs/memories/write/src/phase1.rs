@@ -191,7 +191,7 @@ async fn run_jobs(
         .await
 }
 
-mod job {
+pub mod job {
     use super::*;
 
     pub(crate) async fn run(
@@ -319,7 +319,7 @@ mod job {
         Ok((output, token_usage))
     }
 
-    mod result {
+    pub mod result {
         use super::*;
 
         pub(crate) async fn failed(

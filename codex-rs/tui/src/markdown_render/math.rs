@@ -12,7 +12,7 @@ use pulldown_cmark::Tag;
 use std::borrow::Cow;
 use std::ops::Range;
 
-mod render;
+pub mod render;
 
 const MAX_MATH_BYTES: usize = 4096;
 

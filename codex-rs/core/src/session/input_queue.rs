@@ -47,7 +47,7 @@ pub enum TurnInput {
     InterAgentCommunication(InterAgentCommunication),
 }
 
-mod turn_input_response_item {
+pub mod turn_input_response_item {
     use super::ResponseItem;
     use super::ResponseItemEnvelope;
     use serde::Deserialize;

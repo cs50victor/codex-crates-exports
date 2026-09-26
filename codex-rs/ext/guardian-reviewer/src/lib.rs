@@ -2,24 +2,24 @@
 //! of the host session runtime.
 //! The host supplies review attempts and enforces the resulting decision on the bound action.
 
-mod assessment;
-mod circuit_breaker;
-mod completion;
-mod conversation;
+pub mod assessment;
+pub mod circuit_breaker;
+pub mod completion;
+pub mod conversation;
 pub use conversation::ConversationCheckpoint;
 pub use conversation::ConversationState;
-mod deadline;
-mod execution;
-mod feedback;
-mod metrics;
-mod model;
-mod outcome;
-mod pool;
-mod reporting;
-mod retry;
-mod review;
-mod routing;
-mod settings;
+pub mod deadline;
+pub mod execution;
+pub mod feedback;
+pub mod metrics;
+pub mod model;
+pub mod outcome;
+pub mod pool;
+pub mod reporting;
+pub mod retry;
+pub mod review;
+pub mod routing;
+pub mod settings;
 
 pub use assessment::GuardianAssessment;
 pub use assessment::guardian_output_contract_prompt;

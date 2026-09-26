@@ -3,13 +3,13 @@
 //! Board identity and caller identity come from the host. Implementations own
 //! storage and notification fanout; tools and feature registration are separate.
 
-mod api;
-mod extension;
-mod host;
-mod in_memory;
-mod local;
-mod tools;
-mod types;
+pub mod api;
+pub mod extension;
+pub mod host;
+pub mod in_memory;
+pub mod local;
+pub mod tools;
+pub mod types;
 
 pub use api::AgentMessageBoard;
 pub use api::ChannelQuery;

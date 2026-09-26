@@ -1,10 +1,10 @@
-mod backend;
-mod extension;
-mod local;
-mod metrics;
-mod prompts;
-mod schema;
-mod tools;
+pub mod backend;
+pub mod extension;
+pub mod local;
+pub mod metrics;
+pub mod prompts;
+pub mod schema;
+pub mod tools;
 
 pub use extension::install;
 

@@ -1,22 +1,22 @@
 use anyhow::Result;
 
 #[cfg(windows)]
-mod installation_record;
+pub mod installation_record;
 #[cfg(windows)]
-mod ipc;
+pub mod ipc;
 
 #[cfg(windows)]
-mod machine_policy;
+pub mod machine_policy;
 #[cfg(windows)]
-mod package_identity;
+pub mod package_identity;
 #[cfg(windows)]
-mod package_lifecycle;
+pub mod package_lifecycle;
 #[cfg(windows)]
-mod provisioning;
+pub mod provisioning;
 #[cfg(windows)]
-mod registered_runtime;
+pub mod registered_runtime;
 #[cfg(windows)]
-mod service;
+pub mod service;
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
 pub enum RunMode {

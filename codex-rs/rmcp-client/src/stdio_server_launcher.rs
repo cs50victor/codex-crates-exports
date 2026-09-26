@@ -258,7 +258,7 @@ enum StdioServerProcessKind {
     Executor(Arc<dyn ExecProcess>),
 }
 
-mod private {
+pub mod private {
     pub trait Sealed {}
 }
 

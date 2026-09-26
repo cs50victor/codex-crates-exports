@@ -1,18 +1,18 @@
 #[cfg(target_os = "linux")]
-mod bwrap;
-mod denial;
+pub mod bwrap;
+pub mod denial;
 pub mod landlock;
-mod linux_pid_namespace;
-mod manager;
+pub mod linux_pid_namespace;
+pub mod manager;
 pub mod policy_transforms;
 #[cfg(target_os = "macos")]
 pub mod seatbelt;
-mod spawn;
-mod terminal_queries;
-mod violation;
-mod windows;
+pub mod spawn;
+pub mod terminal_queries;
+pub mod violation;
+pub mod windows;
 #[cfg(windows)]
-mod windows_mxc;
+pub mod windows_mxc;
 
 #[cfg(target_os = "linux")]
 pub use bwrap::find_system_bwrap_in_path;

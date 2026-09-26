@@ -10,7 +10,7 @@
     )),
     allow(dead_code)
 )]
-mod audio_track;
+pub mod audio_track;
 #[cfg_attr(
     not(any(
         target_os = "macos",
@@ -19,12 +19,12 @@ mod audio_track;
     )),
     path = "devices_unavailable.rs"
 )]
-mod devices;
-mod incoming;
-mod runtime;
-mod service_failure;
-mod transport;
-mod transport_runtime;
+pub mod devices;
+pub mod incoming;
+pub mod runtime;
+pub mod service_failure;
+pub mod transport;
+pub mod transport_runtime;
 
 use std::cell::Cell;
 use std::io;
@@ -45,7 +45,7 @@ const BUILD_COMMIT: &str = match option_env!("STABLE_GIT_COMMIT") {
     None => "dev",
 };
 
-fn main() {
+pub fn main() {
     codex_process_hardening::pre_main_hardening();
     let mut args = std::env::args_os().skip(/*n*/ 1);
     match (args.next(), args.next()) {

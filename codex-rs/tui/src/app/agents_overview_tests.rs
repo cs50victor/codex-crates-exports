@@ -1,5 +1,5 @@
 #[path = "agent_center_tests.rs"]
-mod command_center;
+pub mod command_center;
 
 use super::super::agents_overview_view::AgentsOverviewGrouping;
 use super::*;
@@ -2617,7 +2617,7 @@ async fn command_center_action_failures_remain_visible() -> Result<()> {
     Ok(())
 }
 #[path = "agents_overview_actions_tests.rs"]
-mod actions;
+pub mod actions;
 
 fn trust_fixture_folders(app: &mut App) {
     let projects = serde_json::json!({
@@ -2631,7 +2631,7 @@ fn trust_fixture_folders(app: &mut App) {
 }
 
 #[path = "agents_overview_usage_tests.rs"]
-mod usage;
+pub mod usage;
 
 #[tokio::test]
 async fn command_center_new_actions_use_selection_and_leave_metadata_text_alone() {

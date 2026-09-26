@@ -1,7 +1,7 @@
 //! Proxy-aware WebSocket connection setup shared by Codex API clients, reusing the HTTP factory's
 //! ChatGPT cookie store for secure handshakes.
 
-mod dialer;
+pub mod dialer;
 
 use std::io;
 use std::net::IpAddr;

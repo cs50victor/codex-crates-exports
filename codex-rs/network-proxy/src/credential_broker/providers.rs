@@ -1,5 +1,5 @@
-mod github;
-mod openai;
+pub mod github;
+pub mod openai;
 
 use super::destination::CredentialDestination;
 use rama_http::HeaderMap;

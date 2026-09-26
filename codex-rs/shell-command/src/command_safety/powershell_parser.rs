@@ -267,7 +267,7 @@ fn kill_child(child: &mut Child) {
 }
 
 #[cfg(all(test, windows))]
-mod tests {
+pub mod tests {
     use super::*;
     use crate::powershell::try_find_powershell_executable_blocking;
     use pretty_assertions::assert_eq;

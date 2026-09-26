@@ -10,9 +10,9 @@ use serde::Serialize;
 
 use crate::payload::RawPayloadId;
 use crate::payload::RawPayloadRef;
-mod conversation;
-mod runtime;
-mod session;
+pub mod conversation;
+pub mod runtime;
+pub mod session;
 
 pub use conversation::*;
 pub use runtime::*;

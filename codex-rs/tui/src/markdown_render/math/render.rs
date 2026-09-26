@@ -5,7 +5,7 @@
 use crate::width::display_width;
 use unicode_segmentation::UnicodeSegmentation;
 
-mod structured;
+pub mod structured;
 
 const MAX_ROWS: usize = 16;
 const MAX_COLUMNS: usize = 256;

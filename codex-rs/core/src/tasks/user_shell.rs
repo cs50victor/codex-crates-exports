@@ -486,4 +486,4 @@ async fn persist_user_shell_output(
 
 #[cfg(all(test, unix))]
 #[path = "user_shell_tests.rs"]
-mod tests;
+pub mod tests;

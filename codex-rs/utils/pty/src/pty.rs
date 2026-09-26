@@ -676,4 +676,4 @@ pub(crate) fn configure_child_terminal() -> std::io::Result<()> {
 
 #[cfg(all(test, target_os = "linux"))]
 #[path = "pty_linux_tests.rs"]
-mod linux_tests;
+pub mod linux_tests;

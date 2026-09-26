@@ -1,3 +1,3 @@
-mod instructions;
+pub mod instructions;
 
 pub use instructions::CodexHomeUserInstructionsProvider;

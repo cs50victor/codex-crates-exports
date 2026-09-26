@@ -10,7 +10,7 @@ use std::path::PathBuf;
 use std::process::Command;
 
 #[path = "deny_read_walker.rs"]
-mod walker;
+pub mod walker;
 
 use walker::DirectoryScanMode;
 use walker::collect_existing_glob_directory_matches;

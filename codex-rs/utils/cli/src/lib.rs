@@ -1,9 +1,9 @@
-mod approval_mode_cli_arg;
-mod config_override;
-pub(crate) mod format_env_display;
-mod resume_command;
-mod sandbox_mode_cli_arg;
-mod shared_options;
+pub mod approval_mode_cli_arg;
+pub mod config_override;
+pub mod format_env_display;
+pub mod resume_command;
+pub mod sandbox_mode_cli_arg;
+pub mod shared_options;
 
 pub use approval_mode_cli_arg::ApprovalModeCliArg;
 pub use codex_protocol::config_types::ProfileV2Name;

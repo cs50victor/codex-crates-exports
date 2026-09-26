@@ -1,5 +1,5 @@
-mod policy;
-mod world_state;
+pub mod policy;
+pub mod world_state;
 
 use std::sync::Arc;
 use std::time::Instant;

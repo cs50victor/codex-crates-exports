@@ -1,26 +1,26 @@
 //! Shared tool definitions and Responses API tool primitives that can live
 //! outside `codex-core`.
 
-mod code_mode;
-mod dynamic_tool;
-mod function_call_error;
-mod image_detail;
-mod indirect_namespace_prefixes;
-mod json_schema;
-mod mcp_tool;
-mod output_schema;
-mod request_plugin_install;
-mod response_history;
-mod responses_api;
-mod tool_call;
-mod tool_config;
-mod tool_definition;
-mod tool_discovery;
-mod tool_executor;
-mod tool_output;
-mod tool_payload;
-mod tool_search;
-mod tool_spec;
+pub mod code_mode;
+pub mod dynamic_tool;
+pub mod function_call_error;
+pub mod image_detail;
+pub mod indirect_namespace_prefixes;
+pub mod json_schema;
+pub mod mcp_tool;
+pub mod output_schema;
+pub mod request_plugin_install;
+pub mod response_history;
+pub mod responses_api;
+pub mod tool_call;
+pub mod tool_config;
+pub mod tool_definition;
+pub mod tool_discovery;
+pub mod tool_executor;
+pub mod tool_output;
+pub mod tool_payload;
+pub mod tool_search;
+pub mod tool_spec;
 
 pub use code_mode::augment_tool_spec_for_code_mode;
 pub use code_mode::code_mode_name_for_tool_name;

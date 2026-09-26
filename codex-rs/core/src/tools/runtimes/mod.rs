@@ -32,9 +32,9 @@ use codex_utils_absolute_path::AbsolutePathBuf;
 use std::collections::HashMap;
 use std::path::Path;
 
-pub(crate) mod apply_patch;
-pub(crate) mod unified_exec;
-pub(crate) mod zsh_fork;
+pub mod apply_patch;
+pub mod unified_exec;
+pub mod zsh_fork;
 
 const SNAPSHOT_ORIGINAL_BASH_ENV_ENV_KEY: &str = "CODEX_NETWORK_PROXY_SNAPSHOT_ORIGINAL_BASH_ENV";
 const SNAPSHOT_ORIGINAL_POSIX_ENV_ENV_KEY: &str = "CODEX_NETWORK_PROXY_SNAPSHOT_ORIGINAL_POSIX_ENV";
@@ -915,4 +915,4 @@ mod prepare_powershell_command_tests {
 
 #[cfg(all(test, unix))]
 #[path = "mod_tests.rs"]
-mod tests;
+pub mod tests;

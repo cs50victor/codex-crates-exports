@@ -128,4 +128,4 @@ impl LocalFileSystemPolicyMatcher<'_> {
 
 #[cfg(all(test, target_os = "macos"))]
 #[path = "local_aliases_tests.rs"]
-mod tests;
+pub mod tests;

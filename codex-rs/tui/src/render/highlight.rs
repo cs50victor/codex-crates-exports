@@ -55,7 +55,7 @@ use syntect::util::LinesWithEndings;
 use two_face::theme::EmbeddedThemeName;
 
 #[path = "highlight_streaming.rs"]
-mod streaming;
+pub mod streaming;
 
 pub(crate) use streaming::StreamingCodeHighlighter;
 

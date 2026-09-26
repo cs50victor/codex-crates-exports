@@ -2,9 +2,9 @@
 //! Synthetic events preserve typed turns and reject stale session generations.
 
 #[path = "realtime/recording_controls_tests.rs"]
-mod recording_controls_tests;
+pub mod recording_controls_tests;
 #[path = "realtime/session_metrics_tests.rs"]
-mod session_metrics_tests;
+pub mod session_metrics_tests;
 
 use super::RealtimeConversationPhase;
 use crate::app_command::AppCommand;
@@ -140,14 +140,14 @@ fn finish_turn(
 }
 
 #[path = "realtime_tests/caption_replay.rs"]
-mod caption_replay;
+pub mod caption_replay;
 #[path = "realtime_tests/handoff_privacy.rs"]
-mod handoff_privacy;
+pub mod handoff_privacy;
 #[path = "realtime_tests/handoffs.rs"]
-mod handoffs;
+pub mod handoffs;
 #[path = "realtime_tests/lifecycle.rs"]
-mod lifecycle;
+pub mod lifecycle;
 #[path = "realtime_tests/speech_recovery.rs"]
-mod speech_recovery;
+pub mod speech_recovery;
 #[path = "realtime_tests/transcripts.rs"]
-mod transcripts;
+pub mod transcripts;

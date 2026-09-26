@@ -3,13 +3,13 @@
 //! to the captured parent action, environments, authorization and context snapshots.
 
 #[path = "review_session_setup.rs"]
-mod setup;
+pub mod setup;
 pub use setup::PreparedGuardianContext;
 pub use setup::prepare_review_prewarm;
 pub(crate) use setup::run_guardian_review_session;
 
 #[path = "review_session_context.rs"]
-mod context_policy;
+pub mod context_policy;
 use context_policy::ReviewContextPolicy;
 
 use std::borrow::Cow;

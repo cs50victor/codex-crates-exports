@@ -7,7 +7,7 @@
 //! - `backends::windows_common` holds the small shared Windows backend helpers
 //!   used by both.
 
-mod backends;
+pub mod backends;
 
 use anyhow::Result;
 use anyhow::bail;

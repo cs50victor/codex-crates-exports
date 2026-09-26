@@ -3,12 +3,12 @@
 #![allow(unsafe_op_in_unsafe_fn)]
 
 #[cfg(any(target_os = "windows", test))]
-mod ssh_config_dependencies;
+pub mod ssh_config_dependencies;
 
 #[doc(hidden)]
 pub mod environment_transport;
 #[cfg(any(windows, test))]
-mod launch_environment;
+pub mod launch_environment;
 
 use std::fmt;
 use std::sync::Arc;
@@ -56,11 +56,11 @@ pub struct WindowsSandboxProvisioningSettings {
 }
 
 #[cfg(target_os = "windows")]
-mod acl;
+pub mod acl;
 #[cfg(target_os = "windows")]
-mod allow;
+pub mod allow;
 #[cfg(target_os = "windows")]
-mod app_package;
+pub mod app_package;
 #[cfg(target_os = "windows")]
 #[doc(hidden)]
 pub use app_package::registered_core_needs_refresh;
@@ -68,47 +68,47 @@ pub use app_package::registered_core_needs_refresh;
 #[doc(hidden)]
 pub use app_package::registered_core_requested;
 #[cfg(target_os = "windows")]
-mod cap;
+pub mod cap;
 #[cfg(target_os = "windows")]
-mod deny_read_acl;
+pub mod deny_read_acl;
 #[cfg(target_os = "windows")]
-mod deny_read_state;
+pub mod deny_read_state;
 #[cfg(target_os = "windows")]
-mod desktop;
+pub mod desktop;
 #[cfg(target_os = "windows")]
-mod dpapi;
+pub mod dpapi;
 #[cfg(target_os = "windows")]
-mod env;
+pub mod env;
 #[cfg(target_os = "windows")]
-mod file_write;
+pub mod file_write;
 #[cfg(target_os = "windows")]
-mod framed_io;
+pub mod framed_io;
 #[cfg(target_os = "windows")]
-mod helper_materialization;
+pub mod helper_materialization;
 #[cfg(target_os = "windows")]
-mod hide_users;
+pub mod hide_users;
 #[cfg(target_os = "windows")]
-mod identity;
+pub mod identity;
 #[cfg(target_os = "windows")]
-mod installation_record;
+pub mod installation_record;
 #[cfg(target_os = "windows")]
-mod logging;
+pub mod logging;
 #[cfg(target_os = "windows")]
-mod no_reparse_dir;
+pub mod no_reparse_dir;
 #[cfg(target_os = "windows")]
-mod package_identity;
+pub mod package_identity;
 #[cfg(target_os = "windows")]
-mod path_normalization;
+pub mod path_normalization;
 #[cfg(target_os = "windows")]
-mod process;
+pub mod process;
 #[cfg(target_os = "windows")]
-mod provisioning_client;
+pub mod provisioning_client;
 #[cfg(target_os = "windows")]
-mod provisioning_protocol;
+pub mod provisioning_protocol;
 #[cfg(target_os = "windows")]
-mod runtime_ownership;
+pub mod runtime_ownership;
 #[cfg(target_os = "windows")]
-mod service_identity;
+pub mod service_identity;
 #[cfg(target_os = "windows")]
 #[doc(hidden)]
 pub use runtime_ownership::CORE_INSTALLATION_KEY;
@@ -134,53 +134,53 @@ pub use runtime_ownership::remove_installation;
 #[doc(hidden)]
 pub use runtime_ownership::save_installation;
 #[cfg(target_os = "windows")]
-mod resolved_permissions;
+pub mod resolved_permissions;
 #[cfg(target_os = "windows")]
-mod token;
+pub mod token;
 #[cfg(target_os = "windows")]
-mod token_user;
+pub mod token_user;
 #[cfg(target_os = "windows")]
-mod wfp;
+pub mod wfp;
 #[cfg(target_os = "windows")]
-mod wfp_setup;
+pub mod wfp_setup;
 #[cfg(target_os = "windows")]
-mod winutil;
+pub mod winutil;
 #[cfg(target_os = "windows")]
-mod workspace_acl;
+pub mod workspace_acl;
 
-mod deny_read_resolver;
+pub mod deny_read_resolver;
 #[cfg(target_os = "windows")]
-mod uninstall_windows;
-
-#[cfg(target_os = "windows")]
-mod conpty;
+pub mod uninstall_windows;
 
 #[cfg(target_os = "windows")]
-mod elevated;
+pub mod conpty;
 
 #[cfg(target_os = "windows")]
-mod elevated_impl;
+pub mod elevated;
 
 #[cfg(target_os = "windows")]
-mod proc_thread_attr;
+pub mod elevated_impl;
 
 #[cfg(target_os = "windows")]
-mod sandbox_utils;
+pub mod proc_thread_attr;
 
 #[cfg(target_os = "windows")]
-mod setup;
+pub mod sandbox_utils;
 
 #[cfg(target_os = "windows")]
-mod setup_error;
+pub mod setup;
 
 #[cfg(target_os = "windows")]
-mod setup_launch;
+pub mod setup_error;
 
 #[cfg(target_os = "windows")]
-mod setup_mutex;
+pub mod setup_launch;
 
 #[cfg(target_os = "windows")]
-mod setup_provisioning;
+pub mod setup_mutex;
+
+#[cfg(target_os = "windows")]
+pub mod setup_provisioning;
 
 #[cfg(target_os = "windows")]
 #[doc(hidden)]
@@ -189,15 +189,15 @@ pub use setup_provisioning::main as setup_helper_main;
 pub use setup_provisioning::provision_sandbox_in_process;
 
 #[cfg(target_os = "windows")]
-mod spawn_prep;
+pub mod spawn_prep;
 
 #[cfg(target_os = "windows")]
-mod stdio_bridge;
+pub mod stdio_bridge;
 
 #[cfg(target_os = "windows")]
-mod unified_exec;
+pub mod unified_exec;
 #[cfg(target_os = "windows")]
-mod wrapper;
+pub mod wrapper;
 
 #[cfg(target_os = "windows")]
 pub(crate) use elevated::ipc_framed;
@@ -535,7 +535,7 @@ pub use stub::run_windows_sandbox_capture;
 pub use stub::run_windows_sandbox_legacy_preflight;
 
 #[cfg(target_os = "windows")]
-mod windows_impl {
+pub mod windows_impl {
     use super::WindowsSandboxCancellationToken;
     use super::logging::log_failure;
     use super::logging::log_note;
@@ -1013,7 +1013,7 @@ mod windows_impl {
 }
 
 #[cfg(not(target_os = "windows"))]
-mod stub {
+pub mod stub {
     use super::WindowsSandboxCancellationToken;
     use anyhow::Result;
     use anyhow::bail;

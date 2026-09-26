@@ -171,7 +171,7 @@ pub(crate) fn resolve_role_config<'a>(
         .or_else(|| built_in::configs().get(role_name))
 }
 
-mod role_overrides {
+pub mod role_overrides {
     use super::*;
 
     pub(super) fn build_next_config(
@@ -261,7 +261,7 @@ mod role_overrides {
     }
 }
 
-pub(crate) mod spawn_tool_spec {
+pub mod spawn_tool_spec {
     use super::*;
 
     /// Builds the spawn-agent tool description text from built-in and configured roles.
@@ -334,7 +334,7 @@ pub(crate) mod spawn_tool_spec {
     }
 }
 
-mod built_in {
+pub mod built_in {
     use super::*;
 
     /// Returns the cached built-in role declarations defined in this module.

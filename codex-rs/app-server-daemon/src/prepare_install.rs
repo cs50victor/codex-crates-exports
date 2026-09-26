@@ -486,7 +486,7 @@ fn platform_target() -> Result<&'static str> {
 
 #[cfg(windows)]
 #[path = "prepare_install_windows.rs"]
-mod windows;
+pub mod windows;
 
 #[cfg(test)]
 #[path = "prepare_install_tests.rs"]

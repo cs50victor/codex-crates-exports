@@ -1,10 +1,10 @@
 //! macOS Security and LocalAuthentication integration.
 
-mod error;
+pub mod error;
 #[cfg(target_os = "macos")]
-mod key_protection;
+pub mod key_protection;
 #[cfg(target_os = "macos")]
-mod provider;
+pub mod provider;
 
 #[cfg(target_os = "macos")]
 pub(crate) use provider::NativeProvider;

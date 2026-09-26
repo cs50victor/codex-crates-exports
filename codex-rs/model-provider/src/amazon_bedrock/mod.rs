@@ -1,11 +1,11 @@
-mod auth;
-mod auth_refresh;
-mod catalog;
-mod credential_export;
-mod error;
-mod mantle;
-mod runtime;
-mod runtime_catalog;
+pub mod auth;
+pub mod auth_refresh;
+pub mod catalog;
+pub mod credential_export;
+pub mod error;
+pub mod mantle;
+pub mod runtime;
+pub mod runtime_catalog;
 
 use std::path::PathBuf;
 use std::sync::Arc;

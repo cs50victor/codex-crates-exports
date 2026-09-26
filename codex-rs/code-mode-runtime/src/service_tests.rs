@@ -1375,7 +1375,7 @@ audio({
 }
 
 #[path = "service_audio_tests.rs"]
-mod audio_tests;
+pub mod audio_tests;
 
 #[tokio::test]
 async fn audio_helper_rejects_non_data_urls() {

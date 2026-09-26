@@ -3,10 +3,10 @@
 //! authentication and policy rejections remain errors.
 //! Shutdown wakeups are retried until the listener connects or stops.
 
-mod authentication;
-mod home;
-mod listener;
-mod request;
+pub mod authentication;
+pub mod home;
+pub mod listener;
+pub mod request;
 
 use anyhow::Context;
 use anyhow::Result;

@@ -1,10 +1,10 @@
-mod description;
+pub mod description;
 pub mod grpc;
 pub mod host;
-mod json_schema_types;
-mod response;
-mod runtime;
-mod session;
+pub mod json_schema_types;
+pub mod response;
+pub mod runtime;
+pub mod session;
 
 pub use description::CODE_MODE_PRAGMA_PREFIX;
 pub use description::CodeModeToolKind;

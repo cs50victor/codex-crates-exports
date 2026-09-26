@@ -33,7 +33,7 @@ use crate::terminal_palette::default_fg;
 use crate::terminal_palette::effective_stdout_color_level;
 
 #[path = "effort_ignition_styles.rs"]
-mod styles;
+pub mod styles;
 
 use styles::Canvas;
 use styles::paint_style;

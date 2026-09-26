@@ -9,11 +9,11 @@ use super::LocalThreadStore;
 use crate::ThreadStoreError;
 use crate::ThreadStoreResult;
 
-mod read;
-mod realtime;
-mod search;
-mod segment_paging;
-mod turn_lookup;
+pub mod read;
+pub mod realtime;
+pub mod search;
+pub mod segment_paging;
+pub mod turn_lookup;
 
 pub(super) use read::list_items;
 pub(super) use read::list_turns;

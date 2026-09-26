@@ -1,6 +1,6 @@
 use crate::bash::parse_shell_lc_literal_commands;
 #[path = "windows_dangerous_commands.rs"]
-mod windows_dangerous_commands;
+pub mod windows_dangerous_commands;
 
 /// The platform whose command semantics should be used for safety checks.
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]

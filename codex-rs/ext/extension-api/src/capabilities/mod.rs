@@ -1,7 +1,7 @@
-mod conversation_history;
-mod events;
-mod metrics;
-mod response_items;
+pub mod conversation_history;
+pub mod events;
+pub mod metrics;
+pub mod response_items;
 
 pub use conversation_history::ConversationHistorySnapshot;
 pub use events::ExtensionEventSink;

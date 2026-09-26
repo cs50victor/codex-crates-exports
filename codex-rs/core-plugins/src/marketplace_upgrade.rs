@@ -1,5 +1,5 @@
-mod activation;
-mod git;
+pub mod activation;
+pub mod git;
 
 use self::activation::activate_marketplace_root;
 use self::activation::installed_marketplace_metadata_matches;

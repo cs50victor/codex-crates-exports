@@ -5,7 +5,7 @@
 //! groups checks by concern, colors only status/actionable tokens, and redacts
 //! sensitive detail lines before showing them in detailed output.
 
-mod detail;
+pub mod detail;
 
 use std::fmt::Write as _;
 

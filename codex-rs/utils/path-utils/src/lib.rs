@@ -1,8 +1,8 @@
 //! Path normalization, replacement, symlink resolution, and atomic writes.
 
-pub(crate) mod env;
+pub mod env;
 pub use env::is_wsl;
-mod system_commands;
+pub mod system_commands;
 pub use system_commands::system_executable;
 pub use system_commands::system_path;
 

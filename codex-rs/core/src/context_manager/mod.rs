@@ -1,6 +1,6 @@
-mod history;
-mod normalize;
-pub(crate) mod updates;
+pub mod history;
+pub mod normalize;
+pub mod updates;
 
 pub(crate) use history::ContextManager;
 pub(crate) use history::HistoryReplacement;

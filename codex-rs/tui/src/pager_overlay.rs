@@ -3,8 +3,8 @@
 //! Static content retains its generic pager. Transcript previews share the main conversation
 //! viewport, including its scrolling, selection, search and bounded text layouts.
 
-mod scrolling;
-mod transcript;
+pub mod scrolling;
+pub mod transcript;
 
 pub(crate) use transcript::TranscriptOverlay;
 

@@ -12,7 +12,7 @@ struct Args {
     out: Option<PathBuf>,
 }
 
-fn main() -> Result<()> {
+pub fn main() -> Result<()> {
     let args = Args::parse();
     let out_path = args.out.unwrap_or_else(|| {
         PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../core/config.schema.json")

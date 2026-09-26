@@ -1,10 +1,10 @@
-mod assistant_text;
-mod citation;
-mod inline_hidden_tag;
-mod proposed_plan;
-mod stream_text;
-mod tagged_line_parser;
-mod utf8_stream;
+pub mod assistant_text;
+pub mod citation;
+pub mod inline_hidden_tag;
+pub mod proposed_plan;
+pub mod stream_text;
+pub mod tagged_line_parser;
+pub mod utf8_stream;
 
 pub use assistant_text::AssistantTextChunk;
 pub use assistant_text::AssistantTextStreamParser;

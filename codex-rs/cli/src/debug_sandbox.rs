@@ -1,8 +1,8 @@
-mod cloud_config;
+pub mod cloud_config;
 #[cfg(target_os = "macos")]
-mod pid_tracker;
+pub mod pid_tracker;
 #[cfg(target_os = "macos")]
-mod seatbelt;
+pub mod seatbelt;
 
 use std::path::PathBuf;
 use std::process::Stdio;

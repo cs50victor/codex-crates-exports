@@ -6,8 +6,8 @@ use codex_core::config::Config;
 use codex_extension_api::ExtensionRegistryBuilder;
 use codex_login::AuthManager;
 
-mod async_scorer;
-mod sync_reviewer;
+pub mod async_scorer;
+pub mod sync_reviewer;
 
 pub use sync_reviewer::install as install_reviewer;
 

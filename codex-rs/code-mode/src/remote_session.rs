@@ -28,7 +28,7 @@ use self::connection::ConnectionError;
 use self::connection::RemoteSession;
 use self::connection::SessionCleanup;
 
-mod connection;
+pub mod connection;
 
 pub(crate) type ShutdownResultReceiver = watch::Receiver<Option<Result<(), String>>>;
 

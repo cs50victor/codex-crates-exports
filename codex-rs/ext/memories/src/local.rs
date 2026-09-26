@@ -13,11 +13,11 @@ use crate::backend::ReadMemoryResponse;
 use crate::backend::SearchMemoriesRequest;
 use crate::backend::SearchMemoriesResponse;
 
-mod ad_hoc_note;
-mod list;
-mod path;
-mod read;
-mod search;
+pub mod ad_hoc_note;
+pub mod list;
+pub mod path;
+pub mod read;
+pub mod search;
 
 #[derive(Debug, Clone)]
 pub(crate) struct LocalMemoriesBackend {

@@ -358,7 +358,7 @@ color-eyre = "0.6.3"
 constant_time_eq = "0.3.1"
 crossbeam-channel = "0.5.15"
 crypto_box = { version = "0.9.1", features = ["seal"] }
-crossterm = "0.29.0"
+crossterm = { git = "https://github.com/openai-oss-forks/crossterm", rev = "efa177859fd9623d57b9fe7ae9bf491ae1ac6ec4" }
 ctor = "0.6.3"
 deno_core_icudata = "0.77.0"
 derive_more = "2"
@@ -509,10 +509,10 @@ tokio = "1"
 tokio-rustls = "0.26.4"
 tokio-stream = "0.1.18"
 tokio-test = "0.4"
-tokio-tungstenite = { version = "0.28.0", features = [
+tokio-tungstenite = { features = [
     "proxy",
     "rustls-tls-native-roots",
-] }
+] , git = "https://github.com/openai-oss-forks/tokio-tungstenite", rev = "0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186" }
 tokio-util = "0.7.18"
 toml = "0.9.5"
 toml_edit = "0.24.0"
@@ -527,7 +527,7 @@ tree-sitter = "0.25.10"
 tree-sitter-bash = "0.25"
 tree-sitter-powershell = "=0.26.4"
 ts-rs = "11"
-tungstenite = { version = "0.27.0", features = ["deflate", "proxy"] }
+tungstenite = { features = ["deflate", "proxy"] , git = "https://github.com/openai-oss-forks/tungstenite-rs", rev = "4fffad30fe373adbdcffab9545e9e9bf4f2fc19f" }
 uds_windows = "1.1.0"
 unicode-segmentation = "1.12.0"
 unicode-width = "0.2"

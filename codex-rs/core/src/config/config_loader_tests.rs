@@ -4363,7 +4363,7 @@ async fn project_root_markers_supports_alternate_markers() -> std::io::Result<()
     Ok(())
 }
 
-mod requirements_exec_policy_tests {
+pub mod requirements_exec_policy_tests {
     use crate::exec_policy::load_exec_policy;
     use codex_config::ConfigLayerEntry;
     use codex_config::ConfigLayerSource;

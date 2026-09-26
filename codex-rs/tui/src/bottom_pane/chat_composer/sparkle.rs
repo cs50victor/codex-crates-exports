@@ -32,7 +32,7 @@ use crate::terminal_palette::default_fg;
 use crate::terminal_palette::effective_stdout_color_level;
 
 #[path = "sparkle_field.rs"]
-mod field;
+pub mod field;
 
 const FRAME_TICK: Duration = Duration::from_millis(/*millis*/ 150);
 const IDLE_TIMEOUT: Duration = Duration::from_secs(/*secs*/ 15);

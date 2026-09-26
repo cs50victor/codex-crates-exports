@@ -33,13 +33,13 @@ use url::Host;
 use url::Url;
 
 #[path = "gateway_auth_callback.rs"]
-mod callback;
+pub mod callback;
 #[path = "gateway_auth_login.rs"]
-mod login;
+pub mod login;
 #[path = "gateway_auth_storage.rs"]
-mod storage;
+pub mod storage;
 #[path = "gateway_auth_token.rs"]
-mod token;
+pub mod token;
 
 pub use login::GatewayAuthStatus;
 pub use login::GatewayAuthStatusChange;

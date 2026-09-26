@@ -77,11 +77,11 @@ pub(crate) use send_input::Handler as SendInputHandler;
 pub(crate) use spawn::Handler as SpawnAgentHandler;
 pub(crate) use wait::Handler as WaitAgentHandler;
 
-pub(crate) mod close_agent;
-mod resume_agent;
-mod send_input;
-mod spawn;
-pub(crate) mod wait;
+pub mod close_agent;
+pub mod resume_agent;
+pub mod send_input;
+pub mod spawn;
+pub mod wait;
 
 pub(crate) fn collab_tool_call_status(
     status: &AgentStatus,

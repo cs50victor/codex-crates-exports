@@ -50,12 +50,12 @@ use std::ops::Range;
 use std::sync::Arc;
 use unicode_segmentation::UnicodeSegmentation;
 
-mod hyperlinks;
-mod mouse;
-mod vim;
-mod vim_commands;
-mod vim_search;
-mod wrapping;
+pub mod hyperlinks;
+pub mod mouse;
+pub mod vim;
+pub mod vim_commands;
+pub mod vim_search;
+pub mod wrapping;
 use self::vim::VimMode;
 use self::vim::VimMotion;
 use self::vim::VimOperator;

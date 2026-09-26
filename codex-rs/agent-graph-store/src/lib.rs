@@ -1,9 +1,9 @@
 //! Storage-neutral parent/child topology for thread-spawned agents.
 
-mod error;
-mod local;
-mod store;
-mod types;
+pub mod error;
+pub mod local;
+pub mod store;
+pub mod types;
 
 pub use error::AgentGraphStoreError;
 pub use error::AgentGraphStoreResult;

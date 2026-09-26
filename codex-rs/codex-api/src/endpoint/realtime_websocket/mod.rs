@@ -1,13 +1,13 @@
-pub(crate) mod methods;
-mod methods_common;
-mod methods_frameless_bidi;
-mod methods_v1;
-mod methods_v2;
-pub(crate) mod protocol;
-mod protocol_common;
-mod protocol_frameless_bidi;
-mod protocol_v1;
-mod protocol_v2;
+pub mod methods;
+pub mod methods_common;
+pub mod methods_frameless_bidi;
+pub mod methods_v1;
+pub mod methods_v2;
+pub mod protocol;
+pub mod protocol_common;
+pub mod protocol_frameless_bidi;
+pub mod protocol_v1;
+pub mod protocol_v2;
 
 pub use methods::RealtimeTranscriptState;
 pub use methods::RealtimeWebsocketClient;

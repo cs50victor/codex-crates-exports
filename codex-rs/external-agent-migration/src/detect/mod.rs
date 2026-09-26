@@ -1,6 +1,6 @@
-mod memory;
-pub(crate) mod plugins;
-pub(crate) mod sessions;
+pub mod memory;
+pub mod plugins;
+pub mod sessions;
 
 use crate::config_values::is_empty_toml_table;
 use crate::config_values::merge_missing_mcp_servers;

@@ -44,7 +44,7 @@ impl Error for CredentialStoreError {
     }
 }
 
-mod error_kind;
+pub mod error_kind;
 
 impl From<CredentialStoreError> for std::io::Error {
     fn from(error: CredentialStoreError) -> Self {

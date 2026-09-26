@@ -1,8 +1,8 @@
-mod compact;
-mod live_output;
-mod model;
-mod render;
-mod transcript;
+pub mod compact;
+pub mod live_output;
+pub mod model;
+pub mod render;
+pub mod transcript;
 
 pub(crate) use model::CommandOutput;
 #[cfg(test)]

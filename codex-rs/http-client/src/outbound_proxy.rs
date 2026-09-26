@@ -33,9 +33,9 @@ const SYSTEM_PROXY_CACHE_MAX_ENTRIES: usize = 256;
 static ASYNC_SYSTEM_PROXY_RESOLUTION_PERMIT: Semaphore = Semaphore::const_new(1);
 
 #[cfg(target_os = "macos")]
-mod macos;
+pub mod macos;
 #[cfg(target_os = "windows")]
-mod windows;
+pub mod windows;
 
 /// Coarse semantic bucket for the HTTP or WebSocket client being constructed.
 ///

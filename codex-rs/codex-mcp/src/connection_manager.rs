@@ -6,15 +6,15 @@
 //! running RMCP clients.
 
 #[path = "connection_manager/required.rs"]
-mod required;
+pub mod required;
 #[path = "connection_manager/resources.rs"]
-mod resources;
+pub mod resources;
 #[path = "connection_manager/startup.rs"]
-mod startup;
+pub mod startup;
 #[path = "connection_manager/status.rs"]
-mod status;
+pub mod status;
 #[path = "connection_manager/tool_catalog.rs"]
-mod tool_catalog;
+pub mod tool_catalog;
 
 use startup::chatgpt_auth_provider_for_server;
 use startup::emit_update;

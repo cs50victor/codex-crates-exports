@@ -16,7 +16,7 @@ use codex_app_server_protocol::ClientRequest;
 use codex_app_server_protocol::ThreadItemsListResponse;
 
 #[path = "history_completion.rs"]
-mod completion;
+pub mod completion;
 
 impl App {
     /// Start one bounded page request shared by scrollback refill and the transcript overlay.

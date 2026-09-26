@@ -1,11 +1,11 @@
-mod capabilities;
-mod contributors;
-mod registry;
-mod session_isolation;
-mod state;
-mod tool_policy;
-mod turn_admission;
-mod user_instructions;
+pub mod capabilities;
+pub mod contributors;
+pub mod registry;
+pub mod session_isolation;
+pub mod state;
+pub mod tool_policy;
+pub mod turn_admission;
+pub mod user_instructions;
 
 pub use session_isolation::SessionIsolation;
 pub use tool_policy::ToolPolicy;
@@ -113,7 +113,7 @@ pub use user_instructions::UserInstructionsProvider;
 
 pub use contributors::ToolDispatchInput;
 
-mod model_request;
+pub mod model_request;
 pub use model_request::ModelRequestContributor;
 pub use model_request::ModelRequestInput;
 pub use model_request::ModelRequestKind;

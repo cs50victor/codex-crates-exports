@@ -1,26 +1,26 @@
 //! Migration helpers for importing external-agent configuration into Codex.
 
-mod config_values;
-mod detect;
-mod hooks_cla;
-mod hooks_common;
-mod hooks_cur;
-mod mcp;
-mod memory;
-mod memory_import;
-mod migration_source;
-mod model;
-mod plugins;
-mod reporting;
-mod rewrite;
-mod scope;
-mod service;
+pub mod config_values;
+pub mod detect;
+pub mod hooks_cla;
+pub mod hooks_common;
+pub mod hooks_cur;
+pub mod mcp;
+pub mod memory;
+pub mod memory_import;
+pub mod migration_source;
+pub mod model;
+pub mod plugins;
+pub mod reporting;
+pub mod rewrite;
+pub mod scope;
+pub mod service;
 pub mod sessions;
-mod source;
-mod source_cla;
-mod source_cur;
-mod subagents;
-mod utils;
+pub mod source;
+pub mod source_cla;
+pub mod source_cur;
+pub mod subagents;
+pub mod utils;
 
 use std::io;
 

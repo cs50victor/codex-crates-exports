@@ -1,6 +1,6 @@
 // This shadow-selection experiment is temporary and should be removed after evaluation.
 
-mod task_context;
+pub mod task_context;
 
 pub(crate) use task_context::ShadowTaskContext;
 

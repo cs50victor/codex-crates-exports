@@ -31,10 +31,10 @@ use tracing_subscriber::filter::Targets;
 use tracing_subscriber::fmt::writer::MakeWriter;
 use tracing_subscriber::registry::LookupSpan;
 
-pub(crate) mod feedback_diagnostics;
-mod guardian;
-mod report_upload;
-mod upload;
+pub mod feedback_diagnostics;
+pub mod guardian;
+pub mod report_upload;
+pub mod upload;
 pub use feedback_diagnostics::FEEDBACK_DIAGNOSTICS_ATTACHMENT_FILENAME;
 pub use feedback_diagnostics::FeedbackDiagnostic;
 pub use feedback_diagnostics::FeedbackDiagnostics;

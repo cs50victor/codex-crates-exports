@@ -4,17 +4,17 @@
 //! Implementations are responsible for resolving that id to local rollout files, RPC requests, or
 //! any other backing store.
 
-mod error;
-mod in_memory;
-mod live_thread;
-mod local;
-mod projects;
-mod queue_store;
-mod store;
-mod thread_attachments;
-mod thread_metadata_sync;
-mod thread_sections;
-mod types;
+pub mod error;
+pub mod in_memory;
+pub mod live_thread;
+pub mod local;
+pub mod projects;
+pub mod queue_store;
+pub mod store;
+pub mod thread_attachments;
+pub mod thread_metadata_sync;
+pub mod thread_sections;
+pub mod types;
 
 pub use codex_state::AddThreadAttachmentOutcome;
 pub use codex_state::MAX_QUEUE_ITEMS;

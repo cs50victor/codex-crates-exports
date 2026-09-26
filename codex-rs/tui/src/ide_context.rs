@@ -1,9 +1,9 @@
 //! IDE context data model and public helpers for TUI `/ide` support.
 
-mod ipc;
-mod prompt;
+pub mod ipc;
+pub mod prompt;
 #[cfg(windows)]
-mod windows_pipe;
+pub mod windows_pipe;
 
 pub(crate) use ipc::fetch_ide_context;
 pub(crate) use prompt::apply_ide_context_to_user_input;

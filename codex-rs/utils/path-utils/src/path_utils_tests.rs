@@ -20,7 +20,7 @@ fn replace_path_and_deduplicate_preserves_other_paths_and_order() {
 }
 
 #[cfg(unix)]
-mod symlinks {
+pub mod symlinks {
     use super::super::resolve_symlink_write_paths;
     use pretty_assertions::assert_eq;
     use std::os::unix::fs::symlink;
@@ -43,7 +43,7 @@ mod symlinks {
 }
 
 #[cfg(target_os = "linux")]
-mod wsl {
+pub mod wsl {
     use super::super::normalize_for_wsl_with_flag;
     use pretty_assertions::assert_eq;
     use std::path::PathBuf;
@@ -73,7 +73,7 @@ mod wsl {
     }
 }
 
-mod native_workdir {
+pub mod native_workdir {
     use super::super::normalize_for_native_workdir_with_flag;
     use pretty_assertions::assert_eq;
     use std::path::PathBuf;
@@ -100,7 +100,7 @@ mod native_workdir {
     }
 }
 
-mod path_comparison {
+pub mod path_comparison {
     use super::super::paths_match_after_normalization;
     use std::path::PathBuf;
 

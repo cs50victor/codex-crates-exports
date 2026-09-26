@@ -2,7 +2,7 @@
 //! transcript boundaries and deduplication state with the history reducer.
 //! The reducer selects when its effects are persisted relative to their source event.
 
-mod presentation;
+pub mod presentation;
 
 use codex_protocol::items::TurnItem;
 use codex_protocol::protocol::EventMsg;

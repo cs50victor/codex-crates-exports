@@ -23,7 +23,7 @@
 //! Explicit fresh draft replacements discard the saved draft and end search.
 
 #[path = "history_search_draft.rs"]
-mod draft;
+pub mod draft;
 
 use std::ops::Range;
 

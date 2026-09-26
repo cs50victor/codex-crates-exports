@@ -139,7 +139,7 @@ impl CloudBackend for HttpClient {
     }
 }
 
-mod api {
+pub mod api {
     use super::*;
     use serde_json::Value;
     use std::cmp::Ordering;

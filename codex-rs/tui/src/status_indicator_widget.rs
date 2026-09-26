@@ -35,11 +35,11 @@ use crate::width::display_width;
 use crate::wrapping::RtOptions;
 use crate::wrapping::word_wrap_lines;
 
-mod timer;
+pub mod timer;
 pub(crate) use timer::StatusTimer;
 
 #[path = "summary_shimmer.rs"]
-mod summary_shimmer;
+pub mod summary_shimmer;
 use summary_shimmer::summary_shimmer;
 
 pub(crate) const STATUS_DETAILS_DEFAULT_MAX_LINES: usize = 3;

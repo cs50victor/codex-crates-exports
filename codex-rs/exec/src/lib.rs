@@ -5,12 +5,12 @@
 #![recursion_limit = "256"]
 #![deny(clippy::print_stdout)]
 
-mod cli;
-mod event_processor;
-mod event_processor_with_human_output;
-pub(crate) mod event_processor_with_jsonl_output;
-pub(crate) mod exec_events;
-mod worktree;
+pub mod cli;
+pub mod event_processor;
+pub mod event_processor_with_human_output;
+pub mod event_processor_with_jsonl_output;
+pub mod exec_events;
+pub mod worktree;
 
 pub use cli::Cli;
 pub use cli::Command;

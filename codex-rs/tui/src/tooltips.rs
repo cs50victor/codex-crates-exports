@@ -227,7 +227,7 @@ pub(crate) fn render_tooltip(mut template: &str, keymap: Option<&RuntimeKeymap>)
     Some(rendered)
 }
 
-pub(crate) mod announcement {
+pub mod announcement {
     use crate::tooltips::ANNOUNCEMENT_TIP_URL;
     use crate::version::CODEX_CLI_VERSION;
     use chrono::NaiveDate;

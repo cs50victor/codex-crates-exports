@@ -61,26 +61,26 @@ pub(crate) use self::runtime::AgentControlInit;
 pub(crate) use self::runtime::LocalAgentRuntime;
 pub(crate) use self::watch::StatusSubscription;
 
-mod api;
-mod budget;
-mod completion;
-mod delivery;
-mod execution;
-mod inspection;
-mod interrupt;
-mod legacy;
-mod residency;
-mod resume;
-mod runtime;
-mod runtime_context;
-mod sender_context;
-mod service_tier;
-mod spawn;
-mod spawn_guard;
-mod spawn_telemetry;
-mod target;
-mod user_authorization;
-mod watch;
+pub mod api;
+pub mod budget;
+pub mod completion;
+pub mod delivery;
+pub mod execution;
+pub mod inspection;
+pub mod interrupt;
+pub mod legacy;
+pub mod residency;
+pub mod resume;
+pub mod runtime;
+pub mod runtime_context;
+pub mod sender_context;
+pub mod service_tier;
+pub mod spawn;
+pub mod spawn_guard;
+pub mod spawn_telemetry;
+pub mod target;
+pub mod user_authorization;
+pub mod watch;
 
 /// Per-session controller handle for a local agent tree.
 /// Handles retain a session identity and share their tree's `LocalAgentRuntime`.

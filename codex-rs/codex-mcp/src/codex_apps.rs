@@ -5,7 +5,7 @@
 
 use codex_utils_plugins::mcp_connector::sanitize_name;
 
-mod file_params;
+pub mod file_params;
 
 pub use file_params::declared_openai_file_input_param_names;
 pub(crate) use file_params::prepare_openai_file_params_for_model;

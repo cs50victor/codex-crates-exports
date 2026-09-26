@@ -31,7 +31,7 @@ use std::sync::PoisonError;
 use std::sync::RwLock;
 use std::time::Duration;
 
-mod gateway_oauth;
+pub mod gateway_oauth;
 pub use gateway_oauth::GatewayOAuthConfig;
 pub use gateway_oauth::GatewayOAuthDelivery;
 

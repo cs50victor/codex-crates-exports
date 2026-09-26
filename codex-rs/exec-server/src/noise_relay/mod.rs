@@ -1,8 +1,8 @@
-pub(crate) mod executor_stream;
-mod harness;
-pub(crate) mod message_framing;
-mod ordered_ciphertext;
-pub(crate) mod stream_handler;
+pub mod executor_stream;
+pub mod harness;
+pub mod message_framing;
+pub mod ordered_ciphertext;
+pub mod stream_handler;
 
 use tokio_tungstenite::tungstenite::protocol::WebSocketConfig;
 

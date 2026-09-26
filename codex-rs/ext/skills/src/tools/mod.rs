@@ -48,9 +48,9 @@ use crate::state::SkillsThreadState;
 use crate::telemetry::ActiveSkillTurnMetrics;
 use crate::telemetry::SkillTurnMetrics;
 
-mod list;
-mod read;
-mod schema;
+pub mod list;
+pub mod read;
+pub mod schema;
 
 const SKILLS_NAMESPACE: &str = "skills";
 const MAX_HANDLE_BYTES: usize = 2_048;

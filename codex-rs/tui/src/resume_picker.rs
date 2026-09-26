@@ -72,9 +72,9 @@ use tracing::warn;
 use unicode_width::UnicodeWidthStr;
 use uuid::Uuid;
 
-mod archive;
-mod layout;
-mod page_loading;
+pub mod archive;
+pub mod layout;
+pub mod page_loading;
 
 #[cfg(test)]
 #[path = "resume_picker_color_tests.rs"]
@@ -85,7 +85,7 @@ use page_loading::PageLoadMode;
 use page_loading::PaginationState;
 
 #[path = "resume_picker_transcript_preview.rs"]
-mod transcript_preview;
+pub mod transcript_preview;
 
 pub(crate) use transcript_preview::load_transcript_preview;
 

@@ -17,8 +17,8 @@ use std::sync::Arc;
 #[cfg(test)]
 use crate::tools::handlers::parse_arguments;
 
-mod exec_command;
-mod write_stdin;
+pub mod exec_command;
+pub mod write_stdin;
 
 pub use exec_command::ExecCommandHandler;
 pub(crate) use exec_command::ExecCommandHandlerOptions;

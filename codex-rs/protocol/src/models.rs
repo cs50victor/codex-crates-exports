@@ -32,9 +32,9 @@ use crate::ResponseItemId;
 use crate::mcp::CallToolResult;
 use codex_utils_path_uri::PathUri;
 
-mod configuration_update;
-mod executed_tool_calls;
-mod item_metadata;
+pub mod configuration_update;
+pub mod executed_tool_calls;
+pub mod item_metadata;
 
 pub use crate::local_media::MAX_PROMPT_AUDIO_INPUT_BYTES;
 pub use crate::local_media::snapshot_local_user_input;

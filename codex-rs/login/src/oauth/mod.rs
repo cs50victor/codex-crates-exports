@@ -3,11 +3,11 @@
 //! Callers supply an HTTP client with the application's proxy and CA policy. They retain
 //! ownership of credential storage, refresh scheduling, account validation, and login UX.
 
-mod authorization;
-mod client;
-mod diagnostics;
-mod error;
-mod pkce;
+pub mod authorization;
+pub mod client;
+pub mod diagnostics;
+pub mod error;
+pub mod pkce;
 
 pub(crate) use authorization::AuthorizationRequest;
 pub(crate) use authorization::CallbackError;

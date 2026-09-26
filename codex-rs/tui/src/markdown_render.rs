@@ -73,17 +73,17 @@ use std::ops::Range;
 use std::path::Path;
 use std::path::PathBuf;
 
-mod file_citations;
-mod list_spacing;
-mod local_links;
-mod math;
-mod mermaid;
-pub(crate) mod preferences;
-mod source_tables;
-mod streaming;
-mod table_key_value;
-mod task_lists;
-mod web_links;
+pub mod file_citations;
+pub mod list_spacing;
+pub mod local_links;
+pub mod math;
+pub mod mermaid;
+pub mod preferences;
+pub mod source_tables;
+pub mod streaming;
+pub mod table_key_value;
+pub mod task_lists;
+pub mod web_links;
 
 use file_citations::FileCitations;
 pub(crate) use list_spacing::ListSpacing;

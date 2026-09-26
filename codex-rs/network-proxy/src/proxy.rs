@@ -1,4 +1,4 @@
-mod execution_scope;
+pub mod execution_scope;
 #[cfg(test)]
 #[path = "proxy/managed_routing_tests.rs"]
 mod managed_routing_tests;
