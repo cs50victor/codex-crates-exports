@@ -23,6 +23,7 @@ pub mod spec_plan;
 pub mod tool_dispatch_trace;
 pub mod tool_namespaces_info;
 pub mod user_messaging;
+pub(crate) use user_messaging::record_confirmed_code_mode_send;
 
 use std::borrow::Cow;
 

@@ -80,7 +80,6 @@ pub mod resume_shutdown_tests;
 pub mod safety_buffering;
 #[path = "tests/session_lifecycle_requests.rs"]
 pub mod session_lifecycle_requests;
-pub mod session_summary;
 pub mod startup;
 #[path = "tests/startup_frame_tests.rs"]
 pub mod startup_frame_tests;
