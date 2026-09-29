@@ -976,6 +976,13 @@
     "added_library_target": false,
     "features": {},
     "kind": "library",
+    "name": "codex-utils-process",
+    "path": "codex-rs/utils/process"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
     "name": "codex-utils-pty",
     "path": "codex-rs/utils/pty"
   },

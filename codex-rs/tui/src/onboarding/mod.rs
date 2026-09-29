@@ -5,4 +5,6 @@ pub mod onboarding_screen;
 pub mod trust_directory;
 pub(crate) use auth::mark_underlined_hyperlink;
 pub(crate) use auth::mark_url_hyperlink;
+pub(crate) use onboarding_screen::DirectoryTrustOptions;
+pub(crate) use trust_directory::TrustCancelAction;
 pub mod welcome;

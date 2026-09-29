@@ -19,6 +19,7 @@
 //! so callers must distinguish them from confirmed native clipboard writes.
 //! Image paste lives in `clipboard_paste`.
 
+pub mod primary;
 pub mod tmux;
 pub mod worker;
 

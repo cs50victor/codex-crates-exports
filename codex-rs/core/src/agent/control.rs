@@ -71,6 +71,7 @@ pub mod interrupt;
 pub mod legacy;
 pub mod residency;
 pub mod resume;
+pub mod root_handoff;
 pub mod runtime;
 pub mod runtime_context;
 pub mod sender_context;
