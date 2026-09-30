@@ -1,9 +1,12 @@
 pub mod command_runner;
 pub mod discovery;
 pub mod dispatcher;
+pub mod matcher;
 pub mod mcp_runner;
 pub mod output_parser;
 pub mod schema_loader;
+
+pub(crate) use matcher::HookMatcher;
 
 use crate::events::compact::PostCompactRequest;
 use crate::events::compact::PreCompactOutcome;
@@ -60,7 +63,7 @@ pub(crate) struct ConfiguredHandler {
     /// Internally admitted cleanup hook, enabled independently of per-hook state.
     pub builtin: bool,
     pub event_name: codex_protocol::protocol::HookEventName,
-    pub matcher: Option<String>,
+    pub matcher: Option<HookMatcher>,
     pub timeout_sec: u64,
     pub status_message: Option<String>,
     pub additional_context_limit: AdditionalContextLimit,

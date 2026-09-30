@@ -43,6 +43,7 @@ pub mod backfill;
 pub mod external_agent_config_imports;
 pub mod goals;
 pub mod logs;
+pub mod logs_maintenance;
 pub mod memories;
 pub mod memory_versions;
 pub mod projects;
@@ -54,6 +55,7 @@ pub mod rollout_migration;
 #[cfg(test)]
 pub(crate) mod test_support;
 pub mod thread_attachments;
+pub mod thread_metadata;
 pub mod thread_section_order;
 pub mod thread_sections;
 pub mod threads;
@@ -275,12 +277,7 @@ impl StateRuntime {
             runtime.close().await;
             return Err(err);
         }
-        if let Err(err) = runtime.run_logs_startup_maintenance().await {
-            warn!(
-                "failed to run startup maintenance for logs db at {}: {err}",
-                logs_path.display(),
-            );
-        }
+        runtime.start_periodic_logs_maintenance(std::time::Duration::from_secs(30 * 60));
         Ok(runtime)
     }
 

@@ -1099,6 +1099,13 @@
     "added_library_target": false,
     "features": {},
     "kind": "library",
+    "name": "codex-windows-sandbox-test-support",
+    "path": "codex-rs/windows-sandbox-rs/tests/support"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
     "name": "codex-workload-identity",
     "path": "codex-rs/workload-identity"
   },

@@ -542,6 +542,9 @@ pub mod bedrock_auth;
 pub mod catalog_processor;
 pub mod command_exec_processor;
 pub mod config_processor;
+#[cfg(test)]
+#[path = "request_processors/config_reload_tests.rs"]
+mod config_reload_tests;
 pub mod diagnostics;
 pub mod environment_processor;
 pub mod feedback_doctor_report;

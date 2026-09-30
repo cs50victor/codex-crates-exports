@@ -533,7 +533,7 @@ impl App {
                     fork_config.model = Some(self.chat_widget.current_model().to_string());
                     fork_config.model_reasoning_effort =
                         self.chat_widget.current_reasoning_effort();
-                    let selected_profile = self.confirmed_server_profile(thread_id);
+                    let selected_profile = self.selected_server_profile(thread_id);
                     match app_server.fork_thread_at(
                         &self.local_settings,
                         fork_config,
@@ -574,6 +574,9 @@ impl App {
                                 .await
                             {
                                 Ok(()) => {
+                                    if selected_profile.is_some() {
+                                        self.adopt_inherited_server_selection();
+                                    }
                                     // Keep local input without replacing the fork's running state.
                                     self.chat_widget.restore_reconnected_input(retained_input, &[]);
                                     if let Some(err) = name_error {
@@ -1534,6 +1537,81 @@ impl App {
             AppEvent::FetchMcpInventory { detail, thread_id } => {
                 self.fetch_mcp_inventory(app_server, detail, thread_id);
             }
+            AppEvent::StartMcpLogin { name, thread_id } => {
+                if self.pending_mcp_login_start.is_some() {
+                    self.chat_widget.add_info_message(
+                        "MCP sign-in is starting. Wait for it to finish before trying again.".to_string(),
+                        /*hint*/ None,
+                    );
+                    return Ok(AppRunControl::Continue);
+                }
+                let request_id = format!("mcp-login-{}", uuid::Uuid::new_v4());
+                self.pending_mcp_login_start = Some(PendingMcpLoginStart {
+                    request_id: request_id.clone(),
+                    name: name.clone(),
+                    thread_id,
+                    completions: Vec::new(),
+                });
+                self.start_mcp_login(app_server, request_id, name, thread_id);
+            }
+            AppEvent::McpLoginStarted { request_id, result } => {
+                if let Some(pending) = self
+                    .pending_mcp_login_start
+                    .take_if(|pending| pending.request_id == request_id)
+                {
+                    match result {
+                        Ok(response) => {
+                            // Track the latest attempt per server: unrelated OAuth logins can
+                            // remain open while a user retries this server.
+                            if let Some(login_id) = response.login_id.as_ref() {
+                                self.active_mcp_login_ids
+                                    .insert(pending.name.clone(), login_id.clone());
+                            }
+                            let completed = pending.completions.iter().any(|completion| {
+                                completion.login_id == response.login_id
+                                    && completion.name == pending.name
+                            });
+                            if !completed {
+                                self.open_url_in_browser(response.authorization_url);
+                            }
+                        }
+                        Err(error) => {
+                            self.enqueue_thread_notification(
+                                pending.thread_id,
+                                ServerNotification::McpServerOauthLoginCompleted(
+                                    codex_app_server_protocol::McpServerOauthLoginCompletedNotification {
+                                        name: pending.name,
+                                        thread_id: Some(pending.thread_id.to_string()),
+                                        login_id: None,
+                                        success: false,
+                                        error: Some(error),
+                                    },
+                                ),
+                            ).await?;
+                        }
+                    }
+                    // A rejected start leaves the old attempt current. A successful replacement
+                    // has changed its ID, so the old cancellation is discarded here.
+                    for completion in pending.completions {
+                        if completion.login_id.is_some() {
+                            if completion.login_id.as_ref()
+                                != self.active_mcp_login_ids.get(&completion.name)
+                            {
+                                continue;
+                            }
+                            self.active_mcp_login_ids.remove(&completion.name);
+                        }
+                        if let Some(thread_id) = completion.thread_id.as_deref()
+                            .and_then(|id| ThreadId::from_string(id).ok())
+                        {
+                            self.enqueue_thread_notification(
+                                thread_id,
+                                ServerNotification::McpServerOauthLoginCompleted(completion),
+                            ).await?;
+                        }
+                    }
+                }
+            }
             AppEvent::McpInventoryLoaded {
                 result,
                 detail,
@@ -2376,8 +2454,20 @@ impl App {
                 }
                 self.chat_widget.on_plugin_mentions_loaded(plugins);
             }
-            AppEvent::OpenRealtimeSettings => {
-                self.open_realtime_settings(app_server).await;
+            AppEvent::OpenRealtimeSettings => self.chat_widget.open_realtime_settings(),
+            AppEvent::OpenRealtimeSoundDevices => self.chat_widget.open_realtime_sound_devices(),
+            AppEvent::OpenRealtimeVoices => self.open_realtime_voices(app_server).await,
+            AppEvent::OpenRealtimeDevicePicker { kind } => self.list_realtime_devices(kind),
+            AppEvent::RealtimeDevicesListed { origin, kind, result } => {
+                if origin == self.active_thread_id {
+                    match result {
+                        Ok(devices) => self.chat_widget.open_realtime_device_picker(kind, devices),
+                        Err(error) => self.chat_widget.add_error_message(error),
+                    }
+                }
+            }
+            AppEvent::PersistRealtimeDevice { kind, name } => {
+                self.persist_realtime_device(kind, name).await;
             }
             AppEvent::PersistRealtimeVoiceSelection { voice } => {
                 self.persist_realtime_voice(app_server, voice).await;

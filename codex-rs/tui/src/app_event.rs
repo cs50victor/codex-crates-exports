@@ -22,6 +22,7 @@ use codex_app_server_protocol::GetAccountRateLimitsResponse;
 use codex_app_server_protocol::MarketplaceAddResponse;
 use codex_app_server_protocol::MarketplaceRemoveResponse;
 use codex_app_server_protocol::MarketplaceUpgradeResponse;
+use codex_app_server_protocol::McpServerOauthLoginResponse;
 use codex_app_server_protocol::McpServerStatus;
 use codex_app_server_protocol::McpServerStatusDetail;
 use codex_app_server_protocol::PluginInstallResponse;
@@ -1067,6 +1068,16 @@ pub(crate) enum AppEvent {
         thread_id: Option<ThreadId>,
     },
 
+    StartMcpLogin {
+        name: String,
+        thread_id: ThreadId,
+    },
+
+    McpLoginStarted {
+        request_id: String,
+        result: Result<McpServerOauthLoginResponse, String>,
+    },
+
     /// Result of fetching MCP inventory via app-server RPCs.
     McpInventoryLoaded {
         result: Result<Vec<McpServerStatus>, String>,
@@ -1209,6 +1220,20 @@ pub(crate) enum AppEvent {
 
     /// Read the owning server preference before showing the voice picker.
     OpenRealtimeSettings,
+    OpenRealtimeSoundDevices,
+    OpenRealtimeVoices,
+    OpenRealtimeDevicePicker {
+        kind: codex_realtime_webrtc::AudioDeviceKind,
+    },
+    RealtimeDevicesListed {
+        origin: Option<ThreadId>,
+        kind: codex_realtime_webrtc::AudioDeviceKind,
+        result: Result<Vec<codex_realtime_webrtc::AudioDevice>, String>,
+    },
+    PersistRealtimeDevice {
+        kind: codex_realtime_webrtc::AudioDeviceKind,
+        name: Option<String>,
+    },
 
     /// Save the voice for subsequent conversations through the app server.
     PersistRealtimeVoiceSelection {
