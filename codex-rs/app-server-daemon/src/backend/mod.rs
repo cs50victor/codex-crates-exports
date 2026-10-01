@@ -1,4 +1,5 @@
 pub mod pid;
+pub mod stderr_log;
 #[cfg(windows)]
 pub mod windows;
 

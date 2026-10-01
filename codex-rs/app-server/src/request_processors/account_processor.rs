@@ -16,6 +16,7 @@ use codex_model_provider::is_supported_amazon_bedrock_region;
 use codex_otel::auth_storage::AuthStorageOriginator;
 use codex_rmcp_client::EnterpriseOAuthCredentialGuard;
 
+pub mod bedrock_gov_cloud;
 pub mod bedrock_setup;
 pub mod enterprise_login;
 pub mod gateway_oauth;

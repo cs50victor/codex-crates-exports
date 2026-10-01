@@ -8,6 +8,6 @@
       "rust-src",
       "llvm-tools-preview"
     ],
-    "toolchain": "nightly-2025-09-18"
+    "toolchain": "nightly-2026-08-20"
   }
 ]

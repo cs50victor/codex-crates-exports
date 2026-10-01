@@ -217,6 +217,7 @@ pub mod composer_hints;
 pub mod config_persistence;
 pub mod connector_mentions;
 pub mod daemon_menu;
+pub mod daybreak;
 pub mod empty_state_policy;
 pub mod event_dispatch;
 pub mod exit_summary;
