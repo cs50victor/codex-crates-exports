@@ -206,6 +206,13 @@
     "added_library_target": false,
     "features": {},
     "kind": "library",
+    "name": "codex-cloud-client",
+    "path": "codex-rs/cloud-client"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
     "name": "codex-cloud-config",
     "path": "codex-rs/cloud-config"
   },

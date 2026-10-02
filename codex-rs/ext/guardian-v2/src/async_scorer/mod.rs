@@ -5,6 +5,7 @@ pub mod classification;
 pub mod config;
 pub mod conversation;
 pub mod coverage;
+pub mod decisions;
 pub mod extension;
 pub mod metrics;
 pub mod observation;

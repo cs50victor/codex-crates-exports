@@ -157,6 +157,8 @@ pub mod hooks_rpc;
 pub mod ide_context;
 pub mod inline_visualization;
 pub mod insert_history;
+pub mod managed_worktree_tool_specs;
+pub mod managed_worktree_tools;
 pub use insert_history::insert_history_lines;
 pub mod footer_hint;
 pub mod key_hint;

@@ -59,6 +59,9 @@ pub mod daemon_telemetry;
 pub mod desktop_app;
 pub mod doctor;
 #[cfg(test)]
+#[path = "exec_args_tests.rs"]
+mod exec_args_tests;
+#[cfg(test)]
 #[path = "exec_server_args_tests.rs"]
 mod exec_server_args_tests;
 pub mod exec_server_auth;
