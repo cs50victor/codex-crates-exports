@@ -123,6 +123,9 @@ mod preparation;
 #[path = "scenarios_content_filter.rs"]
 mod content_filter;
 
+#[path = "scenarios_provider_capabilities.rs"]
+mod provider_capabilities;
+
 #[path = "scenarios_shared_instructions.rs"]
 mod shared_instructions;
 
@@ -134,6 +137,9 @@ mod tools_namespace_budget;
 
 #[path = "scenarios_skill_catalog_dedup.rs"]
 mod skill_catalog_dedup;
+
+#[path = "scenarios_compaction_tests.rs"]
+mod compaction;
 
 fn skills_extensions() -> Arc<ExtensionRegistry<Config>> {
     let mut extensions = ExtensionRegistryBuilder::<Config>::new();

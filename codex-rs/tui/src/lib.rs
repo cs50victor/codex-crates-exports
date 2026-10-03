@@ -125,6 +125,7 @@ pub mod clock_format;
 pub mod collaboration_modes;
 pub mod color;
 pub mod config_update;
+pub mod copy_input_guard;
 pub mod custom_terminal;
 pub mod daybreak;
 pub mod experimental_features;

@@ -45,6 +45,7 @@ pub mod test_support;
 pub mod thread_config;
 pub mod tui_effects;
 pub mod tui_keymap;
+pub mod tui_mouse_scroll;
 pub mod tui_rendering;
 pub mod types;
 

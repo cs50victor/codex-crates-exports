@@ -11,10 +11,25 @@ impl ChatWidget {
             .set_daybreak_command_description(self.daybreak_command_description());
     }
 
+    /// UI eligibility only; the catalog and server still determine model/program access.
+    pub(crate) fn daybreak_account_eligible(&self) -> bool {
+        self.config.model_provider_id == "openai"
+            && (self.has_chatgpt_account
+                || matches!(
+                    self.status_account_display,
+                    Some(StatusAccountDisplay::ApiKey)
+                ))
+    }
+
+    /// API-key turns need no explicit program while Daybreak is off.
+    pub(crate) fn daybreak_turn_eligible(&self, enabled: bool) -> bool {
+        self.daybreak_account_eligible() && (self.has_chatgpt_account || enabled)
+    }
+
     pub(super) fn daybreak_command_description(&self) -> Option<&'static str> {
         if self.daybreak_enabled {
             Some("Disable broader access for cybersecurity work")
-        } else if !self.has_chatgpt_account || self.config.model_provider_id != "openai" {
+        } else if !self.daybreak_account_eligible() {
             None
         } else {
             match crate::daybreak::availability(&self.model_catalog.models) {
@@ -196,6 +211,13 @@ impl ChatWidget {
     #[cfg_attr(not(test), allow(dead_code))]
     pub(crate) fn model_catalog(&self) -> Arc<ModelCatalog> {
         self.model_catalog.clone()
+    }
+
+    pub(crate) fn on_account_email_loaded(&mut self, current_email: Option<String>) {
+        if let Some(StatusAccountDisplay::ChatGpt { email, .. }) = &mut self.status_account_display
+        {
+            *email = current_email;
+        }
     }
 
     pub(crate) fn current_plan_type(&self) -> Option<PlanType> {
