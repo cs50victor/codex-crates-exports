@@ -212,6 +212,7 @@ pub mod activity_groups;
 pub mod app_server_event_targets;
 pub mod app_server_events;
 pub mod app_server_requests;
+pub mod app_server_thread_ownership;
 pub mod backend_banner_fallback;
 pub mod background_requests;
 pub mod composer_hints;

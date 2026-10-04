@@ -1,5 +1,5 @@
 {
-  "revision": "7d5f55bdad2d184019831f48a7c77d35af0fa1d5",
+  "revision": "afb436df8b70bb5bc57b86d9a3e829968988cd21",
   "packages": [
     {
       "name": "Inflector",
@@ -253,7 +253,7 @@
       "source": "registry+https://github.com/rust-lang/crates.io-index",
       "checksum": "40c48f72fd53cd289104fc64099abca73db4166ad86ea0b4341abe65af83dadc",
       "dependencies": [
-        "windows-sys 0.61.2"
+        "windows-sys 0.60.2"
       ]
     },
     {
@@ -264,7 +264,7 @@
       "dependencies": [
         "anstyle",
         "once_cell_polyfill",
-        "windows-sys 0.61.2"
+        "windows-sys 0.60.2"
       ]
     },
     {
@@ -5826,12 +5826,11 @@
     {
       "name": "crossterm",
       "version": "0.29.0",
-      "source": "git+https://github.com/openai-oss-forks/crossterm?rev=efa177859fd9623d57b9fe7ae9bf491ae1ac6ec4#efa177859fd9623d57b9fe7ae9bf491ae1ac6ec4",
+      "source": "git+https://github.com/openai-oss-forks/crossterm?rev=ed1cdab335221515706178d68495bba2aed1924f#ed1cdab335221515706178d68495bba2aed1924f",
       "dependencies": [
         "bitflags 2.13.1",
         "crossterm_winapi",
         "derive_more 2.1.1",
-        "document-features",
         "futures-core",
         "mio",
         "parking_lot",
@@ -6496,7 +6495,7 @@
         "libc",
         "option-ext",
         "redox_users 0.5.2",
-        "windows-sys 0.61.2"
+        "windows-sys 0.59.0"
       ]
     },
     {
@@ -6853,7 +6852,7 @@
       "checksum": "39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb",
       "dependencies": [
         "libc",
-        "windows-sys 0.61.2"
+        "windows-sys 0.52.0"
       ]
     },
     {
@@ -7503,7 +7502,7 @@
         "gobject-sys",
         "libc",
         "system-deps",
-        "windows-sys 0.61.2"
+        "windows-sys 0.52.0"
       ]
     },
     {
@@ -9616,7 +9615,7 @@
       "dependencies": [
         "hermit-abi",
         "libc",
-        "windows-sys 0.61.2"
+        "windows-sys 0.52.0"
       ]
     },
     {
@@ -9682,7 +9681,7 @@
         "portable-atomic",
         "portable-atomic-util",
         "serde_core",
-        "windows-sys 0.61.2"
+        "windows-sys 0.52.0"
       ]
     },
     {
@@ -10591,7 +10590,7 @@
       "source": "registry+https://github.com/rust-lang/crates.io-index",
       "checksum": "7957b9740744892f114936ab4a57b3f487491bbeafaf8083688b16841a4240e5",
       "dependencies": [
-        "windows-sys 0.61.2"
+        "windows-sys 0.59.0"
       ]
     },
     {
@@ -11308,7 +11307,7 @@
       "checksum": "7d8fae84b431384b68627d0f9b3b1245fcf9f46f6c0e3dc902e9dce64edd1967",
       "dependencies": [
         "libc",
-        "windows-sys 0.61.2"
+        "windows-sys 0.48.0"
       ]
     },
     {
@@ -12241,7 +12240,7 @@
         "libc",
         "log",
         "socket2 0.6.3",
-        "windows-sys 0.61.2"
+        "windows-sys 0.52.0"
       ]
     },
     {
@@ -13544,7 +13543,7 @@
         "errno",
         "libc",
         "linux-raw-sys 0.12.1",
-        "windows-sys 0.61.2"
+        "windows-sys 0.52.0"
       ]
     },
     {
@@ -13603,7 +13602,7 @@
         "security-framework 3.5.1",
         "security-framework-sys",
         "webpki-root-certs",
-        "windows-sys 0.61.2"
+        "windows-sys 0.52.0"
       ]
     },
     {
@@ -14427,7 +14426,7 @@
       "checksum": "3a766e1110788c36f4fa1c2b71b387a7815aa65f88ce0229841826633d93723e",
       "dependencies": [
         "libc",
-        "windows-sys 0.61.2"
+        "windows-sys 0.60.2"
       ]
     },
     {
@@ -15257,7 +15256,7 @@
         "getrandom 0.4.2",
         "once_cell",
         "rustix 1.1.4",
-        "windows-sys 0.61.2"
+        "windows-sys 0.52.0"
       ]
     },
     {
@@ -15313,7 +15312,7 @@
         "parking_lot",
         "rustix 1.1.4",
         "signal-hook",
-        "windows-sys 0.61.2"
+        "windows-sys 0.60.2"
       ]
     },
     {
@@ -17064,7 +17063,7 @@
       "source": "registry+https://github.com/rust-lang/crates.io-index",
       "checksum": "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22",
       "dependencies": [
-        "windows-sys 0.61.2"
+        "windows-sys 0.48.0"
       ]
     },
     {
@@ -18172,7 +18171,7 @@
   "patches": {
     "crossterm": {
       "git": "https://github.com/openai-oss-forks/crossterm",
-      "rev": "efa177859fd9623d57b9fe7ae9bf491ae1ac6ec4"
+      "rev": "ed1cdab335221515706178d68495bba2aed1924f"
     },
     "tokio-tungstenite": {
       "git": "https://github.com/openai-oss-forks/tokio-tungstenite",

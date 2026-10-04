@@ -4,7 +4,7 @@
     "version": "0.29.0",
     "source": {
       "git": "https://github.com/openai-oss-forks/crossterm",
-      "rev": "efa177859fd9623d57b9fe7ae9bf491ae1ac6ec4"
+      "rev": "ed1cdab335221515706178d68495bba2aed1924f"
     }
   },
   {
