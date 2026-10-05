@@ -261,6 +261,7 @@ pub mod session_lifecycle;
 pub mod session_picker;
 pub mod side;
 pub mod startup;
+pub mod startup_bootstrap;
 pub mod startup_prompts;
 pub mod startup_warnings;
 pub mod thread_event_buffer;
