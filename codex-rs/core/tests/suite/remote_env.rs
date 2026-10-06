@@ -2,6 +2,8 @@
 mod capability_roots;
 #[path = "guardian_environments_tests.rs"]
 mod guardian_environments;
+#[path = "remote_env_required_skills_tests.rs"]
+mod required_skills;
 #[path = "remote_env_spawn_tests.rs"]
 pub(super) mod spawn_tests;
 
@@ -75,6 +77,7 @@ use codex_protocol::protocol::Op;
 use codex_protocol::protocol::ReviewDecision;
 use codex_protocol::protocol::SandboxPolicy;
 use codex_protocol::protocol::ThreadSettingsOverrides;
+use codex_protocol::protocol::TurnEnvironmentRequest;
 use codex_protocol::protocol::TurnEnvironmentSelection;
 use codex_protocol::protocol::TurnEnvironmentSelections;
 use codex_protocol::protocol::TurnSettingsUpdate;
@@ -1690,7 +1693,7 @@ async fn shared_executor_keeps_ready_capability_roots_scoped_to_each_attachment(
     let second = test
         .thread_manager
         .start_thread(StartThreadOptions {
-            environments: Some(vec![TurnEnvironmentSelection {
+            environments: Some(vec![TurnEnvironmentRequest {
                 config: EnvironmentConfigState::Ready(EnvironmentConfig {
                     allow_login_shell: true,
                     workspace_roots: selection.workspace_roots.clone(),
@@ -1704,7 +1707,7 @@ async fn shared_executor_keeps_ready_capability_roots_scoped_to_each_attachment(
                     network_policy: None,
                     selected_capability_roots: vec![root("startup-root"), root("second-root")],
                 }),
-                ..selection.clone()
+                ..selection.clone().into_request()
             }]),
             thread_extension_init: second_thread_init,
             ..StartThreadOptions::new(test.config.clone())
@@ -1965,7 +1968,7 @@ async fn pending_attachment_installs_configuration_before_waiting_turn_resumes()
     };
     let start_pending_thread = || {
         test.thread_manager.start_thread(StartThreadOptions {
-            environments: Some(vec![pending_selection.clone()]),
+            environments: Some(vec![pending_selection.clone().into_request()]),
             ..StartThreadOptions::new(test.config.clone())
         })
     };
@@ -2414,7 +2417,7 @@ async fn future_pending_environment_can_finish_without_retargeting_the_active_tu
     let thread = test
         .thread_manager
         .start_thread(StartThreadOptions {
-            environments: Some(vec![active.clone()]),
+            environments: Some(vec![active.clone().into_request()]),
             ..StartThreadOptions::new(test.config.clone())
         })
         .await?
@@ -2528,7 +2531,7 @@ async fn active_environment_update_wakes_the_old_wait_with_the_new_selection() -
     let thread = test
         .thread_manager
         .start_thread(StartThreadOptions {
-            environments: Some(vec![original.clone()]),
+            environments: Some(vec![original.clone().into_request()]),
             ..StartThreadOptions::new(test.config.clone())
         })
         .await?
@@ -2797,7 +2800,7 @@ async fn ready_before_selection_resolves_resumed_thread_capability_root_after_wa
     let resumed = test
         .thread_manager
         .start_thread(StartThreadOptions {
-            environments: Some(vec![selection.clone()]),
+            environments: Some(vec![selection.clone().into_request()]),
             thread_extension_init,
             ..StartThreadOptions::new(test.config.clone())
         })
@@ -3154,12 +3157,22 @@ async fn deferred_executor_spawn_agent_inherits_ready_step_environments(
     Ok(())
 }
 
+#[test_case("exec_command")]
+#[test_case("mcp_elicitation")]
 #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
-async fn deferred_executor_guardian_uses_newly_ready_step_environment() -> Result<()> {
+async fn deferred_executor_guardian_uses_newly_ready_step_environment(
+    tool: &'static str,
+) -> Result<()> {
     const WAIT_CALL_ID: &str = "wait-for-guardian-environment";
     const EXEC_CALL_ID: &str = "guardian-ready-environment-command";
     const DENIAL_RATIONALE: &str = "The remote environment policy denies this action.";
 
+    if tool == "mcp_elicitation" {
+        core_test_support::skip_if_wine_exec!(
+            Ok(()),
+            "the MCP fixture requires a host Python interpreter"
+        );
+    }
     let listener = TcpListener::bind("127.0.0.1:0").await?;
     let server = start_mock_server().await;
     let completed_response =
@@ -3177,17 +3190,21 @@ async fn deferred_executor_guardian_uses_newly_ready_step_environment() -> Resul
             ),
             completed_response(
                 "resp-guardian-command",
-                ev_function_call(
-                    EXEC_CALL_ID,
-                    "exec_command",
-                    &json!({
-                        "cmd": "printf guardian-should-not-run",
-                        "environment_id": REMOTE_ENVIRONMENT_ID,
-                        "sandbox_permissions": SandboxPermissions::RequireEscalated,
-                        "justification": "Review the newly ready remote environment.",
-                    })
-                    .to_string(),
-                ),
+                if tool == "mcp_elicitation" {
+                    ev_function_call_with_namespace(EXEC_CALL_ID, "mcp__cua_repl", "js", "{}")
+                } else {
+                    ev_function_call(
+                        EXEC_CALL_ID,
+                        "exec_command",
+                        &json!({
+                            "cmd": "printf guardian-should-not-run",
+                            "environment_id": REMOTE_ENVIRONMENT_ID,
+                            "sandbox_permissions": SandboxPermissions::RequireEscalated,
+                            "justification": "Review the newly ready remote environment.",
+                        })
+                        .to_string(),
+                    )
+                },
             ),
             completed_response(
                 "resp-guardian-review",
@@ -3205,11 +3222,21 @@ async fn deferred_executor_guardian_uses_newly_ready_step_environment() -> Resul
     .await;
     let mut builder = test_codex()
         .with_exec_server_url(format!("ws://{}", listener.local_addr()?))
-        .with_config(|config| {
+        .with_config(move |config| {
             config.project_doc_max_bytes = 0;
             config.permissions.approval_policy = Constrained::allow_any(AskForApproval::OnRequest);
             config.approvals_reviewer = ApprovalsReviewer::AutoReview;
             assert!(config.features.enable(Feature::DeferredExecutor).is_ok());
+            if tool == "mcp_elicitation" {
+                config.mcp_servers.set(serde_json::from_value(json!({
+                    "cua_repl": {
+                        "command": if cfg!(windows) { "python" } else { "python3" },
+                        "args": ["-u", "-c", super::guardian_mcp_elicitation::ELICITATION_SERVER,
+                            json!([{"codex_sensitive_action": true}]).to_string(), "forward"],
+                        "default_tools_approval_mode": "approve",
+                    }
+                })).expect("MCP server config")).expect("set MCP fixture");
+            }
         });
     let (attach_tx, attach_rx) = tokio::sync::oneshot::channel();
     let (shutdown_tx, shutdown_rx) = tokio::sync::oneshot::channel();
@@ -3220,6 +3247,9 @@ async fn deferred_executor_guardian_uses_newly_ready_step_environment() -> Resul
         shutdown_rx,
     ));
     let test = expect_startup(builder.build_with_remote_and_local_env(&server)).await;
+    if tool == "mcp_elicitation" {
+        core_test_support::wait_for_mcp_server(&test.codex, "cua_repl").await?;
+    }
     let remote_cwd = test.cwd.path().join("guardian-remote").abs();
     let local_cwd = test.cwd.path().abs();
     fs::create_dir_all(remote_cwd.as_path())?;
@@ -3305,10 +3335,10 @@ async fn deferred_executor_guardian_uses_newly_ready_step_environment() -> Resul
         "Guardian used the stale local environment's denied-read policy: {guardian_context}"
     );
     let rejection = requests
-        .iter()
-        .find_map(|request| request.function_call_output_text(EXEC_CALL_ID))
-        .context("Guardian denial should be returned to the parent model")?;
-    assert!(rejection.contains(DENIAL_RATIONALE));
+        .last()
+        .context("expected parent continuation after review")?
+        .function_call_output(EXEC_CALL_ID);
+    assert!(rejection.to_string().contains(DENIAL_RATIONALE));
 
     shutdown_tx
         .send(())
