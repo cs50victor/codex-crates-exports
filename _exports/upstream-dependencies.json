@@ -1,5 +1,5 @@
 {
-  "revision": "822e58cc3d666166c7446c5b1ea2e52f5d09594c",
+  "revision": "5a3140176e668a2f72f3c098490eb7f7052d9d85",
   "packages": [
     {
       "name": "Inflector",
@@ -2011,6 +2011,7 @@
         "codex-protocol",
         "codex-state",
         "codex-utils-absolute-path",
+        "codex-utils-path-uri",
         "os_info",
         "pretty_assertions",
         "serde",
@@ -2151,6 +2152,7 @@
         "hmac 0.12.1",
         "http 1.4.0",
         "keyring",
+        "libc",
         "opentelemetry",
         "opentelemetry_sdk",
         "pretty_assertions",
@@ -3559,6 +3561,7 @@
         "codex-history",
         "codex-protocol",
         "pretty_assertions",
+        "serde",
         "serde_json"
       ]
     },
@@ -3609,6 +3612,7 @@
         "codex-prompts",
         "codex-protocol",
         "codex-utils-cargo-bin",
+        "codex-websocket-client",
         "core_test_support",
         "dirs",
         "http 1.4.0",

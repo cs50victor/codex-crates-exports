@@ -22,6 +22,8 @@ pub mod approvals;
 pub mod capabilities;
 pub mod codex_error_info;
 pub mod config_types;
+pub mod guardian_transcript;
+pub use guardian_transcript::TranscriptFormat;
 pub mod dynamic_tools;
 pub mod environment;
 pub mod error;

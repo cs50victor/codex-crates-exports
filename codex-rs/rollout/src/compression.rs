@@ -21,6 +21,7 @@ pub mod error_metrics;
 pub mod path_metadata;
 pub mod read_metrics;
 
+pub(crate) use blocking_reader::read_rollout_lines;
 use error_metrics::FailureMetric;
 pub(crate) use path_metadata::existing_rollout_with_metadata_sync;
 use read_metrics::ReadFailureSource;
