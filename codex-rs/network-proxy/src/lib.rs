@@ -8,6 +8,7 @@ pub mod config;
 pub mod connect_policy;
 pub mod connection_lifecycle;
 pub mod credential_broker;
+pub mod domain_matcher;
 pub mod environment_policy;
 pub mod http_proxy;
 pub mod mitm;

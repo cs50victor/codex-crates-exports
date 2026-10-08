@@ -4,6 +4,7 @@
 pub mod code_mode;
 pub mod dynamic_tool;
 pub mod function_call_error;
+pub mod functions_namespace_function_prefixes;
 pub mod image_detail;
 pub mod indirect_namespace_prefixes;
 pub mod json_schema;
@@ -30,6 +31,7 @@ pub use code_mode::tool_spec_to_code_mode_tool_definition;
 pub use codex_protocol::ToolName;
 pub use dynamic_tool::parse_dynamic_tool;
 pub use function_call_error::FunctionCallError;
+pub use functions_namespace_function_prefixes::FunctionsNamespaceFunctionPrefixes;
 pub use image_detail::can_request_original_image_detail;
 pub use image_detail::normalize_output_image_detail;
 pub use image_detail::sanitize_original_image_detail;
