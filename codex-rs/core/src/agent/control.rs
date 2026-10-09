@@ -73,6 +73,7 @@ pub mod interrupt;
 pub mod legacy;
 pub mod mailbox;
 pub mod residency;
+pub use residency::ThreadEvictionOutcome;
 pub mod resume;
 pub mod root_handoff;
 pub mod runtime;

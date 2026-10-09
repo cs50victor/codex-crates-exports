@@ -12,6 +12,7 @@ pub mod tools;
 pub mod types;
 
 pub use api::AgentMessageBoard;
+pub use api::ChannelDescription;
 pub use api::ChannelQuery;
 pub use api::CreateChannelRequest;
 pub use api::PageRequest;

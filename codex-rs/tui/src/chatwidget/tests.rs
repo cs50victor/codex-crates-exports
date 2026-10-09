@@ -257,6 +257,8 @@ pub mod history_projection;
 pub mod history_replay;
 #[path = "tests/home_cleanup_tests.rs"]
 pub mod home_cleanup_tests;
+#[path = "tests/iterm_session_status.rs"]
+pub mod iterm_session_status;
 #[path = "tests/luna_reserve_usage_tests.rs"]
 pub mod luna_reserve_usage_tests;
 pub mod mcp_startup;

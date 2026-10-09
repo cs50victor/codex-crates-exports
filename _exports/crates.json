@@ -766,13 +766,6 @@
     "added_library_target": false,
     "features": {},
     "kind": "library",
-    "name": "codex-shell-escalation",
-    "path": "codex-rs/shell-escalation"
-  },
-  {
-    "added_library_target": false,
-    "features": {},
-    "kind": "library",
     "name": "codex-skills",
     "path": "codex-rs/skills"
   },

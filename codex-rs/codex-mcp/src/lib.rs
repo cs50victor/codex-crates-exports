@@ -122,6 +122,7 @@ pub mod resource_client;
 pub mod resource_origin;
 pub mod rmcp_client;
 pub mod runtime;
+pub mod sandbox_executable;
 pub mod server;
 pub mod tool_catalog_cache;
 pub mod tools;

@@ -147,6 +147,7 @@ pub use codex_prompts as review_prompts;
 pub mod thread_manager;
 pub mod web_search;
 pub mod windows_sandbox_read_grants;
+pub use agent::control::ThreadEvictionOutcome;
 pub use thread_manager::AgentTreeShutdown;
 pub use thread_manager::AgentTreeShutdownFailure;
 pub use thread_manager::AgentTreeShutdownFailureReason;
