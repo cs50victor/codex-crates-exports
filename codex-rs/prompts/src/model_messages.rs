@@ -15,11 +15,13 @@ use permissions::ResolvedPermissionMessages;
 
 pub mod collaboration;
 pub mod guardian;
+pub mod incremental_tools;
 pub mod multi_agent;
 pub mod permissions;
 
 pub use collaboration::ResolvedCollaborationModeMessages;
 pub use guardian::ResolvedAutoReviewMessages;
+pub use incremental_tools::ResolvedIncrementalToolMessages;
 pub use multi_agent::ResolvedMultiAgentMessages;
 
 /// Text together with whether it was supplied by the catalog, even when it equals the default.
@@ -213,6 +215,15 @@ impl<'a> ResolvedModelMessages<'a> {
             .as_ref()?
             .functions_namespace_functions_description_prefixes
             .as_ref()
+    }
+
+    /// Resolves bounded incremental catalog wording for an owned world-state section.
+    pub fn incremental_tools(&self) -> ResolvedIncrementalToolMessages {
+        ResolvedIncrementalToolMessages::new(
+            self.catalog_messages
+                .and_then(|messages| messages.tools.as_ref())
+                .and_then(|tools| tools.incremental_tools.as_ref()),
+        )
     }
 
     /// Selects Code Mode messages; bundled text and runtime composition belong to the tool owner.

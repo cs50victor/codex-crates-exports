@@ -257,8 +257,6 @@ pub mod history_projection;
 pub mod history_replay;
 #[path = "tests/home_cleanup_tests.rs"]
 pub mod home_cleanup_tests;
-#[path = "tests/iterm_session_status.rs"]
-pub mod iterm_session_status;
 #[path = "tests/luna_reserve_usage_tests.rs"]
 pub mod luna_reserve_usage_tests;
 pub mod mcp_startup;
@@ -299,6 +297,8 @@ pub mod status_command_tests;
 pub mod status_surface_previews;
 #[path = "tests/subagent_activity_tests.rs"]
 pub mod subagent_activity;
+#[path = "tests/terminal_program_status.rs"]
+pub mod terminal_program_status;
 pub mod terminal_title;
 #[path = "tests/tool_activity_tests.rs"]
 pub mod tool_activity_tests;

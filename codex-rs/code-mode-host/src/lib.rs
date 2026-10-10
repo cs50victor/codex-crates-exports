@@ -48,6 +48,7 @@ pub use self::transport::DEFAULT_LISTEN_URL;
 
 pub mod delegate;
 pub mod grpc;
+pub mod grpc_stdio;
 pub mod grpc_transport;
 pub mod peer;
 pub mod transport;

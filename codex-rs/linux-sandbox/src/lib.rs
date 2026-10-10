@@ -16,8 +16,6 @@ pub mod exec_util;
 #[cfg(target_os = "linux")]
 pub mod fd_mount;
 #[cfg(target_os = "linux")]
-pub mod landlock;
-#[cfg(target_os = "linux")]
 pub mod launcher;
 #[cfg(target_os = "linux")]
 pub mod linux_run_main;
@@ -25,6 +23,8 @@ pub mod linux_run_main;
 pub mod proxy_lifecycle;
 #[cfg(target_os = "linux")]
 pub mod proxy_routing;
+#[cfg(target_os = "linux")]
+pub mod seccomp;
 #[cfg(target_os = "linux")]
 pub mod wslg;
 
