@@ -104,6 +104,7 @@ pub(crate) use codex_app_server_client::legacy_core;
 
 pub(crate) use worktree_startup::ManagedTuiWorktree;
 
+pub mod activation_key_guard;
 pub mod additional_dirs;
 pub mod analytics;
 pub mod app;
@@ -128,6 +129,7 @@ pub mod clipboard_paste;
 pub mod clock_format;
 pub mod collaboration_modes;
 pub mod color;
+pub mod config_panel;
 pub mod config_update;
 pub mod copy_input_guard;
 pub mod custom_terminal;
