@@ -147,6 +147,7 @@ pub use codex_protocol::config_types::ModelProviderAuthInfo;
 pub mod event_mapping;
 pub use codex_prompts as review_prompts;
 pub mod thread_manager;
+pub mod thread_spawn;
 pub mod web_search;
 pub mod windows_sandbox_read_grants;
 pub use agent::control::ThreadEvictionOutcome;

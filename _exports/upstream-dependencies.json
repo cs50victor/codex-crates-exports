@@ -1,5 +1,5 @@
 {
-  "revision": "f82e36592278a0a782fb0d0fc97e5fa10e832ac2",
+  "revision": "c22a06c18070c3e33bd2648c7210a00a2a9f6f80",
   "packages": [
     {
       "name": "Inflector",
@@ -2219,6 +2219,7 @@
         "blake3",
         "codex-app-server-protocol",
         "codex-app-server-transport",
+        "codex-features",
         "codex-http-client",
         "codex-install-context",
         "codex-uds",
@@ -3301,6 +3302,7 @@
         "codex-network-proxy",
         "codex-protocol",
         "codex-shell-command",
+        "codex-skills",
         "codex-utils-path-uri",
         "pretty_assertions",
         "serde",
@@ -3402,6 +3404,7 @@
         "codex-rollout",
         "codex-thread-store",
         "codex-utils-output-truncation",
+        "linkify",
         "pretty_assertions",
         "serde",
         "serde_json",
@@ -4636,7 +4639,6 @@
         "schemars 0.8.22",
         "serde",
         "serde_json",
-        "serde_yaml",
         "tempfile",
         "tokio",
         "toml 0.9.11+spec-1.1.0",
@@ -4932,6 +4934,7 @@
       "version": "0.0.0",
       "dependencies": [
         "base64 0.22.1",
+        "block2",
         "core-foundation 0.10.1",
         "dirs",
         "objc2",
@@ -10004,6 +10007,15 @@
       "checksum": "4d1e908a416d6e9f725743b84a36feea40c4c131e805fbc26d61f9f451f36080"
     },
     {
+      "name": "linkify",
+      "version": "0.11.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "92f9ae2f3d31697697311f016320fe984127e636b45cf5eb5c175b7eb103dadb",
+      "dependencies": [
+        "memchr"
+      ]
+    },
+    {
       "name": "linktime-proc-macro",
       "version": "0.1.0",
       "source": "registry+https://github.com/rust-lang/crates.io-index",
@@ -10949,8 +10961,10 @@
       "source": "registry+https://github.com/rust-lang/crates.io-index",
       "checksum": "e48e0b8b339e0d9d2ed4416b7f93f9d4daadff7d4dd797f89867cde11aeac607",
       "dependencies": [
+        "block2",
         "objc2",
-        "objc2-foundation"
+        "objc2-foundation",
+        "objc2-security"
       ]
     },
     {
@@ -10963,6 +10977,17 @@
         "objc2",
         "objc2-core-foundation",
         "objc2-foundation"
+      ]
+    },
+    {
+      "name": "objc2-security",
+      "version": "0.3.2",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "709fe137109bd1e8b5a99390f77a7d8b2961dafc1a1c5db8f2e60329ad6d895a",
+      "dependencies": [
+        "bitflags 2.13.1",
+        "objc2",
+        "objc2-core-foundation"
       ]
     },
     {

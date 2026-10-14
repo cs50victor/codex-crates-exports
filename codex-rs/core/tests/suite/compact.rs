@@ -1151,8 +1151,12 @@ async fn reasoning_effort_override_remote_v2_compaction_resets_pinned_effort(
     Ok(())
 }
 
+#[test_case::test_case(json!({"input_tokens": 120_000, "output_tokens": 30_000, "total_tokens": 150_000}); "reported_usage")]
+#[test_case::test_case(Value::Null; "missing_usage")]
 #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
-async fn incomplete_response_during_compaction_is_terminal() -> Result<()> {
+async fn incomplete_response_during_compaction_is_terminal_and_counted(
+    reported_usage: Value,
+) -> Result<()> {
     skip_if_no_network!(Ok(()));
     for (provider, expected_error) in [
         (
@@ -1178,7 +1182,8 @@ async fn incomplete_response_during_compaction_is_terminal() -> Result<()> {
                     "type": "response.incomplete",
                     "response": {
                         "id": "incomplete-compaction",
-                        "incomplete_details": {"reason": "max_output_tokens"}
+                        "incomplete_details": {"reason": "max_output_tokens"},
+                        "usage": reported_usage
                     }
                 })]),
             ],
@@ -1243,6 +1248,19 @@ async fn incomplete_response_during_compaction_is_terminal() -> Result<()> {
         })
         .await;
         assert_eq!(errors, vec![expected_error]);
+        assert_eq!(
+            test.codex
+                .token_usage_info()
+                .await
+                .expect("partial usage")
+                .total_token_usage
+                .total_tokens,
+            if reported_usage.is_null() {
+                120_000
+            } else {
+                270_000
+            },
+        );
         assert_eq!(
             response_mock
                 .requests()
@@ -5891,6 +5909,7 @@ async fn remote_v2_compaction_refreshes_instructions_and_preserves_them_on_cold_
     )?;
     let mut builder = test_codex()
         .with_home(Arc::clone(&home))
+        .with_model_info_override("gpt-5.5", |model| model.use_responses_lite = true)
         .with_auth(CodexAuth::create_dummy_chatgpt_auth_for_testing());
     let test = builder.build(&server).await?;
 
@@ -5950,6 +5969,7 @@ async fn remote_v2_compaction_refreshes_instructions_and_preserves_them_on_cold_
     let resumed_cwd = test.config.cwd.clone();
     let mut resume_builder = test_codex()
         .with_home(Arc::clone(&home))
+        .with_model_info_override("gpt-5.5", |model| model.use_responses_lite = true)
         .with_auth(CodexAuth::create_dummy_chatgpt_auth_for_testing())
         .with_config(move |config| config.cwd = resumed_cwd);
     let resumed = resume_builder
@@ -5965,7 +5985,7 @@ async fn remote_v2_compaction_refreshes_instructions_and_preserves_them_on_cold_
     assert_single_instruction_fragment(&requests[3], &new_fragment);
     let resumed_input = requests[3].input();
     assert_eq!(
-        resumed_input.get(1..=replacement_history.len()),
+        resumed_input.get(2..=replacement_history.len() + 1),
         Some(replacement_history.as_slice()),
         "remote-v2 cold resume should replay persisted replacement history verbatim"
     );
