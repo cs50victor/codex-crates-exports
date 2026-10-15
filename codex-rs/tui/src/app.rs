@@ -277,6 +277,7 @@ pub mod thread_settings;
 pub mod thread_title;
 pub mod transcript_export;
 pub mod tui_mode_picker;
+pub mod user_turn_submission;
 pub mod user_verification;
 pub mod user_verification_errors;
 pub mod user_verification_requests;
@@ -875,6 +876,12 @@ impl App {
         {
             self.discard_startup_modal_input(tui)?;
             return Ok(AppRunControl::Continue);
+        }
+        if matches!(&event, TuiEvent::Key(key) if key.kind != KeyEventKind::Release)
+            || matches!(&event, TuiEvent::Paste(text) if !text.is_empty())
+            || matches!(&event, TuiEvent::Mouse(mouse) if mouse.kind != crossterm::event::MouseEventKind::Moved)
+        {
+            self.chat_widget.acknowledge_program_status();
         }
         let idle_draw = matches!(event, TuiEvent::Draw);
         if self.handle_rendered_selection_event(tui, &event)? {

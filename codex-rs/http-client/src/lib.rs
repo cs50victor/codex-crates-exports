@@ -5,6 +5,7 @@ pub mod client_builder;
 pub mod client_tls;
 pub mod custom_ca;
 pub mod error;
+pub mod native_roots;
 pub mod network_policy;
 pub mod outbound_proxy;
 pub mod request;

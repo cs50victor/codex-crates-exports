@@ -275,6 +275,8 @@ pub mod plan_mode;
 #[path = "tests/plugin_catalog_tests.rs"]
 pub mod plugin_catalog;
 pub mod popups_and_settings;
+#[path = "tests/program_status.rs"]
+pub mod program_status;
 #[path = "tests/rate_limit_recovery_tests.rs"]
 pub mod rate_limit_recovery_tests;
 #[path = "tests/reasoning_status_tests.rs"]
