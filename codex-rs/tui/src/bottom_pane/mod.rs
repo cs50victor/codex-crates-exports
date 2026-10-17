@@ -158,9 +158,11 @@ pub mod mentions_v2;
 pub mod picker_presets;
 pub mod picker_rows;
 pub mod picker_style;
+pub mod shortcut_hud;
 pub mod shortcut_overlay;
 pub(crate) use picker_style::active_tab_style;
 pub(crate) use picker_style::selection_style;
+pub(crate) use shortcut_hud::ShortcutHud;
 pub mod prompt_args;
 pub mod selection_picker_layout;
 pub mod skill_popup;
@@ -1230,6 +1232,11 @@ impl BottomPane {
 
     pub(crate) fn composer_text_with_pending(&self) -> String {
         self.composer.current_text_with_pending()
+    }
+
+    /// Include buffered typing before a shortcut takes ownership of composer input.
+    pub(crate) fn flush_pending_composer_input(&mut self) {
+        self.composer.flush_pending_input();
     }
 
     /// Returns whether the composer currently accepts interactive draft edits.

@@ -296,6 +296,8 @@ pub mod sparkle_submission_tests;
 pub mod startup_submission_tests;
 pub mod status_and_layout;
 pub mod status_command_tests;
+#[path = "tests/status_surface_command_tests.rs"]
+pub mod status_surface_command_tests;
 pub mod status_surface_previews;
 #[path = "tests/subagent_activity_tests.rs"]
 pub mod subagent_activity;
@@ -328,3 +330,6 @@ pub mod question_notifications_tests;
 
 #[path = "tests/security_setup_tests.rs"]
 pub mod security_setup_tests;
+
+#[path = "tests/quick_dials_tests.rs"]
+pub mod quick_dials_tests;

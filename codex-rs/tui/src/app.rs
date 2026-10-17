@@ -237,6 +237,7 @@ pub mod managed_worktree_creation;
 pub mod misalignment_policy;
 pub mod model_defaults;
 pub mod new_session;
+pub mod quick_dials;
 pub mod turn_tips;
 pub(crate) use new_session::has_launch_setting;
 pub mod clipboard;

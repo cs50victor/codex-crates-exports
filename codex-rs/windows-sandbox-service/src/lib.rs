@@ -17,6 +17,8 @@ pub mod provisioning;
 pub mod registered_runtime;
 #[cfg(windows)]
 pub mod service;
+#[cfg(any(windows, test))]
+pub mod uninstall_policy;
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
 pub enum RunMode {

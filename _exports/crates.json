@@ -633,6 +633,13 @@
     "added_library_target": false,
     "features": {},
     "kind": "library",
+    "name": "codex-multi-env-copy-file",
+    "path": "codex-rs/ext/multi-env-copy-file"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
     "name": "codex-mxc-sandbox",
     "path": "codex-rs/mxc-sandbox"
   },
@@ -691,6 +698,13 @@
     "kind": "library",
     "name": "codex-protocol",
     "path": "codex-rs/protocol"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
+    "name": "codex-protocol-test-support",
+    "path": "codex-rs/protocol/tests/support"
   },
   {
     "added_library_target": false,

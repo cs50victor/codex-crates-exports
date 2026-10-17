@@ -10,6 +10,8 @@ pub mod exports;
 pub mod literals;
 #[path = "shell_snapshot_render.rs"]
 pub mod render;
+#[path = "shell_snapshot_restore.rs"]
+pub mod restore;
 
 pub use capture::CapturedSnapshot;
 pub use capture::CapturedStartupEnvironment;
@@ -19,6 +21,9 @@ pub use capture::snapshot_source_capture_script;
 pub use credentials::PreparedSnapshot;
 pub use credentials::SnapshotCredentialEnvironment;
 pub use credentials::prepare_snapshot_credentials;
+pub use restore::SNAPSHOT_BROKERED_UNSET_ENV_PREFIX;
+pub use restore::SNAPSHOT_BROKERED_VALUE_ENV_PREFIX;
+pub use restore::build_brokered_credential_exports;
 
 use capture::BASH_SH_SNAPSHOT_HEADER;
 
