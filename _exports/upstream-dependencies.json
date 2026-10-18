@@ -1,5 +1,5 @@
 {
-  "revision": "ce0323f2f2d3b25e82806cd555237da3db4e1897",
+  "revision": "8c076942cb70fba8e5c4732c23f1faabc4aed484",
   "packages": [
     {
       "name": "Inflector",
@@ -2354,7 +2354,8 @@
         "tokio-util",
         "tracing",
         "url",
-        "uuid"
+        "uuid",
+        "zstd"
       ]
     },
     {
