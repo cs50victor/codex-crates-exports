@@ -7,6 +7,7 @@ pub mod change_state;
 pub mod default_client;
 pub mod error;
 pub mod personal_access_token;
+pub mod source;
 pub mod storage;
 pub mod util;
 pub mod workload_identity;

@@ -759,6 +759,13 @@
     "added_library_target": false,
     "features": {},
     "kind": "library",
+    "name": "codex-runtime-agent-instance",
+    "path": "codex-rs/runtime-agent-instance"
+  },
+  {
+    "added_library_target": false,
+    "features": {},
+    "kind": "library",
     "name": "codex-sandboxing",
     "path": "codex-rs/sandboxing"
   },

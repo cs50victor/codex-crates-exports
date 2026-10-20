@@ -104,6 +104,10 @@ pub mod code_mode_host;
 pub mod codex_home_metrics;
 pub mod command_exec;
 pub mod config_layer;
+pub mod startup_config;
+pub use startup_config::StartupConfigArgs;
+pub use startup_config::print_startup_config;
+
 pub mod config_manager;
 pub mod config_manager_service;
 pub mod connection_cleanup;
@@ -138,6 +142,7 @@ pub mod request_processors;
 pub mod request_serialization;
 pub mod server_request_error;
 pub mod skills_watcher;
+pub mod thread_sample;
 pub mod thread_state;
 pub mod thread_status;
 pub mod transport;
@@ -546,22 +551,12 @@ pub async fn run_main_with_transport_options(
         arg0_paths.clone(),
         Arc::new(NoopThreadConfigLoader),
     );
-    let bootstrap_config = config_manager
-        .load_startup_config(startup_cwd.clone())
-        .await?
-        .config;
-    let bootstrap_auth =
-        AuthManager::shared_from_config(&bootstrap_config, /*enable_codex_api_key_env*/ false)
-            .await
-            .map_err(std::io::Error::other)?;
-    config_manager.replace_cloud_config_bundle_loader(
-        bootstrap_auth,
-        bootstrap_config.chatgpt_base_url.clone(),
-        bootstrap_config.http_client_factory(),
-    );
+    let startup = config_manager
+        .load_cloud_startup_config(startup_cwd.clone())
+        .await?;
     let mut config_warnings = Vec::new();
     let mut plugin_startup_config = PluginStartupConfig::Current;
-    let config = match config_manager.load_latest_config(startup_cwd.clone()).await {
+    let config = match startup.config {
         Ok(config) => config,
         Err(err) if is_unsupported_untrusted_approval_policy_error(&err) => {
             return Err(err);

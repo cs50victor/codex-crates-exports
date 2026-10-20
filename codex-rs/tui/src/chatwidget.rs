@@ -395,7 +395,6 @@ pub mod status_surfaces;
 use self::status_surface_commands::StatusSurfaceOverrides;
 pub mod streaming;
 use self::status_surfaces::CachedProjectRootName;
-pub mod thread_title_status;
 pub mod thread_usage;
 pub(crate) use self::thread_usage::ThreadUsageOutcome;
 pub mod tool_lifecycle;

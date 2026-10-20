@@ -108,6 +108,7 @@ pub mod mcp_tool_approval_templates;
 pub mod mcp_tool_exposure;
 pub mod network_policy_decision;
 pub use mcp::McpManager;
+pub use mcp::McpServersDisabled;
 pub mod original_image_detail;
 pub use codex_mcp::CodexAppsToolsCache;
 pub use codex_mcp::SandboxState;

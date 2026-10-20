@@ -2,6 +2,8 @@
 //! a usable process security environment and never enters MXC's ACL fallbacks.
 
 #[cfg(windows)]
+pub mod availability;
+#[cfg(windows)]
 pub mod native;
 #[cfg(any(windows, test))]
 pub mod policy;
@@ -97,7 +99,7 @@ pub fn create_command_args(args: CreateMxcCommandArgsParams<'_>) -> Result<Vec<S
 pub fn is_available() -> bool {
     #[cfg(windows)]
     {
-        appcontainer_common::base_container_runner::BaseContainerRunner::is_process_security_environment_usable()
+        availability::is_available()
     }
     #[cfg(not(windows))]
     {
